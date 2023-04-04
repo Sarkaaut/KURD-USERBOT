@@ -59,9 +59,9 @@ async def send_music(bot: Client, message: Message):
         await message.delete()
     except Exception as e:
         print(e)
-        await message.edit("`شکستی هێنا لە دۆزینەوەی گۆرانی`")
+        await message.edit("شکستی هێنا لە دۆزینەوەی گۆرانی")
         await asyncio.sleep(2)
         await message.delete()
 
 
-add_command_help("مووزیک", [[".م `or` مووزیک", "گۆرانی بگەڕێ و بنێرە"]])
+add_command_help("مووزیک", [[".م `يان` مووزیک", "گۆرانی بگەڕێ و بنێرە"]])
