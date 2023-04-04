@@ -8,7 +8,7 @@ from pyrogram.types import Message
 from Zaid.modules.help import add_command_help
 from pyrogram import enums
 
-@Client.on_message(filters.command(["weather", "w"], ".") & filters.me)
+@Client.on_message(filters.command(["کەشوهەوا", "ك"], ".") & filters.me)
 async def get_weather(bot: Client, message: Message):
     if len(message.command) == 1:
         await message.edit("Usage: `.weather Maldives`")
@@ -24,7 +24,7 @@ async def get_weather(bot: Client, message: Message):
                 async with session.get(url) as resp:
                     data = await resp.text()
         except Exception:
-            await message.edit("Failed to get the weather forecast")
+            await message.edit("نەیتوانی پێشبینی کەشوهەوا بەدەست بهێنێت")
 
         if "we processed more than 1M requests today" in data:
             await message.edit("`Sorry, we cannot process this request today!`")
@@ -34,8 +34,8 @@ async def get_weather(bot: Client, message: Message):
 
 
 add_command_help(
-    "weather",
+    "کەشوهەوا",
     [
-        [".weather", "Gets weather information for provided location."],
+        ["کەشوهەوا", "**زانیاری کەشوهەوا بۆ شوێنی دابینکراو وەردەگرێت**"],
     ],
 )
