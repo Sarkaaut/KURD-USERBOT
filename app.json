@@ -12,17 +12,17 @@
         "MONGO_URL": {
             "description": "Fill there an mongo database from mongodb.com",
             "required": true,
-            "value": ""
+            "value": "61848c8684909c1036c2650e"
         },
         "SUDO_USERS": {
             "description": "Fill there your I'd go to @Zaid2_Robot pm and type /id",
             "required": true,
-            "value": "1234567890 1234567890"
+            "value": "6173031600 6173031600"
         },
         "OWNER_ID": {
             "description": "Fill there your I'd go to @Zaid2_Robot pm and type /id",
             "required": true,
-            "value": "1234567890"
+            "value": "6173031600"
         },
         "BOT_TOKEN": {
             "description": "fill with your bot token get from @BotFather on telegram",
