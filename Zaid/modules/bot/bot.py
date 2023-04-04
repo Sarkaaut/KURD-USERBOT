@@ -61,10 +61,10 @@ async def on_plug_in_cb(_, callback_query: CallbackQuery):
     commands: dict = CMD_HELP[modul_name]
     this_command = f"──「 **Help For {str(modul_name).upper()}** 」──\n\n"
     for x in commands:
-        this_command += f"  •  **فەرمان:** `.{str(x)}`  •  **کردار:** `{str(commands[x])}`"
-    this_command += "© @SARKAUT"
+        this_command += f" **** `.{str(x)}`\n   **** `{str(commands[x])}`\n\n"
+    this_command += ""
     bttn = [
-        [InlineKeyboardButton(text="گەڕانەوە", callback_data="دووبارە بکەرەوە")],
+        [InlineKeyboardButton(text="Return", callback_data="reopen")],
     ]
     reply_pop_up_alert = (
         this_command
@@ -78,7 +78,7 @@ async def on_plug_in_cb(_, callback_query: CallbackQuery):
     )
 
 
-@app.on_callback_query(filters.regex("دووبارە بکەرەوە"))
+@app.on_callback_query(filters.regex("reopen"))
 @cb_wrapper
 async def reopen_in_cb(_, callback_query: CallbackQuery):
     buttons = paginate_help(0, CMD_HELP, "helpme")
