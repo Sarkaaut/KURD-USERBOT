@@ -847,7 +847,7 @@ async def menggabut(client: Client, message: Message):
     await e.edit("`باشه وه ره🙈💋`")
 
 
-@Client.on_message(filters.command(["helikopter", "heli"], ".") & filters.me)
+@Client.on_message(filters.command(["هێلیکۆپتەر", "heli"], ".") & filters.me)
 async def helikopter(client: Client, message: Message):
     await edit_or_reply(
         message,
@@ -863,26 +863,26 @@ async def helikopter(client: Client, message: Message):
         "╬═╬ \n"
         "╬═╬ \n"
         "╬═╬ \n"
-        "╬═╬ Hallo Semuanya :) \n"
+        "╬═╬ سڵاو چە ماعە ت :) \n"
         "╬═╬☻/ \n"
         "╬═╬/▌ \n"
         "╬═╬/ \\ \n",
     )
 
 
-@Client.on_message(filters.command("tembak", ".") & filters.me)
+@Client.on_message(filters.command("ئە تکۆژم", ".") & filters.me)
 async def dornembak(client: Client, message: Message):
     await edit_or_reply(
         message,
-        "_/﹋\\_\n" "(҂`_´)\n" "<,︻╦╤─ ҉\n" r"_/﹋\_" "\n**Do you want to be my boyfriend??!**",
+        "_/﹋\\_\n" "(҂`_´)\n" "<,︻╦╤─ ҉\n" r"_/﹋\_" "\n**دە بیتە خۆشە ویستم یان بتکۆژم؟**",
     )
 
 
-@Client.on_message(filters.command("bundir", ".") & filters.me)
+@Client.on_message(filters.command("خوکشتن", ".") & filters.me)
 async def ngebundir(client: Client, message: Message):
     await edit_or_reply(
         message,
-        "`Drugs Everything...`          \n　　　　　|"
+        "ئە وە خۆم کوشت بۆ ئە کتیڤ نابن...          \n　　　　　|"
         "\n　　　　　| \n"
         "　　　　　| \n"
         "　　　　　| \n"
@@ -899,7 +899,7 @@ async def ngebundir(client: Client, message: Message):
     )
 
 
-@Client.on_message(filters.command(["awk", "awikwok"], ".") & filters.me)
+@Client.on_message(filters.command(["dyarm", "دیارم"], ".") & filters.me)
 async def awikwok(client: Client, message: Message):
     await edit_or_reply(
         message,
@@ -907,11 +907,11 @@ async def awikwok(client: Client, message: Message):
         "──▄▀█▄▄▄─────▄▀█▄▄▄\n"
         "▄▀──█▄▄──────█─█▄▄\n"
         "─▄▄▄▀──▀▄───▄▄▄▀──▀▄\n"
-        "─▀───────▀▀─▀───────▀▀\n`Awkwokwokwok..`",
+        "─▀───────▀▀─▀───────▀▀\n`لیتانە وە دیارم..`",
     )
 
 
-@Client.on_message(filters.command("y", ".") & filters.me)
+@Client.on_message(filters.command("لایک", ".") & filters.me)
 async def ysaja(client: Client, message: Message):
     await edit_or_reply(
         message,
@@ -931,7 +931,7 @@ async def ysaja(client: Client, message: Message):
     )
 
 
-@Client.on_message(filters.command("tank", ".") & filters.me)
+@Client.on_message(filters.command("دە بابە", ".") & filters.me)
 async def tank(client: Client, message: Message):
     await edit_or_reply(
         message,
@@ -942,12 +942,12 @@ async def tank(client: Client, message: Message):
     )
 
 
-@Client.on_message(filters.command("babi", ".") & filters.me)
+@Client.on_message(filters.command("بە راز", ".") & filters.me)
 async def babi(client: Client, message: Message):
     await edit_or_reply(
         message,
         "┈┈┏━╮╭━┓┈╭━━━━╮\n"
-        "┈┈┃┏┗┛┓┃╭┫Ngok ┃\n"
+        "┈┈┃┏┗┛┓┃╭┫جۆنن ┃\n"
         "┈┈╰┓▋▋┏╯╯╰━━━━╯\n"
         "┈╭━┻╮╲┗━━━━╮╭╮┈\n"
         "┈┃▎▎┃╲╲╲╲╲╲┣━╯┈\n"
@@ -957,7 +957,7 @@ async def babi(client: Client, message: Message):
     )
 
 
-@Client.on_message(filters.command(["ajg", "anjg"], ".") & filters.me)
+@Client.on_message(filters.command(["سە گ", "sag"], ".") & filters.me)
 async def anjg(client: Client, message: Message):
     await edit_or_reply(
         message,
@@ -970,22 +970,22 @@ async def anjg(client: Client, message: Message):
     )
 
 
-@Client.on_message(filters.command("nah", ".") & filters.me)
+@Client.on_message(filters.command("بۆ تۆیە", ".") & filters.me)
 async def nahlove(client: Client, message: Message):
     typew = await edit_or_reply(
-        message, "`\n(\\_/)`" "`\n(●_●)`" "`\n />💖 *This is for you`"
+        message, "`\n(\\_/)`" "`\n(●_●)`" "`\n />💖 *ئەمە بۆ تۆیە"
     )
     await asyncio.sleep(2)
     await typew.edit("`\n(\\_/)`" "`\n(●_●)`")
 
 
-@Client.on_message(filters.command("santet", ".") & filters.me)
+@Client.on_message(filters.command("سانتێت", ".") & filters.me)
 async def santet(client: Client, message: Message):
-    typew = await edit_or_reply(message, "`Enabling Online Witchcraft Command....`")
+    typew = await edit_or_reply(message, "چالاککردنی فەرمانی جادووگەری ئۆنلاین....")
     await asyncio.sleep(2)
-    await typew.edit("`Searching for This Person's Name...`")
+    await typew.edit("گەڕان بەدوای ناوی ئەم کەسەدا...")
     await asyncio.sleep(1)
-    await typew.edit("`Online Witchcraft to be Done Immediately`")
+    await typew.edit("جادووگەری ئۆنلاین دەبێت دەستبەجێ ئەنجام بدرێت")
     await asyncio.sleep(1)
     await typew.edit("0%")
     number = 1
@@ -1288,7 +1288,7 @@ async def santet(client: Client, message: Message):
     await asyncio.sleep(0.03)
     await typew.edit(str(number) + "%   ████████████████▌")
     await asyncio.sleep(1)
-    await typew.edit("**Target Successfully Stuck Online 🥴**")
+    await typew.edit("**ئامانج بە سەرکەوتوویی لە ڕێگەی ئۆنلاینەوە گیر بوو 🥴**")
 
 
 add_command_help(
