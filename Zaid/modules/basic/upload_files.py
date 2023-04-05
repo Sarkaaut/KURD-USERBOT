@@ -12,7 +12,7 @@ async def progress_callback(current, total, bot: Client, message: Message):
         await message.edit(f"{humanize.naturalsize(current)} / {humanize.naturalsize(total)}")
 
 
-@Client.on_message(filters.command('بەرزکردنەوە', '.') & filters.me)
+@Client.on_message(filters.command('فایل', '.') & filters.me)
 async def upload_helper(bot: Client, message: Message):
     if len(message.command) > 1:
         await bot.send_document('خود', message.command[1], progress=progress_callback, progress_args=(bot, message))
@@ -24,7 +24,7 @@ async def upload_helper(bot: Client, message: Message):
 
 
 add_command_help(
-    "بەرزکردنەوە",
+    "فایل",
     [
         ["بەرزکردنەوە", "فایلەکە باربکە بۆ تەلەگرام لە ڕێڕەوی پەڕگەی سیستەمی پێدراوەوە."],
     ],
