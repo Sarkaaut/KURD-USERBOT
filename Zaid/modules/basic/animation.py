@@ -257,7 +257,7 @@ async def hajqag(client: Client, message: Message):
     await message.edit("پەیوەندیکردن بە پاڤێل دورۆڤ (بەڕێوەبەری جێبەجێکاری تەلەگرام)......")
     animation_chars = [
         "پەیوەندیکردن بە بارەگای تێلێگرام...",
-        "`Call Connected.`",
+        "پەیوەندی پەیوەست کراوە",
         "تێلێگرام: سڵاو ئەمە بنکەی تێلێگرامە. ئەمە کێیە?",
         f"من: ئه مه م {DEFAULTUSER} ,تکایە پەیوەندیم پێوە بکەن بە برا بچووکەکەمەوە،پاڤێل دورۆڤ",
         "بەکارهێنەر ڕێگەپێدراوە",
@@ -280,7 +280,7 @@ async def hajqag(client: Client, message: Message):
         await message.edit(animation_chars[i % 18])
 
 
-@Client.on_message(filters.command("kill", ".") & filters.me)
+@Client.on_message(filters.command("کوشتن", ".") & filters.me)
 async def gahah(client: Client, message: Message):
     if message.forward_from:
         return
@@ -299,26 +299,26 @@ async def gahah(client: Client, message: Message):
         "------------------>",
         "------>;(^。^)ノ",
         "(￣ー￣) DEAD",
-        "**Mrr Gya Matherchod lala la 😈.😈.😈.😈.😈.😈.😈......**\n '#Sad_Reacts_Online'\n",
+        "**بمرە هە ی کافر 😈😈**",
     ]
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
         await message.edit(animation_chars[i % 12])
 
 
-@Client.on_message(filters.command("wtf", ".") & filters.me)
+@Client.on_message(filters.command("ته واوی", ".") & filters.me)
 async def gagahkah(client: Client, message: Message):
     if message.forward_from:
         return
     animation_interval = 0.8
     animation_ttl = range(0, 5)
-    await message.edit("wtf")
+    await message.edit("ته واوی")
     animation_chars = [
-        "What",
-        "What The",
-        "What The F",
-        "What The F Brah",
-        "[𝗪𝗵𝗮𝘁 𝗧𝗵𝗲 𝗙 𝗕𝗿𝗮𝗵](https://telegra.ph//file/f3b760e4a99340d331f9b.jpg)",
+        "چییه",
+        "تە واوی تۆ",
+        "خو تیک نە جویتە",
+        "ئه قڵت ئیش دە کات",
+        "[بە خوا فیزت کردووە](https://telegra.ph//file/f3b760e4a99340d331f9b.jpg)",
     ]
     for i in animation_ttl:
 
@@ -326,7 +326,7 @@ async def gagahkah(client: Client, message: Message):
         await message.edit(animation_chars[i % 5])
 
 
-@Client.on_message(filters.command("ding", ".") & filters.me)
+@Client.on_message(filters.command("تۆپ", ".") & filters.me)
 async def gkahgagw(client: Client, message: Message):
     animation_interval = 0.3
     animation_ttl = range(0, 30)
@@ -344,20 +344,20 @@ async def gkahgagw(client: Client, message: Message):
     ]
     if message.forward_from:
         return
-    await message.edit("ding..dong..ding..dong ...")
+    await message.edit("تۆپ..تۆپ..تۆپ..تۆپ")
     await asyncio.sleep(4)
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
         await message.edit(animation_chars[i % 10])
 
 
-@Client.on_message(filters.command("hypo", ".") & filters.me)
+@Client.on_message(filters.command("تيكداني چاو", ".") & filters.me)
 async def okihakga(client: Client, message: Message):
     if message.forward_from:
         return
     animation_interval = 0.3
     animation_ttl = range(0, 15)
-    await message.edit("hypo....")
+    await message.edit("چاوە ریی بە....")
     animation_chars = [
         "⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜",
         "⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬛⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜",
@@ -373,30 +373,30 @@ async def okihakga(client: Client, message: Message):
         "⬜⬜⬜⬜⬜⬜⬜\n⬜⬛⬛⬛⬛⬛⬜\n⬜⬛⬜⬜⬜⬛⬜\n⬜⬛⬜⬛⬜⬛⬜\n⬜⬛⬜⬜⬜⬛⬜\n⬜⬛⬛⬛⬛⬛⬜\n⬜⬜⬜⬜⬜⬜⬜",
         "⬛⬛⬛⬛⬛\n⬛⬜⬜⬜⬛\n⬛⬜⬛⬜⬛\n⬛⬜⬜⬜⬛\n⬛⬛⬛⬛⬛",
         "⬜⬜⬜\n⬜⬛⬜\n⬜⬜⬜",
-        "[👉🔴👈])",
+        "[🖕🏿])",
     ]
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
         await message.edit(animation_chars[i % 15])
 
 
-@Client.on_message(filters.command(["gangsta", "gang", "gangstar"], ".") & filters.me)
+@Client.on_message(filters.command(["سوتاندن", "خیانە ت", "swtandn"], ".") & filters.me)
 async def gajjajay(client: Client, message: Message):
-    await message.edit("EVERyBOdy")
+    await message.edit("دە تسوتینم")
     await asyncio.sleep(0.3)
     await message.edit("iZ")
     await asyncio.sleep(0.2)
-    await message.edit("GangSTur")
+    await message.edit("مە کە توخوا😭")
     await asyncio.sleep(0.5)
-    await message.edit("UNtIL ")
+    await message.edit("وسبە قە حپە ی خیانە ت کار")
     await asyncio.sleep(0.2)
-    await message.edit("I")
+    await message.edit("خیانە تم نە کردە😭💔")
     await asyncio.sleep(0.3)
-    await message.edit("ArRivE")
+    await message.edit("درو مە کە حیز😡")
     await asyncio.sleep(0.3)
     await message.edit("🔥🔥🔥")
     await asyncio.sleep(0.3)
-    await message.edit("EVERyBOdy iZ GangSTur UNtIL I ArRivE 🔥🔥🔥")
+    await message.edit(" ئایییی یارمە تی ئاییی سوتامممم🔥🔥🔥")
 
 
 @Client.on_message(filters.command("charging", ".") & filters.me)
@@ -418,7 +418,7 @@ async def timer_blankx(client: Client, message: Message):
     )
 
 
-@Client.on_message(filters.command(["koc", "kocok"], ".") & filters.me)
+@Client.on_message(filters.command(["تفوو", "tfo"], ".") & filters.me)
 async def kocok(client: Client, message: Message):
     e = await edit_or_reply(message, "8✊===D")
     await e.edit("8=✊==D")
@@ -449,10 +449,10 @@ async def kocok(client: Client, message: Message):
     await e.edit("8===✊D💦💦💦💦💦💦💦💦💦")
     await e.edit("8==✊=D💦💦💦💦💦💦💦💦💦💦")
     await e.edit("8=✊==D That's why it's over?")
-    await e.edit("RIP 😭😭😭😭")
+    await e.edit("ئی بۆ 😭😭😭😭")
 
 
-@Client.on_message(filters.command(["fuck", "fucek"], ".") & filters.me)
+@Client.on_message(filters.command(["fuck", "فە کیو"], ".") & filters.me)
 async def ngefuck(client: Client, message: Message):
     e = await edit_or_reply(message, ".                       /¯ )")
     await e.edit(".                       /¯ )\n                      /¯  /")
@@ -482,7 +482,7 @@ async def ngefuck(client: Client, message: Message):
     )
 
 
-@Client.on_message(filters.command("hack", ".") & filters.me)
+@Client.on_message(filters.command("هاک", ".") & filters.me)
 async def hak(client: Client, message: Message):
     await message.edit_text("Looking for WhatsApp databases in targeted person...")
     await asyncio.sleep(2)
