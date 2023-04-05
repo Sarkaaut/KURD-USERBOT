@@ -317,7 +317,7 @@ async def updatees(client: Client, message: Message):
 
 
 add_command_help(
-    " ئە پدیت",
+    "ئە پدیت",
     [
         ["تازە کردنە وە", "بۆ بینینی لیستی نوێترین نوێکارییەکانی kurd Uesr bot"],
         ["ئە پدیت کردن", "بۆ نوێکردنەوەی userbot"],
