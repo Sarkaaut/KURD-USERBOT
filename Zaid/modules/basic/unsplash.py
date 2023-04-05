@@ -8,7 +8,7 @@ from Zaid.helper.aiohttp_helper import AioHttp
 from Zaid.modules.help import add_command_help
 
 
-@Client.on_message(filters.command(["unsplash", "pic"], ".") & filters.me)
+@Client.on_message(filters.command(["پلاش", "plash"], ".") & filters.me)
 async def unsplash_pictures(bot: Client, message: Message):
     cmd = message.command
 
@@ -16,7 +16,7 @@ async def unsplash_pictures(bot: Client, message: Message):
         keyword = cmd[1]
 
         if len(cmd) > 2 and int(cmd[2]) < 10:
-            await message.edit("```Getting Pictures```")
+            await message.edit("```وەرگرتنی وێنە ```")
             count = int(cmd[2])
             images = []
             while len(images) is not count:
@@ -32,7 +32,7 @@ async def unsplash_pictures(bot: Client, message: Message):
             await message.delete()
             return
         else:
-            await message.edit("```Getting Picture```")
+            await message.edit("```وەرگرتنی وێنە ```")
             img = await AioHttp().get_url(
                 f"https://source.unsplash.com/1600x900/?{keyword}"
             )
@@ -44,8 +44,8 @@ async def unsplash_pictures(bot: Client, message: Message):
 
 
 add_command_help(
-    "unsplash",
+    "پلاش",
     [
-        [".unsplash __or__ .pic", "Send random pic of keyword first argument."],
+        ["پلاش", "ناردنی وێنەی هەڕەمەکی لە وشەی سەرەکی یەکەم ئارگومێنت"],
     ],
 )
