@@ -100,17 +100,17 @@ async def phase4(message):
         await asyncio.sleep(SLEEP)
 
 
-@Client.on_message(filters.command(["heart", "love"], ".") & filters.me)
+@Client.on_message(filters.command(["xoham dawet", "خوشمدە ویت"], ".") & filters.me)
 async def hearts(client: Client, message: Message):
     await phase1(message)
     await asyncio.sleep(SLEEP * 3)
-    await message.edit("❤️ I")
+    await message.edit("❤️ ئاشقتم")
     await asyncio.sleep(0.5)
-    await message.edit("❤️ I Love")
+    await message.edit("❤️ تاقانە کە م")
     await asyncio.sleep(0.5)
-    await message.edit("❤️ I Love You")
+    await message.edit("❤️ تا مردن")
     await asyncio.sleep(3)
-    await message.edit("❤️ I Love You <3")
+    await message.edit("❤️ خۆشم دە ویت")
 
 
 @Client.on_message(
