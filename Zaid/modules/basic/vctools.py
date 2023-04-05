@@ -40,17 +40,17 @@ async def get_group_call(
 
 
 @Client.on_message(
-    filters.command(["startvc"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["تيل"], ".") & (filters.me | filters.user(SUDO_USER))
 )
 async def opengc(client: Client, message: Message):
     flags = " ".join(message.command[1:])
-    tex = await message.reply_text(message, "`Processing . . .`")
+    tex = await message.reply_text(message, "پرۆسێسکردن. . .")
     vctitle = get_arg(message)
     if flags == enums.ChatType.CHANNEL:
         chat_id = message.chat.title
     else:
         chat_id = message.chat.id
-    args = f"**Started Group Call\n • **Chat ID** : `{chat_id}`"
+    args = f"**Started Group Call\n • ** ناسنامەی چات** : `{chat_id}`"
     try:
         if not vctitle:
             await client.invoke(
@@ -60,7 +60,7 @@ async def opengc(client: Client, message: Message):
                 )
             )
         else:
-            args += f"\n • **Title:** `{vctitle}`"
+            args += f"\n • ** ناونیشان:** `{vctitle}`"
             await client.invoke(
                 CreateGroupCall(
                     peer=(await client.resolve_peer(chat_id)),
@@ -70,28 +70,28 @@ async def opengc(client: Client, message: Message):
             )
         await tex.edit(args)
     except Exception as e:
-        await tex.edit(f"**INFO:** `{e}`")
+        await tex.edit(f"** زانیاری:** `{e}`")
 
 
 @Client.on_message(
-    filters.command(["stopvc"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["داخستن"], ".") & (filters.me | filters.user(SUDO_USER))
 )
 async def end_vc_(client: Client, message: Message):
     chat_id = message.chat.id
     if not (
         group_call := (
-            await get_group_call(client, message, err_msg=", group call already ended")
+            await get_group_call(client, message, err_msg=", پەیوەندی گروپی کۆتایی هات")
         )
     ):
         return
     await client.invoke(DiscardGroupCall(call=group_call))
-    await message.reply_text(f"Ended group call in **Chat ID** : `{chat_id}`")
+    await message.reply_text(f"کۆتایی هات بە پەیوەندی گروپی ** ناسنامەی چات** : `{chat_id}`")
 
 
 add_command_help(
     "vctools",
     [
-        ["startvc", "Start voice chat of group."],
-        ["stopvc", "End voice chat of group."],
+        ["تيل", "دەست بکە بە چاتی دەنگی گروپ."],
+        ["داخستن", "کۆتایی هێنان بە چاتی دەنگی گروپ."],
     ],
 )
