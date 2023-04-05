@@ -7,19 +7,19 @@ from Zaid.helper.utility import get_arg
 
 
 
-@Client.on_message(filters.command(["tr", "translate"], ["."]) & filters.me)
+@Client.on_message(filters.command(["Wargeran", "وەرگێڕان"], ["."]) & filters.me)
 async def pytrans_tr(_, message: Message):
-  tr_msg = await message.edit("`Processing...`")
+  tr_msg = await message.edit("پرۆسێسکردن...")
   r_msg = message.reply_to_message
   args = get_arg(message)
   if r_msg:
     if r_msg.text:
       to_tr = r_msg.text
     else:
-      return await tr_msg.edit("`Reply to a message that contains text!`")
+      return await tr_msg.edit("وەڵامی نامەیەک بدەرەوە کە دەقی تێدابێت!")
     # Checks if dest lang is defined by the user
     if not args:
-      return await tr_msg.edit(f"`Please define a destination language!` \n\n**Ex:** `{Config.CMD_PREFIX}ptr si Hey, I'm using telegram!`")
+      return await tr_msg.edit(f"تکایە زمانی مەبەست پێناسە بکە! \n\n**پێشووتر:** {Config.CMD_PREFIX}ptr هێی من تەلەگرام بەکاردەهێنم!")
     # Setting translation if provided
     else:
       sp_args = args.split(" ")
@@ -45,15 +45,15 @@ async def pytrans_tr(_, message: Message):
   py_trans = Async_PyTranslator(provider=tr_engine)
   translation = await py_trans.translate(to_tr, dest_lang)
   # Parse the translation message
-  if translation["status"] == "success":
+  if translation["دۆخ"] == "سەرکەوتن":
     tred_txt = f"""
-**Translation Engine**: `{translation["engine"]}`
-**Translated to:** `{translation["dest_lang"]}`
+**Translation Engine**: `{translation["بزوێنەر"]}`
+** وەرگێڕانی بۆ:** `{translation["dest_lang"]}`
 **Translation:**
 `{translation["translation"]}`
 """
     if len(tred_txt) > 4096:
-      await tr_msg.edit("`Wah!! Translated Text So Long Tho!, Give me a minute, I'm sending it as a file!`")
+      await tr_msg.edit("واه دەقی وەرگێڕدراو ئەوەندە درێژ تۆ! خولەکێکم پێ بدە، وەک فایلێک دەینێرم!")
       tr_txt_file = open("translated.txt", "w+")
       tr_txt_file.write(tred_txt)
       tr_txt_file.close()
@@ -64,8 +64,8 @@ async def pytrans_tr(_, message: Message):
       await tr_msg.edit(tred_txt)
 
 add_command_help(
-    "translate",
+    "وەرگێڕان",
     [
-        [".tr", "Translate some text by give a text or reply that text/caption."],
+        [".tr", "وەرگێڕانی هەندێک دەق بە پێدانی دەقێک یان وەڵامدانەوەی ئەو دەقە/کاپشنە"],
     ],
 )
