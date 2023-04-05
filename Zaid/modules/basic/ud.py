@@ -40,7 +40,7 @@ async def urban_dictionary(bot, message):
 
 
 add_command_help(
-    "فەرهەنگ",
+    "پێناسە",
     [
         ["پێناسە", "پێناسەی ئەو وشەیە بکە کە دەینێری یان وەڵامی دەدەیتەوە"],
     ],
