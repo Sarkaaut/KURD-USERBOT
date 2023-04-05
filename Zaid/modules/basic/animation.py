@@ -421,35 +421,35 @@ async def timer_blankx(client: Client, message: Message):
 @Client.on_message(filters.command(["تفوو", "tfo"], ".") & filters.me)
 async def kocok(client: Client, message: Message):
     e = await edit_or_reply(message, "8✊===D")
-    await e.edit("8=✊==D")
-    await e.edit("8==✊=D")
-    await e.edit("8===✊D")
-    await e.edit("8==✊=D")
-    await e.edit("8=✊==D")
-    await e.edit("8✊===D")
-    await e.edit("8=✊==D")
-    await e.edit("8==✊=D")
-    await e.edit("8===✊D")
-    await e.edit("8==✊=D")
-    await e.edit("8=✊==D")
-    await e.edit("8✊===D")
-    await e.edit("8=✊==D")
-    await e.edit("8==✊=D")
-    await e.edit("8===✊D")
-    await e.edit("8==✊=D")
-    await e.edit("8=✊==D")
-    await e.edit("8===✊D💦")
-    await e.edit("8==✊=D💦💦")
-    await e.edit("8=✊==D💦💦💦")
-    await e.edit("8✊===D💦💦💦💦")
-    await e.edit("8===✊D💦💦💦💦💦")
-    await e.edit("8==✊=D💦💦💦💦💦💦")
-    await e.edit("8=✊==D💦💦💦💦💦💦💦")
-    await e.edit("8✊===D💦💦💦💦💦💦💦💦")
-    await e.edit("8===✊D💦💦💦💦💦💦💦💦💦")
-    await e.edit("8==✊=D💦💦💦💦💦💦💦💦💦💦")
-    await e.edit("8=✊==D That's why it's over?")
-    await e.edit("ئی بۆ 😭😭😭😭")
+    await e.edit("8=💦==D")
+    await e.edit("8==💦=D")
+    await e.edit("8===💦D")
+    await e.edit("8==💦=D")
+    await e.edit("8=💦==D")
+    await e.edit("8💦===D")
+    await e.edit("8=💦==D")
+    await e.edit("8==💦=D")
+    await e.edit("8===💦D")
+    await e.edit("8==💦=D")
+    await e.edit("8=💦==D")
+    await e.edit("8💦===D")
+    await e.edit("8=💦==D")
+    await e.edit("8==💦=D")
+    await e.edit("8===💦D")
+    await e.edit("8==💦=D")
+    await e.edit("8=💦==D")
+    await e.edit("8===💦D💦")
+    await e.edit("8==💦=D💦💦")
+    await e.edit("8=💦==D💦💦💦")
+    await e.edit("8💦===D💦💦💦💦")
+    await e.edit("8===💦D💦💦💦💦💦")
+    await e.edit("8==💦=D💦💦💦💦💦💦")
+    await e.edit("8=💦==D💦💦💦💦💦💦💦")
+    await e.edit("8💦===D💦💦💦💦💦💦💦💦")
+    await e.edit("8===💦D💦💦💦💦💦💦💦💦💦")
+    await e.edit("8==💦=D💦💦💦💦💦💦💦💦💦💦")
+    await e.edit("8=💦==Dشايه ني له وه زياتری")
+    await e.edit("تفووو")
 
 
 @Client.on_message(filters.command(["fuck", "فە کیو"], ".") & filters.me)
@@ -484,60 +484,60 @@ async def ngefuck(client: Client, message: Message):
 
 @Client.on_message(filters.command("هاک", ".") & filters.me)
 async def hak(client: Client, message: Message):
-    await message.edit_text("Looking for WhatsApp databases in targeted person...")
+    await message.edit_text("گەڕان بەدوای بنکەدراوەی تیلیگرام لە کەسی ئامانجدار...")
     await asyncio.sleep(2)
     await message.edit_text(
-        " User online: True\nTelegram access: True\nRead Storage: True "
+        "بەکارهێنەر ئۆنلاین : ڕاست دەستڕاگەیشتن بە تەلەگرام: ڕاست خوێندنەوە هەڵگرتن: ڕاست "
     )
     await asyncio.sleep(2)
     await message.edit_text(
-        "Hacking... 0%\n[░░░░░░░░░░░░░░░░░░░░]\n`Looking for WhatsApp...`\nETA: 0m, 20s"
+        "هاککردن... 0%\n[░░░░░░░░░░░░░░░░░░░░]\n`Looking for WhatsApp...`\nETA: 0m, 20s"
     )
     await asyncio.sleep(2)
     await message.edit_text(
-        "Hacking... 11.07%\n[██░░░░░░░░░░░░░░░░░░]\n`Looking for WhatsApp...`\nETA: 0m, 18s"
+        "هاککردن... 11.07%\n[██░░░░░░░░░░░░░░░░░░]\n`Looking for WhatsApp...`\nETA: 0m, 18s"
     )
     await asyncio.sleep(2)
     await message.edit_text(
-        "Hacking... 20.63%\n[███░░░░░░░░░░░░░░░░░]\n`Found folder C:/WhatsApp`\nETA: 0m, 16s"
+        "هاککردن... 20.63%\n[███░░░░░░░░░░░░░░░░░]\n`Found folder C:/WhatsApp`\nETA: 0m, 16s"
     )
     await asyncio.sleep(2)
     await message.edit_text(
-        "Hacking... 34.42%\n[█████░░░░░░░░░░░░░░░]\n`Found folder C:/WhatsApp`\nETA: 0m, 14s"
+        ". هاککردن.. 34.42%\n[█████░░░░░░░░░░░░░░░]\n`Found folder C:/WhatsApp`\nETA: 0m, 14s"
     )
     await asyncio.sleep(2)
     await message.edit_text(
-        "Hacking... 42.17%\n[███████░░░░░░░░░░░░░]\n`Searching for databases`\nETA: 0m, 12s"
+        "هاککردن... 42.17%\n[███████░░░░░░░░░░░░░]\n`Searching for databases`\nETA: 0m, 12s"
     )
     await asyncio.sleep(2)
     await message.edit_text(
-        "Hacking... 55.30%\n[█████████░░░░░░░░░░░]\n`Found msgstore.db.crypt12`\nETA: 0m, 10s"
+        "هاککردن... 55.30%\n[█████████░░░░░░░░░░░]\n`Found msgstore.db.crypt12`\nETA: 0m, 10s"
     )
     await asyncio.sleep(2)
     await message.edit_text(
-        "Hacking... 64.86%\n[███████████░░░░░░░░░]\n`Found msgstore.db.crypt12`\nETA: 0m, 08s"
+        "هاککردن... 64.86%\n[███████████░░░░░░░░░]\n`Found msgstore.db.crypt12`\nETA: 0m, 08s"
     )
     await asyncio.sleep(2)
     await message.edit_text(
-        "Hacking... 74.02%\n[█████████████░░░░░░░]\n`Trying to Decrypt...`\nETA: 0m, 06s"
+        "هاککردن... 74.02%\n[█████████████░░░░░░░]\n`Trying to Decrypt...`\nETA: 0m, 06s"
     )
     await asyncio.sleep(2)
     await message.edit_text(
-        "Hacking... 86.21%\n[███████████████░░░░░]\n`Trying to Decrypt...`\nETA: 0m, 04s"
+        "هاککردن... 86.21%\n[███████████████░░░░░]\n`Trying to Decrypt...`\nETA: 0m, 04s"
     )
     await asyncio.sleep(2)
     await message.edit_text(
-        "Hacking... 93.50%\n[█████████████████░░░]\n`Decryption successful!`\nETA: 0m, 02s"
+        "هاککردن... 93.50%\n[█████████████████░░░]\n`Decryption successful!`\nETA: 0m, 02s"
     )
     await asyncio.sleep(2)
     await message.edit_text(
-        "Hacking... 100%\n[████████████████████]\n`Scanning file...`\nETA: 0m, 00s"
+        "هاککردن... 100%\n[████████████████████]\n`Scanning file...`\nETA: 0m, 00s"
     )
     await asyncio.sleep(2)
-    await message.edit_text("Hacking complete!\nUploading file...")
+    await message.edit_text("هاککردن تەواو بووە!بردنی فایلە کان...")
     await asyncio.sleep(2)
     await message.edit_text(
-        "Targeted Account Hacked...!\n\n ✅ File has been successfully uploaded to my server.\nWhatsApp Database:\n`./DOWNLOADS/msgstore.db.crypt12`"
+        "ئەکاونتی ئامانجدار هاک کرا...! ✅ فایلەکە بە سەرکەوتوویی لە سێرڤەرەکەمدا بارکراوە تکایە نامە بۆ @SARKAUT ئە مە بنیرە بۆ لابردنی هاک لە سە ڕت `"
     )
 
 
