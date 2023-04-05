@@ -1,31 +1,31 @@
 {
-    "name": "Zaid Userbot",
+    "name": "kurd User bot",
     "description": "An first Telegram Userbot with multi Clients for Spamming or Mass.",
     "keywords": ["pyrogram", "userbot"],
     "repository": "https://github.com/ITZ-ZAID/Zaid-Userbot",
   "stack": "container",
     "env": {
         "STRING_SESSION1": {
-            "description": "fill with the telethon session string from https://replit.com/@Itz-zaid/Generator",
+            "description": "پڕ بکەرەوە بە ڕستەی دانیشتنی تەلەتۆن لە://replit.com/@Itz-zaid/Generator",
             "required": true
         },
         "MONGO_URL": {
-            "description": "Fill there an mongo database from mongodb.com",
+            "description": "لەوێ بنکەدراوەیەک لە mongodb.com پڕبکەرەوە",
             "required": true,
             "value": "61848c8684909c1036c2650e"
         },
         "SUDO_USERS": {
-            "description": "Fill there your I'd go to @Zaid2_Robot pm and type /id",
+            "description": "دوو ئایدی سە روکیتی پربکە رە وە",
             "required": true,
             "value": "6173031600 6173031600"
         },
         "OWNER_ID": {
-            "description": "Fill there your I'd go to @Zaid2_Robot pm and type /id",
+            "description": "ئایدی ئونە ر بنوسە",
             "required": true,
             "value": "6173031600"
         },
         "BOT_TOKEN": {
-            "description": "fill with your bot token get from @BotFather on telegram",
+            "description": "پڕ بکەرەوە لە تۆکنی بۆتەکەت لە @BotFather لە تەلەگرام وەربگرە",
             "required": true,
             "value": ""
         }
