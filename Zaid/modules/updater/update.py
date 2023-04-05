@@ -317,9 +317,9 @@ async def updatees(client: Client, message: Message):
 
 
 add_command_help(
-    "update",
+    "ئە پدیت",
     [
-        ["update", "To see a list of the latest updates from Zaid-Userbot."],
-        ["update deploy", "To update userbot."],
+        ["تازە کردنە وە", "بۆ بینینی لیستی نوێترین نوێکارییەکانی kurd Uesr bot"],
+        ["ئە پدیت کردن", "To update userbot."],
     ],
 )
