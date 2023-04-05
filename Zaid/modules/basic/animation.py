@@ -164,7 +164,7 @@ async def pikachu(client: Client, message: Message):
     await message.delete()
 
 
-@Client.on_message(filters.command("hmm", ".") & filters.me)
+@Client.on_message(filters.command("همم", ".") & filters.me)
 async def hello_world(client: Client, message: Message):
     mg = await edit_or_reply(
         message,
@@ -1312,18 +1312,18 @@ add_command_help(
         ["nah", "To display art love."],
         ["ajg", "To Display art anjing."],
         ["babi", "To display art babi."],
-        ["hug", "To get A Hug Gifs anime."],
-        ["hmm", "Get Random Hmmm."],
-        ["wink", "To Get A Winking Gifs."],
+        ["لە باوەشکردن", "بۆ بەدەستهێنانی ئەنیمەی A Hug Gifs"],
+        ["همم", "بە شێوەیەکی هەڕەمەکی بەدەست بهێنە هەممم"],
+        ["چاوتروکاندن", "بۆ بەدەستهێنانی Gifs ی چاوتروکاندن"],
         ["خوشمدە ویت", "بۆ پێشنیارکردنی کەسێک"],
-        ["loveyou", "It Will Send Random Emojis."],
+        ["جۆشە ویستی", "ئیمۆجی هەڕەمەکی دەنێرێت"],
         [
-            "pat",
-            "To get a pat gifs",
+            "ئامیزکردن",
+            "بۆ بەدەستهێنانی pat gifs",
         ],
         [
-            "pikachu",
-            "to get a Pikachu Gifs",
+            "پیکاچو",
+            "بۆ بەدەستهێنانی پیکاچو گیفس",
         ],
         [
             "kill",
