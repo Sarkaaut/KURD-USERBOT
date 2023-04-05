@@ -58,7 +58,7 @@ async def uptotelegraph(client: Client, message: Message):
         except exceptions.TelegraphException as exc:
             await tex.edit(f"** هەڵە:** `{exc}`")
             return
-        wow_graph = f"**Uploaded as** [Telegraph](https://telegra.ph/{response['path']})"
+        wow_graph = f"** بارکراوە لە سە ر** [Telegraph](https://telegra.ph/{response['path']})"
         await tex.edit(wow_graph)
 
 
