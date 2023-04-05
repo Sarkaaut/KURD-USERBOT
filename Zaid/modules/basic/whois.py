@@ -74,7 +74,7 @@ async def who_is(client: Client, message: Message):
         return await ex.edit(f"** زانیاری:** `{e}`")
 
 
-@Client.on_message(filters.command(["زانیاری چات", "zanyare chat", "zact"], ".") & filters.me)
+@Client.on_message(filters.command(["زانیاری گروپ", "zanyare chat", "زانیاری گروپ"], ".") & filters.me)
 async def chatinfo_handler(client: Client, message: Message):
     ex = await message.edit_text("پرۆسێسکردن...")
     try:
@@ -142,7 +142,7 @@ add_command_help(
             "زانیاری بەکارهێنەری تەلەگرام بەدەست بهێنە لەگەڵ وەسفێکی تەواو تە نها بە ریپلە ی ",
         ],
         [
-            "زانیاری چات",
+            "زانیاری گروپ",
             "زانیاری گروپ بەدەست بهێنە لەگەڵ وەسفێکی تەواو",
         ],
     ],
