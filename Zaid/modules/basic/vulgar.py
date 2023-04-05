@@ -38,7 +38,7 @@ async def i_am_not_allowed_to_say_this(bot: Client, message: Message):
 
             for word in bad_words:
                 try:
-                    txt = re.sub(word, "bruh", txt, flags=re.IGNORECASE)
+                    txt = re.sub(word, "سرايه وه", txt, flags=re.IGNORECASE)
                 except Exception as e:
                     print(f"{e}")
 
