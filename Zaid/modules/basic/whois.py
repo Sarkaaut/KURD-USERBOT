@@ -30,8 +30,8 @@ async def who_is(client: Client, message: Message):
         user_details = (await client.get_chat(user.id)).bio
         bio = f"{user_details}" if user_details else "-"
         h = f"{user.status}"
-        if h.startswith("UserStatus"):
-            y = h.replace("UserStatus.", "")
+        if h.startswith("دۆخی بەکارهێنەر"):
+            y = h.replace("دۆخی بەکارهێنەر", "")
             status = y.capitalize()
         else:
             status = "-"
