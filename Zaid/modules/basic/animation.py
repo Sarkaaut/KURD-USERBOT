@@ -1315,7 +1315,7 @@ add_command_help(
         ["hug", "To get A Hug Gifs anime."],
         ["hmm", "Get Random Hmmm."],
         ["wink", "To Get A Winking Gifs."],
-        ["love", "To Propose Someone."],
+        ["خوشمدە ویت", "بۆ پێشنیارکردنی کەسێک"],
         ["loveyou", "It Will Send Random Emojis."],
         [
             "pat",
