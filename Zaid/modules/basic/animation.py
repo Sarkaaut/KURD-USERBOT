@@ -384,7 +384,7 @@ async def okihakga(client: Client, message: Message):
 async def gajjajay(client: Client, message: Message):
     await message.edit("دە تسوتینم")
     await asyncio.sleep(0.3)
-    await message.edit("iZ")
+    await message.edit("ئی بۆ🥺")
     await asyncio.sleep(0.2)
     await message.edit("مە کە توخوا😭")
     await asyncio.sleep(0.5)
@@ -421,7 +421,7 @@ async def timer_blankx(client: Client, message: Message):
 @Client.on_message(filters.command(["تفوو", "tfo"], ".") & filters.me)
 async def kocok(client: Client, message: Message):
     e = await edit_or_reply(message, "8✊===D")
-    await e.edit("8=💦==D")
+    await e.edit("=💦==")
     await e.edit("8==💦=D")
     await e.edit("8===💦D")
     await e.edit("8==💦=D")
