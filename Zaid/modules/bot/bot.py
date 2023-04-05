@@ -20,19 +20,19 @@ async def _callbacks(_, callback_query: CallbackQuery):
             Data.text_help_menu,
             reply_markup=InlineKeyboardMarkup(buttons),
         )
-    elif query == "close":
+    elif query == "داخستن":
         await app.edit_inline_text(callback_query.inline_message_id, "**— CLOSED**")
         return
-    elif query == "close_help":
+    elif query == "یارمەتی داخستنی":
         if callback_query.from_user.id not in users:
            return
         await app.edit_inline_text(
             callback_query.inline_message_id,
-            "**CLOSED MENU HELP**",
+            "**یارمەتی مینیوی داخراو**",
             reply_markup=InlineKeyboardMarkup(Data.reopen),
         )
         return
-    elif query == "closed":
+    elif query == "داخراوە":
         try:
             await callback_query.message.delete()
         except BaseException:
@@ -51,7 +51,7 @@ async def _callbacks(_, callback_query: CallbackQuery):
             )
         except Exception as e:
             e = traceback.format_exc()
-            print(e, "Callbacks")
+            print(e, "پەیوەندیکردنەوە")
 
 
 @app.on_callback_query(filters.regex("ub_modul_(.*)"))
@@ -59,17 +59,17 @@ async def _callbacks(_, callback_query: CallbackQuery):
 async def on_plug_in_cb(_, callback_query: CallbackQuery):
     modul_name = callback_query.matches[0].group(1)
     commands: dict = CMD_HELP[modul_name]
-    this_command = f"**Help For {str(modul_name).upper()}**\n\n"
+    this_command = f"**یارمەتی بۆ {str(modul_name).upper()}**\n\n"
     for x in commands:
         this_command += f" .{str(x)}\n {str(commands[x])}\n\n"
     this_command += "@SARKAUT"
     bttn = [
-        [InlineKeyboardButton(text="Return", callback_data="reopen")],
+        [InlineKeyboardButton(text="گەڕانەوە", callback_data="دووبارە بکەرەوە")],
     ]
     reply_pop_up_alert = (
         this_command
         if this_command is not None
-        else f"{module_name} No documentation has been written for the module."
+        else f"{module_name} هیچ بەڵگەنامەیەک بۆ مۆدیولەکە نەنووسراوە"
     )
     await app.edit_inline_text(
         callback_query.inline_message_id,
@@ -78,7 +78,7 @@ async def on_plug_in_cb(_, callback_query: CallbackQuery):
     )
 
 
-@app.on_callback_query(filters.regex("reopen"))
+@app.on_callback_query(filters.regex("دووبارە بکەرەوە"))
 @cb_wrapper
 async def reopen_in_cb(_, callback_query: CallbackQuery):
     buttons = paginate_help(0, CMD_HELP, "helpme")
