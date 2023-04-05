@@ -114,7 +114,7 @@ async def hearts(client: Client, message: Message):
 
 
 @Client.on_message(
-    filters.me & (filters.command(["loveyou"], ".") | filters.regex("^loveyou "))
+    filters.me & (filters.command(["جۆشە ویستی"], ".") | filters.regex("^loveyou "))
 )
 async def _(client: Client, message: Message):
     noble = random.randint(1, len(NOBLE) - 2)
@@ -122,7 +122,7 @@ async def _(client: Client, message: Message):
     await edit_or_reply(message, reply_text)
 
 
-@Client.on_message(filters.command("wink", ".") & filters.me)
+@Client.on_message(filters.command("چاوتروکاندن", ".") & filters.me)
 async def wink(client: Client, message: Message):
     hmm_s = "https://some-random-api.ml/animu/wink"
     r = requests.get(url=hmm_s).json()
@@ -131,7 +131,7 @@ async def wink(client: Client, message: Message):
     await message.delete()
 
 
-@Client.on_message(filters.command("hug", ".") & filters.me)
+@Client.on_message(filters.command("لە باوەشکردن", ".") & filters.me)
 async def hug(client: Client, message: Message):
     hmm_s = "https://some-random-api.ml/animu/hug"
     r = requests.get(url=hmm_s).json()
@@ -140,7 +140,7 @@ async def hug(client: Client, message: Message):
     await message.delete()
 
 
-@Client.on_message(filters.command("pat", ".") & filters.me)
+@Client.on_message(filters.command("ئامیزکردن", ".") & filters.me)
 async def pat(client: Client, message: Message):
     hmm_s = "https://some-random-api.ml/animu/pat"
     r = requests.get(url=hmm_s).json()
@@ -149,7 +149,7 @@ async def pat(client: Client, message: Message):
     await message.delete()
 
 
-@Client.on_message(filters.command("pikachu", ".") & filters.me)
+@Client.on_message(filters.command("پیکاچو", ".") & filters.me)
 async def pikachu(client: Client, message: Message):
     hmm_s = "https://some-random-api.ml/img/pikachu"
     r = requests.get(url=hmm_s).json()
@@ -173,7 +173,7 @@ async def hello_world(client: Client, message: Message):
 
 
 @Client.on_message(
-    filters.me & (filters.command(["ahh"], ".") | filters.regex("^ahh "))
+    filters.me & (filters.command(["پيكه نين"], ".") | filters.regex("^ahh "))
 )
 async def hello_world(client: Client, message: Message):
     mg = await edit_or_reply(message, "ahh")
@@ -193,7 +193,7 @@ async def hello_world(client: Client, message: Message):
     await mg.edit("aaahhhhhhhh")
 
 
-@Client.on_message(filters.command("brain", ".") & filters.me)
+@Client.on_message(filters.command("مێشکت", ".") & filters.me)
 async def pijtau(client: Client, message: Message):
     if message.forward_from:
         return
@@ -222,7 +222,7 @@ async def pijtau(client: Client, message: Message):
         await message.edit(animation_chars[i % 14])
 
 
-@Client.on_message(filters.command("bomb", ".") & filters.me)
+@Client.on_message(filters.command("بۆمب", ".") & filters.me)
 async def gahite(client: Client, message: Message):
     if message.forward_from:
         return
@@ -248,32 +248,32 @@ async def gahite(client: Client, message: Message):
     await asyncio.sleep(2)
 
 
-@Client.on_message(filters.command("call", ".") & filters.me)
+@Client.on_message(filters.command("ته له فون", ".") & filters.me)
 async def hajqag(client: Client, message: Message):
     if message.forward_from:
         return
     animation_interval = 3
     animation_ttl = range(0, 18)
-    await message.edit("Calling Pavel Durov (ceo of telegram)......")
+    await message.edit("پەیوەندیکردن بە پاڤێل دورۆڤ (بەڕێوەبەری جێبەجێکاری تەلەگرام)......")
     animation_chars = [
-        "`Connecting To Telegram Headquarters...`",
+        "پەیوەندیکردن بە بارەگای تێلێگرام...",
         "`Call Connected.`",
-        "`Telegram: Hello This is Telegram HQ. Who is this?`",
-        f"`Me: Yo this is` {DEFAULTUSER} ,`Please Connect me to my lil bro,Pavel Durov `",
-        "`User Authorised.`",
-        "`Calling Saitama`  `At +916969696969`",
-        "`Private  Call Connected...`",
-        "`Me: Hello Sir, Please Ban This Telegram Account.`",
-        "`Saitama : May I Know Who Is This?`",
-        f"`Me: Yo Brah, I Am` {DEFAULTUSER} ",
-        "`Saitama : OMG!!! Long time no see, Wassup cat...\nI'll Make Sure That Guy Account Will Get Blocked Within 24Hrs.`",
-        "`Me: Thanks, See You Later Brah.`",
-        "`Saitama : Please Don't Thank Brah, Telegram Is Our's. Just Gimme A Call When You Become Free.`",
-        "`Me: Is There Any Issue/Emergency???`",
-        "`Saitama : Yes Sur, There Is A Bug In Telegram v69.6.9.\nI Am Not Able To Fix It. If Possible, Please Help Fix The Bug.`",
-        "`Me: Send Me The App On My Telegram Account, I Will Fix The Bug & Send You.`",
-        "`Saitama : Sure Sur \nTC Bye Bye :)`",
-        "`Private Call Disconnected.`",
+        "تێلێگرام: سڵاو ئەمە بنکەی تێلێگرامە. ئەمە کێیە?",
+        f"من: ئه مه م {DEFAULTUSER} ,تکایە پەیوەندیم پێوە بکەن بە برا بچووکەکەمەوە،پاڤێل دورۆڤ",
+        "بەکارهێنەر ڕێگەپێدراوە",
+        "پەیوەندیکردن بە سایتاما ره قه م +916969696969",
+        "پەیوەندی تایبەت بە پەیوەندییەوە...",
+        "من: سڵاو کاکە تکایە ئەم ئەکاونتە تێلێگرامە قەدەغە بکەن.",
+        "سایتاما : دەتوانم بزانم ئەمە کێیە؟",
+        f"من : ئه مه م{DEFAULTUSER} ",
+        "سایتاما : OMG!!! ماوەیەکی زۆرە نەبینین، پشیلەی واسوپ...\nI'll دڵنیابە کە ئەکاونتی کابرا لە ماوەی 24س بلۆک دەکرێت.",
+        "من: سوپاس، دواتر دەتبینمەوە برا.",
+        "سایتاما : تکایە سوپاسی براه مەکەن، تێلێگرام هی ئێمەیە. تەنها پەیوەندییەک بکە کاتێک ئازاد دەبیت",
+        "من: ئایا هیچ کێشەیەک/باری نائاسایی هەیە؟؟؟",
+        "سایتاما: بەڵێ سور، هەڵەیەک لە تێلێگرام v69.6.9.\nمن ناتوانم چاکی بکەم. ئەگەر دەکرێت تکایە یارمەتیت بدەن لە چاککردنی هەڵەکە",
+        "من: ئەپەکەم بۆ بنێرە لە ئەکاونتی تێلێگرامەکەم، من هەڵەکە چاک دەکەم و تۆ دەنێرم.",
+        "سایتاما : دڵنیا سور \nTC بای بای:)",
+        "سایتاما : دڵنیا سور \nTC بای بای",
     ]
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
