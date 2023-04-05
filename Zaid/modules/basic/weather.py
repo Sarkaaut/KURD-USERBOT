@@ -8,10 +8,10 @@ from pyrogram.types import Message
 from Zaid.modules.help import add_command_help
 from pyrogram import enums
 
-@Client.on_message(filters.command(["weather", "w"], ".") & filters.me)
+@Client.on_message(filters.command(["کەشوهەوا", "kashohawa"], ".") & filters.me)
 async def get_weather(bot: Client, message: Message):
     if len(message.command) == 1:
-        await message.edit("Usage: `.weather Maldives`")
+        await message.edit("بەکارهێنان: `. کەشوهەوا iraq `")
         await asyncio.sleep(3)
         await message.delete()
 
@@ -24,18 +24,18 @@ async def get_weather(bot: Client, message: Message):
                 async with session.get(url) as resp:
                     data = await resp.text()
         except Exception:
-            await message.edit("Failed to get the weather forecast")
+            await message.edit("نەیتوانی پێشبینی کەشوهەوا بەدەست بهێنێت")
 
-        if "we processed more than 1M requests today" in data:
-            await message.edit("`Sorry, we cannot process this request today!`")
+        if "ئەمڕۆ زیاتر لە 1M داواکاریمان پرۆسێس کرد" in data:
+            await message.edit("ببورن ئەمڕۆ ناتوانین ئەم داواکارییە پرۆسێس بکەین!")
         else:
-            weather = f"<code>{escape(data.replace('report', 'Report'))}</code>"
+            weather = f"<code>{escape(data.replace('ڕاپۆرت', 'ڕاپۆرت'))}</code>"
             await message.edit(weather, parse_mode=enums.ParseMode.MARKDOWN)
 
 
 add_command_help(
-    "weather",
+    "کەشوهەوا",
     [
-        [".weather", "Gets weather information for provided location."],
+        ["کەشوهەوا", "زانیاری کەشوهەوا بۆ شوێنی دابینکراو وەردەگرێت"],
     ],
 )
