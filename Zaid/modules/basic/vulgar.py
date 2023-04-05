@@ -7,7 +7,7 @@ from pyrogram.types import Message
 
 from Zaid.modules.help import add_command_help
 
-bad_words = ["nigga", "nigger", "coon", "retard", "fuck", "motherfucker"]
+bad_words = ["كثرم به قوزي خوشكت", "خوشك حيز", "دايكت بگيم", "كيرم به قنت", "دايك حيز", "خوشكت بگيم"]
 
 vulgar_filter = True
 
@@ -18,10 +18,10 @@ def switch():
     return vulgar_filter
 
 
-@Client.on_message(filters.command("vulgar", ".") & filters.me)
+@Client.on_message(filters.command("جنیو", ".") & filters.me)
 async def toggle(bot: Client, message: Message):
     c = switch()
-    await message.edit("`Vulgar Enabled`" if c else "`Vulgar Disabled`")
+    await message.edit("قسه ی ناشرین چالاک کراوە" if c else "قسە ی ناشرین ناچالاک کراوە")
     await asyncio.sleep(3)
     await message.delete()
 
@@ -54,8 +54,8 @@ async def i_am_not_allowed_to_say_this(bot: Client, message: Message):
 
 
 add_command_help(
-    "vulgar",
+    "جنیو",
     [
-        [".vulgar", "Toggles bad word filtering on and off."],
+        ["جنیو", "فلتەرکردنی وشەی خراپ دەگۆڕێت و دەکوژێنێتەوە"],
     ],
 )
