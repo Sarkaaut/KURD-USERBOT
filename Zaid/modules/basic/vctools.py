@@ -35,8 +35,8 @@ async def get_group_call(
             ).full_chat
         if full_chat is not None:
             return full_chat.call
-    await message.edit(f"**No group call Found** {err_msg}")
-    return False
+    await message.edit(f"** هیچ پەیوەندییەکی گروپی نەدۆزراوەتەوە** {err_msg}")
+    return 
 
 
 @Client.on_message(
@@ -50,7 +50,7 @@ async def opengc(client: Client, message: Message):
         chat_id = message.chat.title
     else:
         chat_id = message.chat.id
-    args = f"**Started Group Call\n • ** ناسنامەی چات** : `{chat_id}`"
+    args = f"** دەستی بە پەیوەندی گروپی کرد\n • ** ناسنامەی چات** : `{chat_id}`"
     try:
         if not vctitle:
             await client.invoke(
