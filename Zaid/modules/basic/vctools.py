@@ -89,7 +89,7 @@ async def end_vc_(client: Client, message: Message):
 
 
 add_command_help(
-    "vctools",
+    "پەیوەندی",
     [
         ["تيل", "دەست بکە بە چاتی دەنگی گروپ."],
         ["داخستن", "کۆتایی هێنان بە چاتی دەنگی گروپ."],
