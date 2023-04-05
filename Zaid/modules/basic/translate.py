@@ -47,9 +47,9 @@ async def pytrans_tr(_, message: Message):
   # Parse the translation message
   if translation["دۆخ"] == "سەرکەوتن":
     tred_txt = f"""
-**Translation Engine**: `{translation["بزوێنەر"]}`
+** بزوێنەری وەرگێڕان**: `{translation["بزوێنەر"]}`
 ** وەرگێڕانی بۆ:** `{translation["dest_lang"]}`
-**Translation:**
+** وەرگێڕان:**
 `{translation["translation"]}`
 """
     if len(tred_txt) > 4096:
