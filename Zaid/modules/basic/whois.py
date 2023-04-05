@@ -11,13 +11,13 @@ from Zaid.modules.basic.profile import extract_user
 from Zaid.modules.help import add_command_help
 
 
-@Client.on_message(filters.command(["whois", "info"], ".") & filters.me)
+@Client.on_message(filters.command(["zanyare", "زانیاری"], ".") & filters.me)
 async def who_is(client: Client, message: Message):
     user_id = await extract_user(message)
-    ex = await message.edit_text("`Processing . . .`")
+    ex = await message.edit_text("پرۆسێسکردن. . .")
     if not user_id:
         return await ex.edit(
-            "**Provide userid/username/reply to get that user's info.**"
+            "** ڕیپلە ی یان ئوزە ڕنیمی بە کارهێنە ڕ بکە بۆ وە ی زانیاری تە و ئەبین**"
         )
     try:
         user = await client.get_users(user_id)
@@ -37,23 +37,23 @@ async def who_is(client: Client, message: Message):
             status = "-"
         dc_id = f"{user.dc_id}" if user.dc_id else "-"
         common = await client.get_common_chats(user.id)
-        out_str = f"""<b>USER INFORMATION:</b>
+        out_str = f"""<b> زانیاری بەکارهێنەر:</b>
 
-🆔 <b>User ID:</b> <code>{user.id}</code>
-👤 <b>First Name:</b> {first_name}
-🗣️ <b>Last Name:</b> {last_name}
-🌐 <b>Username:</b> {username}
-🏛️ <b>DC ID:</b> <code>{dc_id}</code>
-🤖 <b>Is Bot:</b> <code>{user.is_bot}</code>
-🚷 <b>Is Scam:</b> <code>{user.is_scam}</code>
-🚫 <b>Restricted:</b> <code>{user.is_restricted}</code>
-✅ <b>Verified:</b> <code>{user.is_verified}</code>
-⭐ <b>Premium:</b> <code>{user.is_premium}</code>
-📝 <b>User Bio:</b> {bio}
+🆔 <b> ناونیشانی بەکارهێنەر:</b> <code>{user.id}</code>
+👤 <b> ناوی یەکەم:</b> {first_name}
+🗣️ <b> ناوی کۆتایی:</b> {last_name}
+🌐 <b> ناوی بەکارهێنەر:</b> {username}
+🏛️ <b> ئایدی:</b> <code>{dc_id}</code>
+🤖 <b> بۆت:</b> <code>{user.is_bot}</code>
+🚷 <b> سکام:</b> <code>{user.is_scam}</code>
+🚫 <b> سنووردارە:</b> <code>{user.is_restricted}</code>
+✅ <b> پشتڕاستکراوەتەوە:</b> <code>{user.is_verified}</code>
+⭐ <b> نایاب:</b> <code>{user.is_premium}</code>
+📝 <b> ژیاننامەی بەکارهێنەر:</b> {bio}
 
-👀 <b>Same groups seen:</b> {len(common)}
-👁️ <b>Last Seen:</b> <code>{status}</code>
-🔗 <b>User permanent link:</b> <a href='tg://user?id={user.id}'>{fullname}</a>
+👀 <b> هەمان گروپەکان بینراون:</b> {len(common)}
+👁️ <b> دوا بینین:</b> <code>{status}</code>
+🔗 <b> بەستەری هەمیشەیی بەکارهێنەر:</b> <a href='tg://user?id={user.id}'>{fullname}</a>
 """
         photo_id = user.photo.big_file_id if user.photo else None
         if photo_id:
@@ -71,12 +71,12 @@ async def who_is(client: Client, message: Message):
         else:
             await ex.edit(out_str, disable_web_page_preview=True)
     except Exception as e:
-        return await ex.edit(f"**INFO:** `{e}`")
+        return await ex.edit(f"** زانیاری:** `{e}`")
 
 
-@Client.on_message(filters.command(["chatinfo", "cinfo", "ginfo"], ".") & filters.me)
+@Client.on_message(filters.command(["زانیاری چات", "zanyare chat", "zact"], ".") & filters.me)
 async def chatinfo_handler(client: Client, message: Message):
-    ex = await message.edit_text("`Processing...`")
+    ex = await message.edit_text("پرۆسێسکردن...")
     try:
         if len(message.command) > 1:
             chat_u = message.command[1]
@@ -84,35 +84,35 @@ async def chatinfo_handler(client: Client, message: Message):
         else:
             if message.chat.type == ChatType.PRIVATE:
                 return await message.edit(
-                    f"Use this command within a group or use .chatinfo [group username or id]`"
+                    f"ئەم فرمانە لەناو گروپێکدا بەکاربهێنە یان زانیاری چات بەکاربهێنە"
                 )
             else:
                 chatid = message.chat.id
                 chat = await client.get_chat(chatid)
         h = f"{chat.type}"
-        if h.startswith("ChatType"):
-            y = h.replace("ChatType.", "")
+        if h.startswith("جۆری چات"):
+            y = h.replace("جۆری چات", "")
             type = y.capitalize()
         else:
-            type = "Private"
+            type = "تایبەت"
         username = f"@{chat.username}" if chat.username else "-"
         description = f"{chat.description}" if chat.description else "-"
         dc_id = f"{chat.dc_id}" if chat.dc_id else "-"
-        out_str = f"""<b>CHAT INFORMATION:</b>
+        out_str = f"""<b> زانیاری گروپ جات:</b>
 
-🆔 <b>Chat ID:</b> <code>{chat.id}</code>
-👥 <b>Title:</b> {chat.title}
-👥 <b>Username:</b> {username}
-📩 <b>Type:</b> <code>{type}</code>
-🏛️ <b>DC ID:</b> <code>{dc_id}</code>
-🗣️ <b>Is Scam:</b> <code>{chat.is_scam}</code>
-🎭 <b>Is Fake:</b> <code>{chat.is_fake}</code>
-✅ <b>Verified:</b> <code>{chat.is_verified}</code>
-🚫 <b>Restricted:</b> <code>{chat.is_restricted}</code>
-🔰 <b>Protected:</b> <code>{chat.has_protected_content}</code>
+🆔 <b> ناسنامەی چات:</b> <code>{chat.id}</code>
+👥 <b> ناونیشان:</b> {chat.title}
+👥 <b> ناوی بەکارهێنەر:</b> {username}
+📩 <b> جۆر:</b> <code>{type}</code>
+🏛️ <b> ئایدی:</b> <code>{dc_id}</code>
+🗣️ <b> سکام:</b> <code>{chat.is_scam}</code>
+🎭 <b> ساختەیە:</b> <code>{chat.is_fake}</code>
+✅ <b> پشتڕاستکراوەتەوە:</b> <code>{chat.is_verified}</code>
+🚫 <b> سنووردارە:</b> <code>{chat.is_restricted}</code>
+🔰 <b> پارێزراوە:</b> <code>{chat.has_protected_content}</code>
 
-🚻 <b>Total members:</b> <code>{chat.members_count}</code>
-📝 <b>Description:</b>
+🚻 <b> کۆی گشتی ئەندامان:</b> <code>{chat.members_count}</code>
+📝 <b> وەسف:</b>
 <code>{description}</code>
 """
         photo_id = chat.photo.big_file_id if chat.photo else None
@@ -131,19 +131,19 @@ async def chatinfo_handler(client: Client, message: Message):
         else:
             await ex.edit(out_str, disable_web_page_preview=True)
     except Exception as e:
-        return await ex.edit(f"**INFO:** `{e}`")
+        return await ex.edit(f"** زانیاری:** `{e}`")
 
 
 add_command_help(
-    "info",
+    "زانیاری",
     [
         [
-            "info <username/userid/reply>",
-            "get telegram user info with full description.",
+            "زانیاری",
+            "زانیاری بەکارهێنەری تەلەگرام بەدەست بهێنە لەگەڵ وەسفێکی تەواو تە نها بە ریپلە ی ",
         ],
         [
-            "chatinfo <username/chatid/reply>",
-            "get group info with full description.",
+            "زانیاری چات",
+            "زانیاری گروپ بەدەست بهێنە لەگەڵ وەسفێکی تەواو",
         ],
     ],
 )
