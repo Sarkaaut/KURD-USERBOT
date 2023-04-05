@@ -80,7 +80,7 @@ async def end_vc_(client: Client, message: Message):
     chat_id = message.chat.id
     if not (
         group_call := (
-            await get_group_call(client, message, err_msg=", پەیوەندی گروپی کۆتایی هات")
+            await get_group_call(client, message, err_msg=", پەیوەندی گروپی پیشتر کۆتایی هات")
         )
     ):
         return
