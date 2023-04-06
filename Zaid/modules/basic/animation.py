@@ -357,7 +357,7 @@ async def okihakga(client: Client, message: Message):
         return
     animation_interval = 0.3
     animation_ttl = range(0, 15)
-    await message.edit("hypo....")
+    await message.edit("جۆان سە یری کە....")
     animation_chars = [
         "⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜",
         "⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬛⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜",
@@ -373,30 +373,30 @@ async def okihakga(client: Client, message: Message):
         "⬜⬜⬜⬜⬜⬜⬜\n⬜⬛⬛⬛⬛⬛⬜\n⬜⬛⬜⬜⬜⬛⬜\n⬜⬛⬜⬛⬜⬛⬜\n⬜⬛⬜⬜⬜⬛⬜\n⬜⬛⬛⬛⬛⬛⬜\n⬜⬜⬜⬜⬜⬜⬜",
         "⬛⬛⬛⬛⬛\n⬛⬜⬜⬜⬛\n⬛⬜⬛⬜⬛\n⬛⬜⬜⬜⬛\n⬛⬛⬛⬛⬛",
         "⬜⬜⬜\n⬜⬛⬜\n⬜⬜⬜",
-        "[👉🔴👈])",
+        "🖕🏿",
     ]
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
         await message.edit(animation_chars[i % 15])
 
 
-@Client.on_message(filters.command(["gangsta", "gang", "gangstar"], ".") & filters.me)
+@Client.on_message(filters.command(["سوتاندن", "خیانە ت", "swtandn"], ".") & filters.me)
 async def gajjajay(client: Client, message: Message):
-    await message.edit("EVERyBOdy")
+    await message.edit("دە تسوتینم")
     await asyncio.sleep(0.3)
-    await message.edit("iZ")
+    await message.edit("ئی بۆ🥺")
     await asyncio.sleep(0.2)
-    await message.edit("GangSTur")
+    await message.edit("مە کە توخوا😭")
     await asyncio.sleep(0.5)
-    await message.edit("UNtIL ")
+    await message.edit("وسبە قە حپە ی خیانە ت کار")
     await asyncio.sleep(0.2)
-    await message.edit("I")
+    await message.edit("خیانە تم نە کردە😭💔")
     await asyncio.sleep(0.3)
-    await message.edit("ArRivE")
+    await message.edit("درو مە کە حیز😡")
     await asyncio.sleep(0.3)
     await message.edit("🔥🔥🔥")
     await asyncio.sleep(0.3)
-    await message.edit("EVERyBOdy iZ GangSTur UNtIL I ArRivE 🔥🔥🔥")
+    await message.edit(" ئایییی یارمە تی ئاییی سوتامممم🔥🔥🔥")
 
 
 @Client.on_message(filters.command("charging", ".") & filters.me)
@@ -1319,6 +1319,7 @@ add_command_help(
         ["خۆشە یستی", "ئیمۆجی هەڕەمەکی دەنێرێت"],
         ["پیکە نین", "بە کە سیک پیبکە نە"],
         ["پەیوەندی", "پەیوەندی بە بنکە ی تیلیگرامە وە دە کات"],
+        ["تیکدانی چاو", "ئە نمە یشنی بۆ تیکدانی چاو"],
         [
             "ئە نە می",
             "بۆ بەدەستهێنانی گیڤی ئە نە می",
