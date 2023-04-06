@@ -399,7 +399,7 @@ async def gajjajay(client: Client, message: Message):
     await message.edit(" ئایییی یارمە تی ئاییی سوتامممم🔥🔥🔥")
 
 
-@Client.on_message(filters.command("charging", ".") & filters.me)
+@Client.on_message(filters.command(".بارگاویکردنەوە", ".") & filters.me)
 async def timer_blankx(client: Client, message: Message):
     txt = (
         message.text[10:]
@@ -1294,29 +1294,31 @@ async def santet(client: Client, message: Message):
 add_command_help(
     " ئەنیمەیشن",
     [
-        ["fuck", "To display the middle finger animation."],
-        ["dino", "To display dino chased animation."],
-        ["santet", "To display online blackmail animation."],
-        ["gabut", "To display the animation gait."],
-        ["sayang or lover", "To display the animation dear."],
-        ["hack", "To display a fake hacking animation."],
-        ["bomb", "To display the Bomb animation."],
-        ["brain", "To display the Brain animation 🧠."],
-        ["kontol", "To display dick art."],
-        ["penis", "To display penis art with emoji."],
-        ["tembak", "To display shooting art."],
-        ["bundir", "To display bundir art."],
-        ["helikopter", "To display helicopter art."],
-        ["y", "To display art y sj."],
-        ["awk", "to display art awkowkowk."],
-        ["nah", "To display art love."],
-        ["ajg", "To Display art anjing."],
-        ["babi", "To display art babi."],
+        ["فە کیو", "بۆ پیشاندانی ئەنیمەیشنی پەنجەی ناوەڕاست"],
+        ["راکە", "بۆ پیشاندانی ئەنیمەیشنی راكردن له ده يناسور"],
+        ["سانتێت", ""بۆ پیشاندانی ئەنیمەیشنی ڕەشبگیری ئۆنلاین],
+        ["شیتە بۆستە", "بۆ پیشاندانی ڕۆیشتنی ئەنیمەیشن به دواي كجيك دا"],
+        ["دڵمی", "بۆ پیشاندانی ئەنیمەیشنی ئازیز"],
+        ["هاک", "بۆ پیشاندانی ئەنیمەیشنی هاککردنی ساختە"],
+        ["بۆمب", "بۆ پیشاندانی ئەنیمەیشنی بۆمب"],
+        ["مێشکت", "بۆ پیشاندانی ئەنیمەیشنی مێشک"]
+        ["ئە تکۆژم", "هه رشه ی کوشتن لە کە سیک ئە نیمە شن"],
+        ["خوکشتن", "ئێنتحارکردن بە ئە نیمە شن"],
+        ["هێلیکۆپتەر", "بۆ نمایشکردنی هونەری هێلیکۆپتەر"],
+        ["لایک", ""بۆ پیشاندانی ئە نمە یشنی لایک],
+        ["دیارم", "بۆ خو پیشاندان بە هاوریان بە ئە نمە یشن"],
+        ["بۆ تۆیە", "بۆ نمایشکردنی خۆشەویستی هونەر"],
+        ["سە گ", ""بۆ پیشاندانی ئە نمە یشنی سە گ],
+        ["بە راز", "بۆ پیشاندانی ئە نمە یشنی بە راز"],
         ["لە باوەشکردن", "بۆ بەدەستهێنانی ئەنیمەی A Hug Gifs"],
         ["همم", "بە شێوەیەکی هەڕەمەکی بەدەست بهێنە هەممم"],
         ["چاوتروکاندن", "بۆ بەدەستهێنانی Gifs ی چاوتروکاندن"],
         ["خوشمدە ویت", "بۆ پێشنیارکردنی کەسێک"],
         ["جۆشە ویستی", "ئیمۆجی هەڕەمەکی دەنێرێت"],
+        ["تە لە فون", "بۆ تە لە فون کردن بۆ تیلیگرام"],
+        ["تيكداني چاو", "بۆ تیکدانی چاۆت فە رمانە کە بنیرە"],
+        ["بارگاویکردنەوە", "شە حنکردنە وە ی موبایل"],
+        ["تفوو", "تف کردن بە روخساری کە سیک دا"],
         [
             "ئامیزکردن",
             "بۆ بەدەستهێنانی pat gifs",
@@ -1326,24 +1328,24 @@ add_command_help(
             "بۆ بەدەستهێنانی پیکاچو گیفس",
         ],
         [
-            "kill",
-            "To kill Someone randomly",
+            "کوشتن",
+            "بۆ کوشتنی کەسێک بە شێوەیەکی هەڕەمەکی",
         ],
         [
-            "wtf",
-            "Wtf animation",
+            "ته واوی",
+            "ئەنیمەیشنی کە سی ناتە واو",
         ],
         [
-            "ding",
-            "Get Dong",
+            "تۆپ",
+            "تۆپی پی بەدەست بهێنە",
         ],
         [
-            "ganstar",
-            "Animation Gangster",
+            "سوتاندن",
+            "ئەنیمەیشنی سوتاندنی هاوسە رە کە ی",
         ],
         [
-            "charge",
-            " Tesla animation charging",
+            "دە بابە",
+            "بۆ پیشاندانی ئە نمە یشنی دە بابە",
         ],
     ],
 )
