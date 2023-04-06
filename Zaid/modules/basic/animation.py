@@ -626,51 +626,51 @@ async def adadino(client: Client, message: Message):
     await typew.edit("مردم")
 
 
-@Client.on_message(filters.command(["sayang", "lover"], ".") & filters.me)
+@Client.on_message(filters.command(["دڵی", "دڵمی"], ".") & filters.me)
 async def zeyenk(client: Client, message: Message):
-    e = await edit_or_reply(message, "I LOVEE YOUUU 💕")
+    e = await edit_or_reply(message, "تۆم خۆش دەوێت 💕")
     await e.edit("💝💘💓💗")
     await e.edit("💞💕💗💘")
     await e.edit("💝💘💓💗")
     await e.edit("💞💕💗💘")
     await e.edit("💘💞💗💕")
     await e.edit("💘💞💕💗")
-    await e.edit("LOVE YOU 💝💖💘")
+    await e.edit("شیت کە م 💝💖💘")
     await e.edit("💝💘💓💗")
     await e.edit("💞💕💗💘")
     await e.edit("💘💞💕💗")
-    await e.edit("LOVE")
-    await e.edit("YOU")
-    await e.edit("FOREVER 💕")
+    await e.edit("تاقانە کە م")
+    await e.edit("هە ناسە کە م")
+    await e.edit("روحە کە م 💕")
     await e.edit("💘💘💘💘")
-    await e.edit("LOVE")
-    await e.edit("I")
-    await e.edit("LOVE")
-    await e.edit("BABY")
-    await e.edit("I LOVE YOUUUU")
-    await e.edit("MY BABY")
+    await e.edit("چە رگە کە م")
+    await e.edit("کە روشکە کە م")
+    await e.edit("هه نگوينه كه م")
+    await e.edit("شاژنه كه م")
+    await e.edit("نازداره كه م")
+    await e.edit("ماله كه م")
     await e.edit("💕💞💘💝")
     await e.edit("💘💕💞💝")
-    await e.edit("LOVE YOU 💞")
+    await e.edit("زورم خوشده وييت هه ميشه بوم بميني ياخوا 💞")
 
 
-@Client.on_message(filters.command("gabut", ".") & filters.me)
+@Client.on_message(filters.command("شیتە بۆستە", ".") & filters.me)
 async def menggabut(client: Client, message: Message):
-    e = await edit_or_reply(message, "`GO AWAY`")
-    await e.edit("`THHARA VAI JOGINDER`")
-    await e.edit("`BANGBANGG`")
-    await e.edit("`GYZZZZ`")
-    await e.edit("`DUMMKKK`")
-    await e.edit("`JAAAAA NAAA`")
-    await e.edit("`RAMDKII`")
-    await e.edit("`EMMM RUSSIAN`")
-    await e.edit("`FUCKKKK`")
+    e = await edit_or_reply(message, "نە خیر")
+    await e.edit("دە بوسته ")
+    await e.edit("وازم لي بينه كوره")
+    await e.edit("هه ر ئه تگرم")
+    await e.edit("ده مه كه ماجت پي ناده م")
+    await e.edit("`يه ك ماج")
+    await e.edit("نييه نايده م وس")
+    await e.edit("ده نا شيت بوم بوت")
+    await e.edit("`ده ي سيته`")
     await e.edit("🙈🙈🙈🙈")
     await e.edit("🙉🙉🙉🙉")
     await e.edit("🙈🙈🙈🙈")
     await e.edit("🙉🙉🙉🙉")
-    await e.edit("`BITCH`")
-    await e.edit("🙉🙉🙉🙉")
+    await e.edit("`ئا بگره`")
+    await e.edit("💋")
     await e.edit("🐢                       🚶")
     await e.edit("🐢                      🚶")
     await e.edit("🐢                     🚶")
@@ -730,7 +730,7 @@ async def menggabut(client: Client, message: Message):
     await e.edit("🚶                               🐢")
     await e.edit("🚶                                🐢")
     await e.edit("🚶                                 🐢")
-    await e.edit("`AHHH TAPATAP`")
+    await e.edit("ده وه ره رامه كه")
     await e.edit("🙉")
     await e.edit("🙈")
     await e.edit("🙉")
@@ -854,10 +854,10 @@ async def menggabut(client: Client, message: Message):
     await e.edit("🚶                              🐢")
     await e.edit("🚶                               🐢")
     await e.edit("🚶                                🐢")
-    await e.edit("`GABUT`")
+    await e.edit("`باشه وه ره🙈💋`")
 
 
-@Client.on_message(filters.command(["helikopter", "heli"], ".") & filters.me)
+@Client.on_message(filters.command(["هێلیکۆپتەر", "heli"], ".") & filters.me)
 async def helikopter(client: Client, message: Message):
     await edit_or_reply(
         message,
@@ -873,26 +873,26 @@ async def helikopter(client: Client, message: Message):
         "╬═╬ \n"
         "╬═╬ \n"
         "╬═╬ \n"
-        "╬═╬ Hallo Semuanya :) \n"
+        "╬═╬ سڵاو چە ماعە ت :) \n"
         "╬═╬☻/ \n"
         "╬═╬/▌ \n"
         "╬═╬/ \\ \n",
     )
 
 
-@Client.on_message(filters.command("tembak", ".") & filters.me)
+@Client.on_message(filters.command("ئە تکۆژم", ".") & filters.me)
 async def dornembak(client: Client, message: Message):
     await edit_or_reply(
         message,
-        "_/﹋\\_\n" "(҂`_´)\n" "<,︻╦╤─ ҉\n" r"_/﹋\_" "\n**Do you want to be my boyfriend??!**",
+        "_/﹋\\_\n" "(҂`_´)\n" "<,︻╦╤─ ҉\n" r"_/﹋\_" "\n**دە بیتە خۆشە ویستم یان بتکۆژم؟**",
+
     )
 
-
-@Client.on_message(filters.command("bundir", ".") & filters.me)
+@Client.on_message(filters.command("خوکشتن", ".") & filters.me)
 async def ngebundir(client: Client, message: Message):
     await edit_or_reply(
         message,
-        "`Drugs Everything...`          \n　　　　　|"
+        "ئە وە خۆم کوشت بۆ ئە کتیڤ نابن...          \n　　　　　|"
         "\n　　　　　| \n"
         "　　　　　| \n"
         "　　　　　| \n"
@@ -906,10 +906,12 @@ async def ngebundir(client: Client, message: Message):
         "＜ 、･　　|　　＼ \n"
         "　＼＿＿／∪ _ ∪) \n"
         "　　　　　 Ｕ Ｕ\n",
+
+
     )
 
 
-@Client.on_message(filters.command(["awk", "awikwok"], ".") & filters.me)
+@Client.on_message(filters.command(["dyarm", "دیارم"], ".") & filters.me)
 async def awikwok(client: Client, message: Message):
     await edit_or_reply(
         message,
@@ -917,11 +919,11 @@ async def awikwok(client: Client, message: Message):
         "──▄▀█▄▄▄─────▄▀█▄▄▄\n"
         "▄▀──█▄▄──────█─█▄▄\n"
         "─▄▄▄▀──▀▄───▄▄▄▀──▀▄\n"
-        "─▀───────▀▀─▀───────▀▀\n`Awkwokwokwok..`",
+        "─▀───────▀▀─▀───────▀▀\n`لیتانە وە دیارم..`",
     )
 
 
-@Client.on_message(filters.command("y", ".") & filters.me)
+@Client.on_message(filters.command("لایک", ".") & filters.me)
 async def ysaja(client: Client, message: Message):
     await edit_or_reply(
         message,
@@ -941,7 +943,7 @@ async def ysaja(client: Client, message: Message):
     )
 
 
-@Client.on_message(filters.command("tank", ".") & filters.me)
+@Client.on_message(filters.command("دە بابە", ".") & filters.me)
 async def tank(client: Client, message: Message):
     await edit_or_reply(
         message,
@@ -952,7 +954,7 @@ async def tank(client: Client, message: Message):
     )
 
 
-@Client.on_message(filters.command("babi", ".") & filters.me)
+@Client.on_message(filters.command("بە راز", ".") & filters.me)
 async def babi(client: Client, message: Message):
     await edit_or_reply(
         message,
@@ -967,7 +969,7 @@ async def babi(client: Client, message: Message):
     )
 
 
-@Client.on_message(filters.command(["ajg", "anjg"], ".") & filters.me)
+@Client.on_message(filters.command(["سە گ", "anjg"], ".") & filters.me)
 async def anjg(client: Client, message: Message):
     await edit_or_reply(
         message,
