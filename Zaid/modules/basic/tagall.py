@@ -17,13 +17,13 @@ def get_arg(message: Message):
         return ""
     return " ".join(split[1:])
 
-@Client.on_message(filters.command("tagall", ".") & filters.me)
+@Client.on_message(filters.command("تاگ", ".") & filters.me)
 async def mentionall(client: Client, message: Message):
     chat_id = message.chat.id
     direp = message.reply_to_message
     args = get_arg(message)
     if not direp and not args:
-        return await message.edit("**Send me a message or reply to a message!**")
+        return await message.edit("**نامەیەکم بۆ بنێرە یان وەڵامی نامەیەک بدەرەوە!**")
     await message.delete()
     spam_chats.append(chat_id)
     usrnum = 0
@@ -48,28 +48,28 @@ async def mentionall(client: Client, message: Message):
         pass
 
 
-@Client.on_message(filters.command("cancel", ".") & filters.me)
+@Client.on_message(filters.command("وە ستان", ".") & filters.me)
 async def cancel_spam(client: Client, message: Message):
     if not message.chat.id in spam_chats:
-        return await message.edit("**It seems there is no tagall here.**")
+        return await message.edit("**پێدەچێت لێرەدا هیچ تاگی نەبێت**")
     else:
         try:
             spam_chats.remove(message.chat.id)
         except:
             pass
-        return await message.edit("**Cancelled.**")
+        return await message.edit("**هەڵوەشایەوە**")
 
 
 add_command_help(
-    "tagall",
+    " تاگ",
     [
         [
-            "tagall [text/reply ke chat]",
-            "Tag all the members one by one",
+            "تاگ",
+            "یەک بە یەک هەموو ئەندامەکان تاگ بکەن",
         ],
         [
-            "cancel",
-            f"to stop .tagall",
+            "وە ستان",
+            f"بۆ وەستاندنی تاگ تە نها فە رمانە کە بنیرە",
         ],
     ],
 )
