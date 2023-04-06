@@ -87,7 +87,7 @@ async def gucast(client: Client, message: Message):
 
 
 add_command_help(
-    "فوروارد",
+    " فوروارد",
     [
         [
             "فوروارد",
