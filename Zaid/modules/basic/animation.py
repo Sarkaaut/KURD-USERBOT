@@ -537,7 +537,7 @@ async def hak(client: Client, message: Message):
     await message.edit_text("هاککردن تەواو بووە!بردنی فایلە کان...")
     await asyncio.sleep(2)
     await message.edit_text(
-        "ئەکاونتی ئامانجدار هاک کرا...! ✅ فایلەکە بە سەرکەوتوویی لە سێرڤەرەکەمدا بارکراوە تکایە نامە بۆ @SARKAUT ئە مە بنیرە بۆ لابردنی هاک لە سە ڕت `"
+        "ئەکاونتی ئامانجدار هاک کرا...! ✅ فایلەکە بە سەرکەوتوویی لە سێرڤەرەکەمدا بارکراوە تکایە نامە بۆ @SARKAUT ئە مە بنیرە بۆ لابردنی هاک لە سە ڕت"
     )    
 
 
@@ -559,9 +559,19 @@ async def titid(client: Client, message: Message):
     await message.edit(titid)
 
 
-@Client.on_message(filters.command("dino", ".") & filters.me)
+
+@Client.on_message(filters.command(["ئەندامی نێرینە", "كير"], ".") & filters.me)
+async def titid(client: Client, message: Message):
+    emoji = get_text(message)
+    titid = MEMES.GAMBAR_TITIT
+    if emoji:
+        titid = titid.replace("😋", emoji)
+    await message.edit(titid)
+
+
+@Client.on_message(filters.command("راکە", ".") & filters.me)
 async def adadino(client: Client, message: Message):
-    typew = await edit_or_reply(message, "`DIN DINNN.....`")
+    typew = await edit_or_reply(message, "`راکە هات.....`")
     await asyncio.sleep(1)
     await typew.edit("`DINOOOOSAURUSSSSS!!`")
     await asyncio.sleep(1)
@@ -569,7 +579,7 @@ async def adadino(client: Client, message: Message):
     await typew.edit("`🏃                       🦖`")
     await typew.edit("`🏃                      🦖`")
     await typew.edit("`🏃                     🦖`")
-    await typew.edit("`🏃   `Larius`          🦖`")
+    await typew.edit("`🏃   `لاریۆس`          🦖`")
     await typew.edit("`🏃                   🦖`")
     await typew.edit("`🏃                  🦖`")
     await typew.edit("`🏃                 🦖`")
@@ -579,7 +589,7 @@ async def adadino(client: Client, message: Message):
     await typew.edit("`🏃             🦖`")
     await typew.edit("`🏃            🦖`")
     await typew.edit("`🏃           🦖`")
-    await typew.edit("`🏃WOARGH!   🦖`")
+    await typew.edit("`🏃یارمە تی!   🦖`")
     await typew.edit("`🏃           🦖`")
     await typew.edit("`🏃            🦖`")
     await typew.edit("`🏃             🦖`")
@@ -591,7 +601,7 @@ async def adadino(client: Client, message: Message):
     await typew.edit("`🏃                   🦖`")
     await typew.edit("`🏃                    🦖`")
     await typew.edit("`🏃                     🦖`")
-    await typew.edit("`🏃  Huh-Huh           🦖`")
+    await typew.edit("`🏃  مە مخۆم!           🦖`")
     await typew.edit("`🏃                   🦖`")
     await typew.edit("`🏃                  🦖`")
     await typew.edit("`🏃                 🦖`")
@@ -603,17 +613,17 @@ async def adadino(client: Client, message: Message):
     await typew.edit("`🏃           🦖`")
     await typew.edit("`🏃          🦖`")
     await typew.edit("`🏃         🦖`")
-    await typew.edit("`HE WAS GETTING CLOSER!!!`")
+    await typew.edit("خەریک بوو نزیکتر دەبووەوە!!!")
     await asyncio.sleep(1)
     await typew.edit("`🏃       🦖`")
     await typew.edit("`🏃      🦖`")
     await typew.edit("`🏃     🦖`")
     await typew.edit("`🏃    🦖`")
-    await typew.edit("`Just give up`")
+    await typew.edit("تەنیا وازبێنە")
     await asyncio.sleep(1)
     await typew.edit("`🧎🦖`")
     await asyncio.sleep(2)
-    await typew.edit("`-DIED-`")
+    await typew.edit("مردم")
 
 
 @Client.on_message(filters.command(["sayang", "lover"], ".") & filters.me)
@@ -1295,7 +1305,7 @@ add_command_help(
     " ئەنیمەیشن",
     [
         ["فە کیو", "بۆ پیشاندانی ئەنیمەیشنی پەنجەی ناوەڕاست"],
-        ["dino", "To display dino chased animation."],
+        ["راکە", "راکردن لە دە س دە ینە سوری"],
         ["santet", "To display online blackmail animation."],
         ["gabut", "To display the animation gait."],
         ["sayang or lover", "To display the animation dear."],
