@@ -100,21 +100,21 @@ async def phase4(message):
         await asyncio.sleep(SLEEP)
 
 
-@Client.on_message(filters.command(["heart", "love"], ".") & filters.me)
+@Client.on_message(filters.command(["Xoshma Dawet", "خۆشم دەوێت"], ".") & filters.me)
 async def hearts(client: Client, message: Message):
     await phase1(message)
     await asyncio.sleep(SLEEP * 3)
-    await message.edit("❤️ I")
+    await message.edit("❤️ زۆرم خۆشم دەوێت")
     await asyncio.sleep(0.5)
-    await message.edit("❤️ I Love")
+    await message.edit("❤️ هە ناسە کە م")
     await asyncio.sleep(0.5)
-    await message.edit("❤️ I Love You")
+    await message.edit("❤️ تاقانە ی دڵم")
     await asyncio.sleep(3)
-    await message.edit("❤️ I Love You <3")
+    await message.edit("❤️بۆ هە میشە لە دڵم دا دە مینی")
 
 
 @Client.on_message(
-    filters.me & (filters.command(["loveyou"], ".") | filters.regex("^loveyou "))
+    filters.me & (filters.command(["خۆشە یستی"], ".") | filters.regex("^loveyou "))
 )
 async def _(client: Client, message: Message):
     noble = random.randint(1, len(NOBLE) - 2)
@@ -122,7 +122,7 @@ async def _(client: Client, message: Message):
     await edit_or_reply(message, reply_text)
 
 
-@Client.on_message(filters.command("wink", ".") & filters.me)
+@Client.on_message(filters.command("چاوتروکاندن", ".") & filters.me)
 async def wink(client: Client, message: Message):
     hmm_s = "https://some-random-api.ml/animu/wink"
     r = requests.get(url=hmm_s).json()
@@ -149,7 +149,7 @@ async def pat(client: Client, message: Message):
     await message.delete()
 
 
-@Client.on_message(filters.command("pikachu", ".") & filters.me)
+@Client.on_message(filters.command("پیکاچو", ".") & filters.me)
 async def pikachu(client: Client, message: Message):
     hmm_s = "https://some-random-api.ml/img/pikachu"
     r = requests.get(url=hmm_s).json()
@@ -164,7 +164,7 @@ async def pikachu(client: Client, message: Message):
     await message.delete()
 
 
-@Client.on_message(filters.command("hmm", ".") & filters.me)
+@Client.on_message(filters.command("همم", ".") & filters.me)
 async def hello_world(client: Client, message: Message):
     mg = await edit_or_reply(
         message,
@@ -1313,17 +1313,17 @@ add_command_help(
         ["ajg", "To Display art anjing."],
         ["babi", "To display art babi."],
         ["hug", "To get A Hug Gifs anime."],
-        ["hmm", "Get Random Hmmm."],
-        ["wink", "To Get A Winking Gifs."],
-        ["love", "To Propose Someone."],
-        ["loveyou", "It Will Send Random Emojis."],
+        ["همم", "بە شێوەیەکی هەڕەمەکی بەدەست بهێنە همم"],
+        ["چاوتروکاندن", "بۆ بەدەستهێنانی گیڤی چاوتروکاندن"],
+        ["خۆشم دەوێت", "بۆ پێشنیارکردنی کەسێک"],
+        ["خۆشە یستی", "ئیمۆجی هەڕەمەکی دەنێرێت"],
         [
             "pat",
             "To get a pat gifs",
         ],
         [
-            "pikachu",
-            "to get a Pikachu Gifs",
+            "پیکاچو",
+            "بۆ بەدەستهێنانی پیکاچو گیفس",
         ],
         [
             "kill",
