@@ -21,11 +21,11 @@ def get_arg(message: Message):
     return " ".join(split[1:])
 
 @Client.on_message(
-    filters.command(["تیم"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["فوروارد"], ".") & (filters.me | filters.user(SUDO_USER))
 )
 async def gcast_cmd(client: Client, message: Message):
     if message.reply_to_message or get_arg(message):
-        tex = await message.reply_text("دەستی بە پەخشی جیهانی کرد...")
+        tex = await message.reply_text("دەستی بە فوروارد کرد...")
     else:
         return await message.edit_text("**پەیامێک یان وەڵامێک بدەرەوە**")
     done = 0
@@ -54,11 +54,11 @@ async def gcast_cmd(client: Client, message: Message):
 
 
 @Client.on_message(
-    filters.command(["تیمی"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["فوروارد گروپ"], ".") & (filters.me | filters.user(SUDO_USER))
 )
 async def gucast(client: Client, message: Message):
     if message.reply_to_message or get_arg(message):
-        tex = await message.reply_text("دەستی بە پەخشی جیهانی کرد...")
+        tex = await message.reply_text("دەستی بە فوروارد کرد...")
     else:
         return await message.edit_text("** پەیامێک یان وەڵامێک بدەرەوە**")
     done = 0
@@ -87,15 +87,15 @@ async def gucast(client: Client, message: Message):
 
 
 add_command_help(
-    "پەخش",
+    "فوروارد",
     [
         [
-            "تیم دە ق یان ریپلە ی بکە",
-            "ناردنی پەیامی پەخشی جیهانی بۆ هەموو ئەو گروپانەی کە چوویتە ناویەوە. (دەتوانێت میدیا/ستیکەر بنێرێت)",
+            "فوروارد",
+            "ناردنی پەیامی پەخشی جیهانی بۆ هەموو ئەو گروپانەی کە چوویتە ناویەوە. (دەتوانێت میدیا ستیکەر بنێرێت)",
         ],
         [
-            "تیمی دە ق یان ریپلە ی بکە",
-            "ناردنی پەیامی پەخشی جیهانی بۆ هەموو مەساجەکانی تایبەت / کۆمپیوتەرەکانی داهاتوو. (دەتوانێت میدیا/ستیکەر بنێرێت)",
+            "فوروارد گروپ",
+            "ناردنی پەیامی پەخشی جیهانی بۆ هەموو مەساجەکانی تایبەت  کۆمپیوتەرەکانی داهاتوو. (دەتوانێت میدیا ستیکەر بنێرێت)",
         ],
     ],
 )
