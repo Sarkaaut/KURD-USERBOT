@@ -14,23 +14,23 @@ if f:
        message.continue_propagation()
 
 
-@Client.on_message(filters.command("autoscroll", ".") & filters.me)
+@Client.on_message(filters.command("جوڵانی ئۆتۆماتیکی", ".") & filters.me)
 async def add_to_auto_read(bot: Client, message: Message):
     if message.chat.id in f:
         f.remove(message.chat.id)
-        await message.edit("Autoscroll deactivated")
+        await message.edit("ئۆتۆسکڕۆڵ ناچالاک کرا")
     else:
         f.add(message.chat.id)
-        await message.edit("Autoscroll activated")
+        await message.edit("ئۆتۆسکڕۆڵ چالاک کراوە")
 
 
 add_command_help(
-    "autoscroll",
+    "جوڵانی ئۆتۆماتیکی",
     [
         [
-            ".autoscroll",
-            "Send .autoscroll in any chat to automatically read all sent messages until you call "
-            "autoscroll again. This is useful if you have Telegram open on another screen.",
+            "جوڵانی ئۆتۆماتیکی",
+            "لە هەر چاتێکدا .autoscroll بنێرە بۆ ئەوەی بە شێوەیەکی ئۆتۆماتیکی هەموو نامە نێردراوەکان بخوێنیتەوە تا پەیوەندی دەکەیت"
+            "جارێکی تر ئۆتۆسکڕۆڵ بکە. ئەمەش بەسوودە ئەگەر تێلێگرامت لەسەر شاشەیەکی تر کراوە بێت.",
         ],
     ],
 )
