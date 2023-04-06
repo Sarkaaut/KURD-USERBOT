@@ -83,14 +83,14 @@ unmute_permissions = ChatPermissions(
 
 
 @Client.on_message(
-    filters.group & filters.command(["setchatphoto", "setgpic"], ".") & filters.me
+    filters.group & filters.command(["وێنەکە دابنێ", "wina"], ".") & filters.me
 )
 async def set_chat_photo(client: Client, message: Message):
     zuzu = (await client.get_chat_member(message.chat.id, client.me.id)).privileges
     can_change_admin = zuzu.can_change_info
     can_change_member = message.chat.permissions.can_change_info
     if not (can_change_admin or can_change_member):
-        await message.edit_text("You don't have enough permission")
+        await message.edit_text("تۆ مۆڵەتی پێویستت نییە")
     if message.reply_to_message:
         if message.reply_to_message.photo:
             await client.set_chat_photo(
@@ -98,25 +98,25 @@ async def set_chat_photo(client: Client, message: Message):
             )
             return
     else:
-        await message.edit_text("Reply to a photo to set it !")
+        await message.edit_text("وەڵامی وێنەیەک بدەرەوە بۆ ئەوەی دانانی !")
 
 
 
-@Client.on_message(filters.group & filters.command("ban", ".") & filters.me)
+@Client.on_message(filters.group & filters.command("باند", ".") & filters.me)
 async def member_ban(client: Client, message: Message):
     user_id, reason = await extract_user_and_reason(message, sender_chat=True)
-    rd = await message.edit_text("`Processing...`")
+    rd = await message.edit_text("پرۆسێسکردن...")
     bot = (await client.get_chat_member(message.chat.id, client.me.id)).privileges
     if not bot.can_restrict_members:
-        return await rd.edit("I don't have enough permissions")
+        return await rd.edit("من مۆڵەتی پێویستم نییە")
     if not user_id:
-        return await rd.edit("I can't find that user.")
+        return await rd.edit("من ناتوانم ئەو بەکارهێنەرە بدۆزمەوە")
     if user_id == client.me.id:
-        return await rd.edit("I can't ban myself.")
+        return await rd.edit("ناتوانم خۆم باند بکەم.")
     if user_id in DEVS:
-        return await rd.edit("I can't ban my developer!")
+        return await rd.edit("ناتوانم گەشەپێدەرەکەم باند بکەم!!")
     if user_id in (await list_admins(client, message.chat.id)):
-        return await rd.edit("I can't ban an admin, You know the rules, so do i.")
+        return await rd.edit("ناتوانم ئەدمینێک باند بکەم، تۆ یاساکان دەزانیت،")
     try:
         mention = (await client.get_users(user_id)).mention
     except IndexError:
@@ -126,27 +126,27 @@ async def member_ban(client: Client, message: Message):
             else "Anon"
         )
     msg = (
-        f"**Banned User:** {mention}\n"
-        f"**Banned By:** {message.from_user.mention if message.from_user else 'Anon'}\n"
+        f"**بەکارهێنەری باندکراو:** {mention}\n"
+        f"**باندکراوە لەلایەن:** {message.from_user.mention if message.from_user else 'Anon'}\n"
     )
     if message.command[0][0] == "d":
         await message.reply_to_message.delete()
     if reason:
-        msg += f"**Reason:** {reason}"
+        msg += f"**هۆکار:** {reason}"
     await message.chat.ban_member(user_id)
     await rd.edit(msg)
 
 
 
-@Client.on_message(filters.group & filters.command("unban", ".") & filters.me)
+@Client.on_message(filters.group & filters.command("لادانی باند", ".") & filters.me)
 async def member_unban(client: Client, message: Message):
     reply = message.reply_to_message
-    rd = await message.edit_text("`Processing...`")
+    rd = await message.edit_text("پرۆسێسکردن...")
     bot = (await client.get_chat_member(message.chat.id, client.me.id)).privileges
     if not bot.can_restrict_members:
-        return await rd.edit("I don't have enough permissions")
+        return await rd.edit("من مۆڵەتی پێویستم نییە")
     if reply and reply.sender_chat and reply.sender_chat != message.chat.id:
-        return await rd.edit("You cannot unban a channel")
+        return await rd.edit("ناتوانیت کەناڵێک باند بکەیت")
 
     if len(message.command) == 2:
         user = message.text.split(None, 1)[1]
@@ -154,7 +154,7 @@ async def member_unban(client: Client, message: Message):
         user = message.reply_to_message.from_user.id
     else:
         return await rd.edit(
-            "Provide a username or reply to a user's message to unban."
+            "ناوی بەکارهێنەرێک یان وەڵامدانەوەی پەیامی بەکارهێنەرێک بۆ لادانی باند"
         )
     await message.chat.unban_member(user)
     umention = (await client.get_users(user)).mention
@@ -162,113 +162,113 @@ async def member_unban(client: Client, message: Message):
 
 
 
-@Client.on_message(filters.command(["pin", "unpin"], ".") & filters.me)
+@Client.on_message(filters.command(["پین", "pin"], ".") & filters.me)
 async def pin_message(client: Client, message):
     if not message.reply_to_message:
-        return await message.edit_text("Reply to a message to pin/unpin it.")
-    rd = await message.edit_text("`Processing...`")
+        return await message.edit_text("وەڵامی نامەیەک بدەرەوە بۆ ئەوەی پین بکەیت یان پین بکەیتەوە")
+    rd = await message.edit_text("پرۆسێسکردن...")
     bot = (await client.get_chat_member(message.chat.id, client.me.id)).privileges
     if not bot.can_pin_messages:
-        return await rd.edit("I don't have enough permissions")
+        return await rd.edit("من مۆڵەتی پێویستم نییە")
     r = message.reply_to_message
     if message.command[0][0] == "u":
         await r.unpin()
         return await rd.edit(
-            f"**Unpinned [this]({r.link}) message.**",
+            f"**بێ پێن [this]({r.link}) message.**",
             disable_web_page_preview=True,
         )
     await r.pin(disable_notification=True)
     await rd.edit(
-        f"**Pinned [this]({r.link}) message.**",
+        f"**پێن کراوە [this]({r.link}) message.**",
         disable_web_page_preview=True,
     )
 
 
-@Client.on_message(filters.command("mute", ".") & filters.me)
+@Client.on_message(filters.command("بێدەنگ", ".") & filters.me)
 async def mute(client: Client, message: Message):
     user_id, reason = await extract_user_and_reason(message)
-    rd = await message.edit_text("`Processing...`")
+    rd = await message.edit_text("پرۆسێسکردن...")
     bot = (await client.get_chat_member(message.chat.id, client.me.id)).privileges
     if not bot.can_restrict_members:
-        return await rd.edit("I don't have enough permissions")
+        return await rd.edit("من مۆڵەتی پێویستم نییە")
     if not user_id:
-        return await rd.edit("I can't find that user.")
+        return await rd.edit("من ناتوانم ئەو بەکارهێنەرە بدۆزمەوە")
     if user_id == client.me.id:
-        return await rd.edit("I can't mute myself.")
+        return await rd.edit("ناتوانم خۆم بێدەنگ بکەم")
     if user_id in DEVS:
-        return await rd.edit("I can't mute my developer!")
+        return await rd.edit("ناتوانم گەشەپێدەرەکەم بێدەنگ بکەم!")
     if user_id in (await list_admins(client, message.chat.id)):
-        return await rd.edit("I can't mute an admin, You know the rules, so do i.")
+        return await rd.edit("ناتوانم ئەدمینێک بێدەنگ بکەم، تۆ یاساکان دەزانیت،")
     mention = (await client.get_users(user_id)).mention
     msg = (
-        f"**Muted User:** {mention}\n"
-        f"**Muted By:** {message.from_user.mention if message.from_user else 'Anon'}\n"
+        f"**بەکارهێنەری بێدەنگ:** {mention}\n"
+        f"**بێدەنگ کراوە لەلایەن:** {message.from_user.mention if message.from_user else 'Anon'}\n"
     )
     if reason:
-        msg += f"**Reason:** {reason}"
+        msg += f"**هۆکار:** {reason}"
     await message.chat.restrict_member(user_id, permissions=ChatPermissions())
     await rd.edit(msg)
 
 
 
-@Client.on_message(filters.group & filters.command("unmute", ".") & filters.me)
+@Client.on_message(filters.group & filters.command("لادانی بیدە نگ", ".") & filters.me)
 async def unmute(client: Client, message: Message):
     user_id = await extract_user(message)
-    rd = await message.edit_text("`Processing...`")
+    rd = await message.edit_text("پرۆسێسکردن...")
     bot = (await client.get_chat_member(message.chat.id, client.me.id)).privileges
     if not bot.can_restrict_members:
-        return await rd.edit("I don't have enough permissions")
+        return await rd.edit("من مۆڵەتی پێویستم نییە")
     if not user_id:
-        return await rd.edit("I can't find that user.")
+        return await rd.edit("من ناتوانم ئەو بەکارهێنەرە بدۆزمەوە")
     await message.chat.restrict_member(user_id, permissions=unmute_permissions)
     umention = (await client.get_users(user_id)).mention
     await rd.edit(f"Unmuted! {umention}")
 
 
-@Client.on_message(filters.command(["kick", "dkick"], ".") & filters.me)
+@Client.on_message(filters.command(["لێدان", "lidan"], ".") & filters.me)
 async def kick_user(client: Client, message: Message):
     user_id, reason = await extract_user_and_reason(message)
-    rd = await message.edit_text("`Processing...`")
+    rd = await message.edit_text("پرۆسێسکردن...")
     bot = (await client.get_chat_member(message.chat.id, client.me.id)).privileges
     if not bot.can_restrict_members:
-        return await rd.edit("I don't have enough permissions")
+        return await rd.edit("من مۆڵەتی پێویستم نییە")
     if not user_id:
-        return await rd.edit("I can't find that user.")
+        return await rd.edit("من ناتوانم ئەو بەکارهێنەرە بدۆزمەوە")
     if user_id == client.me.id:
-        return await rd.edit("I can't kick myself.")
+        return await rd.edit("ناتوانم خۆم لێبدەم")
     if user_id == DEVS:
-        return await rd.edit("I can't kick my developer.")
+        return await rd.edit("ناتوانم لێدان لە گەشەپێدەرەکەم بکەم")
     if user_id in (await list_admins(client, message.chat.id)):
-        return await rd.edit("I can't kick an admin, You know the rules, so do i.")
+        return await rd.edit("ناتوانم ئەدمینێک لێبدەم، تۆ یاساکان دەزانیت، منیش هەروا")
     mention = (await client.get_users(user_id)).mention
     msg = f"""
-**Kicked User:** {mention}
-**Kicked By:** {message.from_user.mention if message.from_user else 'Anon'}"""
+**بەکارهێنەری لێدان:** {mention}
+**دە رکراوە لە لایە ن:** {message.from_user.mention if message.from_user else 'Anon'}"""
     if message.command[0][0] == "d":
         await message.reply_to_message.delete()
     if reason:
-        msg += f"\n**Reason:** `{reason}`"
+        msg += f"\n**هۆکار:** `{reason}`"
     try:
         await message.chat.ban_member(user_id)
         await rd.edit(msg)
         await asyncio.sleep(1)
         await message.chat.unban_member(user_id)
     except ChatAdminRequired:
-        return await rd.edit("**Maaf Anda Bukan admin**")
+        return await rd.edit("**ببورە تۆ ئەدمین نیت**")
 
 
 @Client.on_message(
-    filters.group & filters.command(["promote", "fullpromote"], ".") & filters.me
+    filters.group & filters.command(["ئادمین", "fullpromote"], ".") & filters.me
 )
 async def promotte(client: Client, message: Message):
     user_id = await extract_user(message)
     umention = (await client.get_users(user_id)).mention
-    rd = await message.edit_text("`Processing...`")
+    rd = await message.edit_text("پرۆسێسکردن...")
     if not user_id:
-        return await rd.edit("I can't find that user.")
+        return await rd.edit("من ناتوانم ئەو بەکارهێنەرە بدۆزمەوە")
     bot = (await client.get_chat_member(message.chat.id, client.me.id)).privileges
     if not bot.can_promote_members:
-        return await rd.edit("I don't have enough permissions")
+        return await rd.edit("من مۆڵەتی پێویستم نییە")
     if message.command[0][0] == "f":
         await message.chat.promote_member(
             user_id,
@@ -283,7 +283,7 @@ async def promotte(client: Client, message: Message):
                 can_promote_members=True,
             ),
         )
-        return await rd.edit(f"Fully Promoted! {umention}")
+        return await rd.edit(f"بە تەواوی پرۆمۆشن کراوە! {umention}")
 
     await message.chat.promote_member(
         user_id,
@@ -298,17 +298,17 @@ async def promotte(client: Client, message: Message):
             can_promote_members=False,
         ),
     )
-    await rd.edit(f"Promoted! {umention}")
+    await rd.edit(f"بەرزکراوەتەوە! {umention}")
 
 
-@Client.on_message(filters.group & filters.command("demote", ".") & filters.me)
+@Client.on_message(filters.group & filters.command("دابەزاندن", ".") & filters.me)
 async def demote(client: Client, message: Message):
     user_id = await extract_user(message)
-    rd = await message.edit_text("`Processing...`")
+    rd = await message.edit_text("پرۆسێسکردن...")
     if not user_id:
-        return await rd.edit("I can't find that user.")
+        return await rd.edit("من ناتوانم ئەو بەکارهێنەرە بدۆزمەوە")
     if user_id == client.me.id:
-        return await rd.edit("I can't demote myself.")
+        return await rd.edit("ناتوانم خۆم دابەزێنم")
     await message.chat.promote_member(
         user_id,
         privileges=ChatPrivileges(
@@ -323,42 +323,42 @@ async def demote(client: Client, message: Message):
         ),
     )
     umention = (await client.get_users(user_id)).mention
-    await rd.edit(f"Demoted! {umention}")
+    await rd.edit(f"دابەزینی ئادمینی! {umention}")
 
 
 add_command_help(
-    "admin",
+    "ئادمین",
     [
-        ["ban [reply/username/userid]", "Ban someone."],
+        ["باند", "ریپلە ی بە کارهینە ر بکە بۆ باند کردنی"],
         [
-            f"unban [reply/username/userid]",
-            "Unban someone.",
+            f"لادانی باند",
+            "ئوزە رنیمی بە کارهینە ر بنوسە لە گە ڵ ئە مە دا بۆ لادانی باند",
         ],
-        ["kick [reply/username/userid]", "kick out someone from your group."],
+        ["لێدان", "کەسێک لە گروپەکەت دەربکە بە ریپلە ی"],
         [
-            f"promote `or` .fullpromote",
-            "Promote someone.",
+            f"ئادمین",
+            "کە سیک بە رزبکە رە وە بۆ ئادمینی تە نها بە ریپلە ی",
         ],
-        ["demote", "Demote someone."],
+        ["دابەزاندن", "لادانی کە سیک لە ئادمینی بە ریپلە ی"],
         [
-            "mute [reply/username/userid]",
-            "Mute someone.",
-        ],
-        [
-            "unmute [reply/username/userid]",
-            "Unmute someone.",
+            "بێدەنگ",
+            "بۆ بیدە نگ کردنی کە سیک لە گروپ تە نها ریپلە ی بکە",
         ],
         [
-            "pin [reply]",
-            "to pin any message.",
+            "لادانی بیدە نگ",
+            "بۆ لادانی بیدە گ کردن تە نها ریپلە ی یان ئوزە رنیمی دانی",
         ],
         [
-            "unpin [reply]",
-            "To unpin any message.",
+            "پین",
+            "بۆ پێنکردنی هەر پەیامێک تە نها ریپلە ی بکە",
         ],
         [
-            "setgpic [reply ke image]",
-            "To set an group profile pic",
+            "بێ پێن",
+            "بۆ هەڵدانەوەی پێنەکانی هەر پەیامێک.",
+        ],
+        [
+            "وێنەکە دابنێ",
+            "بۆ دانانی وێنەی پڕۆفایلی گروپ ریپلە ی ئە و وینە یە بکە",
         ],
     ],
 )
