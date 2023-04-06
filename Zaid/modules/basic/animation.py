@@ -131,7 +131,7 @@ async def wink(client: Client, message: Message):
     await message.delete()
 
 
-@Client.on_message(filters.command("hug", ".") & filters.me)
+@Client.on_message(filters.command("باوش", ".") & filters.me)
 async def hug(client: Client, message: Message):
     hmm_s = "https://some-random-api.ml/animu/hug"
     r = requests.get(url=hmm_s).json()
@@ -140,7 +140,7 @@ async def hug(client: Client, message: Message):
     await message.delete()
 
 
-@Client.on_message(filters.command("pat", ".") & filters.me)
+@Client.on_message(filters.command("ئە نە می", ".") & filters.me)
 async def pat(client: Client, message: Message):
     hmm_s = "https://some-random-api.ml/animu/pat"
     r = requests.get(url=hmm_s).json()
@@ -173,7 +173,7 @@ async def hello_world(client: Client, message: Message):
 
 
 @Client.on_message(
-    filters.me & (filters.command(["ahh"], ".") | filters.regex("^ahh "))
+    filters.me & (filters.command(["پیکە نین"], ".") | filters.regex("^ahh "))
 )
 async def hello_world(client: Client, message: Message):
     mg = await edit_or_reply(message, "ahh")
@@ -1312,14 +1312,15 @@ add_command_help(
         ["nah", "To display art love."],
         ["ajg", "To Display art anjing."],
         ["babi", "To display art babi."],
-        ["hug", "To get A Hug Gifs anime."],
+        ["باوش", "بۆ بەدەستهێنانی ئەنمە یشنی ئامیز فە رمانە کە بنیرە"],
         ["همم", "بە شێوەیەکی هەڕەمەکی بەدەست بهێنە همم"],
         ["چاوتروکاندن", "بۆ بەدەستهێنانی گیڤی چاوتروکاندن"],
         ["خۆشم دەوێت", "بۆ پێشنیارکردنی کەسێک"],
         ["خۆشە یستی", "ئیمۆجی هەڕەمەکی دەنێرێت"],
+        ["پیکە نین", "بە کە سیک پیبکە نە"],
         [
-            "pat",
-            "To get a pat gifs",
+            "ئە نە می",
+            "بۆ بەدەستهێنانی گیڤی ئە نە می",
         ],
         [
             "پیکاچو",
