@@ -193,28 +193,28 @@ async def hello_world(client: Client, message: Message):
     await mg.edit("aaahhhhhhhh")
 
 
-@Client.on_message(filters.command("brain", ".") & filters.me)
+@Client.on_message(filters.command("میشکت", ".") & filters.me)
 async def pijtau(client: Client, message: Message):
     if message.forward_from:
         return
     animation_interval = 1
     animation_ttl = range(0, 14)
-    await message.edit("brain")
+    await message.edit("میشکە کە ت")
     animation_chars = [
-        "YOᑌᖇ ᗷᖇᗩIᑎ ➡️ 🧠\n\n🧠         <(^_^ <)🗑",
-        "YOᑌᖇ ᗷᖇᗩIᑎ ➡️ 🧠\n\n🧠       <(^_^ <)  🗑",
-        "YOᑌᖇ ᗷᖇᗩIᑎ ➡️ 🧠\n\n🧠     <(^_^ <)    🗑",
-        "YOᑌᖇ ᗷᖇᗩIᑎ ➡️ 🧠\n\n🧠   <(^_^ <)      🗑",
-        "YOᑌᖇ ᗷᖇᗩIᑎ ➡️ 🧠\n\n🧠 <(^_^ <)        🗑",
-        "YOᑌᖇ ᗷᖇᗩIᑎ ➡️ 🧠\n\n🧠<(^_^ <)         🗑",
-        "YOᑌᖇ ᗷᖇᗩIᑎ ➡️ 🧠\n\n(> ^_^)>🧠         🗑",
-        "YOᑌᖇ ᗷᖇᗩIᑎ ➡️ 🧠\n\n  (> ^_^)>🧠       🗑",
-        "YOᑌᖇ ᗷᖇᗩIᑎ ➡️ 🧠\n\n    (> ^_^)>🧠     🗑",
-        "YOᑌᖇ ᗷᖇᗩIᑎ ➡️ 🧠\n\n      (> ^_^)>🧠   🗑",
-        "YOᑌᖇ ᗷᖇᗩIᑎ ➡️ 🧠\n\n        (> ^_^)>🧠 🗑",
-        "YOᑌᖇ ᗷᖇᗩIᑎ ➡️ 🧠\n\n          (> ^_^)>🧠🗑",
-        "YOᑌᖇ ᗷᖇᗩIᑎ ➡️ 🧠\n\n           (> ^_^)>🗑",
-        "YOᑌᖇ ᗷᖇᗩIᑎ ➡️ 🧠\n\n           <(^_^ <)🗑",
+        "ئە وە میشکی تۆیه ➡️ 🧠\n\n🧠         <(^_^ <)🗑",
+        "ئە وە میشکی تۆیه ➡️ 🧠\n\n🧠       <(^_^ <)  🗑",
+        "ئە وە میشکی تۆیه ➡️ 🧠\n\n🧠     <(^_^ <)    🗑",
+        "ئە وە میشکی تۆیه ➡️ 🧠\n\n🧠   <(^_^ <)      🗑",
+        "ئە وە میشکی تۆیه ➡️ 🧠\n\n🧠 <(^_^ <)        🗑",
+        "ئە وە میشکی تۆیه ➡️ 🧠\n\n🧠<(^_^ <)         🗑",
+        "ئە وە میشکی تۆیه ➡️ 🧠\n\n(> ^_^)>🧠         🗑",
+        "ئە وە میشکی تۆیه ➡️ 🧠\n\n  (> ^_^)>🧠       🗑",
+        "ئە وە میشکی تۆیه ➡️ 🧠\n\n    (> ^_^)>🧠     🗑",
+        "ئە وە میشکی تۆیه ➡️ 🧠\n\n      (> ^_^)>🧠   🗑",
+        "ئە وە میشکی تۆیه ➡️ 🧠\n\n        (> ^_^)>🧠 🗑",
+        "ئە وە میشکی تۆیه ➡️ 🧠\n\n          (> ^_^)>🧠🗑",
+        "ئە وە میشکی تۆیه ➡️ 🧠\n\n           (> ^_^)>🗑",
+        "ئە وە میشکی تۆیه ➡️ 🧠\n\n           <(^_^ <)🗑",
     ]
     for i in animation_ttl:
 
@@ -222,7 +222,7 @@ async def pijtau(client: Client, message: Message):
         await message.edit(animation_chars[i % 14])
 
 
-@Client.on_message(filters.command("bomb", ".") & filters.me)
+@Client.on_message(filters.command("بۆمب", ".") & filters.me)
 async def gahite(client: Client, message: Message):
     if message.forward_from:
         return
@@ -244,11 +244,11 @@ async def gahite(client: Client, message: Message):
     await asyncio.sleep(0.5)
     await message.edit("▪️▪️▪️▪️ \n▪️▪️▪️▪️ \n▪️▪️▪️▪️ \n▪️▪️▪️▪️ \n😵😵😵😵 \n")
     await asyncio.sleep(0.5)
-    await message.edit("`RIP PLOXXX......`")
+    await message.edit("راکە تە قیه وە......")
     await asyncio.sleep(2)
 
 
-@Client.on_message(filters.command("call", ".") & filters.me)
+@Client.on_message(filters.command("پەیوەندی", ".") & filters.me)
 async def hajqag(client: Client, message: Message):
     if message.forward_from:
         return
@@ -280,13 +280,13 @@ async def hajqag(client: Client, message: Message):
         await message.edit(animation_chars[i % 18])
 
 
-@Client.on_message(filters.command("kill", ".") & filters.me)
+@Client.on_message(filters.command("کوشتن", ".") & filters.me)
 async def gahah(client: Client, message: Message):
     if message.forward_from:
         return
     animation_interval = 0.7
     animation_ttl = range(0, 12)
-    await message.edit("ready to die dude.....")
+    await message.edit("ئامادەیە بۆ مردن دۆست.....")
     animation_chars = [
         "Ｆｉｉｉｉｉｒｅ",
         "(　･ิω･ิ)︻デ═一-->",
@@ -299,26 +299,26 @@ async def gahah(client: Client, message: Message):
         "------------------>",
         "------>;(^。^)ノ",
         "(￣ー￣) DEAD",
-        "**Mrr Gya Matherchod lala la 😈.😈.😈.😈.😈.😈.😈......**\n '#Sad_Reacts_Online'\n",
+        "**بمرە  هە ی کافر 😈.😈.😈.😈.😈......**\n '#Sad_Reacts_Online'\n",
     ]
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
         await message.edit(animation_chars[i % 12])
 
 
-@Client.on_message(filters.command("wtf", ".") & filters.me)
+@Client.on_message(filters.command("تە واوی", ".") & filters.me)
 async def gagahkah(client: Client, message: Message):
     if message.forward_from:
         return
     animation_interval = 0.8
     animation_ttl = range(0, 5)
-    await message.edit("wtf")
+    await message.edit("بە ریزم تە واوی")
     animation_chars = [
-        "What",
-        "What The",
-        "What The F",
-        "What The F Brah",
-        "[𝗪𝗵𝗮𝘁 𝗧𝗵𝗲 𝗙 𝗕𝗿𝗮𝗵](https://telegra.ph//file/f3b760e4a99340d331f9b.jpg)",
+        "تیک نە جوتە خو",
+        "بتگیم",
+        "حە زت لە کیرمە",
+        "بە شە ری تۆ",
+        "[تە واو نیت دڵنیام](https://telegra.ph//file/f3b760e4a99340d331f9b.jpg)",
     ]
     for i in animation_ttl:
 
@@ -326,7 +326,7 @@ async def gagahkah(client: Client, message: Message):
         await message.edit(animation_chars[i % 5])
 
 
-@Client.on_message(filters.command("ding", ".") & filters.me)
+@Client.on_message(filters.command("تۆپ", ".") & filters.me)
 async def gkahgagw(client: Client, message: Message):
     animation_interval = 0.3
     animation_ttl = range(0, 30)
@@ -344,14 +344,14 @@ async def gkahgagw(client: Client, message: Message):
     ]
     if message.forward_from:
         return
-    await message.edit("ding..dong..ding..dong ...")
+    await message.edit("تۆپ..تۆپ..تۆپ..تۆپ...")
     await asyncio.sleep(4)
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
         await message.edit(animation_chars[i % 10])
 
 
-@Client.on_message(filters.command("hypo", ".") & filters.me)
+@Client.on_message(filters.command("تیکدانی چاو", ".") & filters.me)
 async def okihakga(client: Client, message: Message):
     if message.forward_from:
         return
@@ -1300,8 +1300,8 @@ add_command_help(
         ["gabut", "To display the animation gait."],
         ["sayang or lover", "To display the animation dear."],
         ["hack", "To display a fake hacking animation."],
-        ["bomb", "To display the Bomb animation."],
-        ["brain", "To display the Brain animation 🧠."],
+        [""بۆمب, ""بۆ پیشاندانی ئەنیمەیشنی بۆمب],
+        ["میشکت", "بۆ پیشاندانی ئەنیمەیشنی مێشک"],
         ["kontol", "To display dick art."],
         ["penis", "To display penis art with emoji."],
         ["tembak", "To display shooting art."],
@@ -1318,6 +1318,8 @@ add_command_help(
         ["خۆشم دەوێت", "بۆ پێشنیارکردنی کەسێک"],
         ["خۆشە یستی", "ئیمۆجی هەڕەمەکی دەنێرێت"],
         ["پیکە نین", "بە کە سیک پیبکە نە"],
+        ["پەیوەندی", "پەیوەندی بە بنکە ی تیلیگرامە وە دە کات"],
+        ["تیکدانی چاو", "ئە نمە یشنی بۆ تیکدانی چاو"],
         [
             "ئە نە می",
             "بۆ بەدەستهێنانی گیڤی ئە نە می",
@@ -1327,16 +1329,16 @@ add_command_help(
             "بۆ بەدەستهێنانی پیکاچو گیفس",
         ],
         [
-            "kill",
-            "To kill Someone randomly",
+            "کوشتن",
+            "بۆ کوشتنی کەسێک بە شێوەیەکی هەڕەمەکی",
         ],
         [
-            "wtf",
-            "Wtf animation",
+            "تە واوی",
+            "ئەنیمەیشنی بۆ کە سە ناتە واوە کان",
         ],
         [
-            "ding",
-            "Get Dong",
+            "تۆپ",
+            "بۆ پیشاندانی ئەنیمەیشنی تۆپ",
         ],
         [
             "ganstar",
