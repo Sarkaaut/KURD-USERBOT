@@ -1357,8 +1357,8 @@ add_command_help(
             "ئەنیمەیشنی سوتاندنی هاوسە رە کە ی بە هوی خیانە ت",
         ],
         [
-            "charge",
-            " Tesla animation charging",
+            "",
+            "",
         ],
     ],
 )
