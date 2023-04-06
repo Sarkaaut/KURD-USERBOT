@@ -1310,7 +1310,7 @@ add_command_help(
         ["راکە", "راکردن لە دە س دە ینە سوری"],
         ["santet", "To display online blackmail animation."],
         ["gabut", "To display the animation gait."],
-        ["sayang or lover", "To display the animation dear."],
+        ["دڵمی", "بۆ پیشاندانی ئەنیمەیشن ئازیز"],
         ["هاک", "بۆ پیشاندانی ئەنیمەیشنی هاککردنی ساختە"],
         ["بۆمب", "بۆ پیشاندانی ئەنیمەیشنی بۆمب"],
         ["میشکت", "بۆ پیشاندانی ئەنیمەیشنی مێشک"],
