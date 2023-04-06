@@ -21,13 +21,13 @@ def get_arg(message: Message):
     return " ".join(split[1:])
 
 @Client.on_message(
-    filters.command(["gcast"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["تیم"], ".") & (filters.me | filters.user(SUDO_USER))
 )
 async def gcast_cmd(client: Client, message: Message):
     if message.reply_to_message or get_arg(message):
-        tex = await message.reply_text("`Started global broadcast...`")
+        tex = await message.reply_text("دەستی بە پەخشی جیهانی کرد...")
     else:
-        return await message.edit_text("**Give A Message or Reply**")
+        return await message.edit_text("**پەیامێک یان وەڵامێک بدەرەوە**")
     done = 0
     error = 0
     async for dialog in client.get_dialogs():
@@ -49,7 +49,7 @@ async def gcast_cmd(client: Client, message: Message):
                     error += 1
                     await asyncio.sleep(0.3)
     await tex.edit_text(
-        f"**Successfully Sent Message To** `{done}` **Groups, chat, Failed to Send Message To** `{error}` **Groups**"
+        f"**بە سەرکەوتوویی نامە بۆ** `{done}` **گروپەکان، چاتەکان، شکستی هێنا لە ناردنی نامە بۆ** `{error}` **گروپەکان**"
     )
 
 
