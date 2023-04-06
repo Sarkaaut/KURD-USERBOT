@@ -661,15 +661,15 @@ async def menggabut(client: Client, message: Message):
     await e.edit("وازم لي بينه كوره")
     await e.edit("هه ر ئه تگرم")
     await e.edit("ده مه كه ماجت پي ناده م")
-    await e.edit("`يه ك ماج")
+    await e.edit("يه ك ماج")
     await e.edit("نييه نايده م وس")
     await e.edit("ده نا شيت بوم بوت")
-    await e.edit("`ده ي سيته`")
+    await e.edit("ده ي سيته")
     await e.edit("🙈🙈🙈🙈")
     await e.edit("🙉🙉🙉🙉")
     await e.edit("🙈🙈🙈🙈")
     await e.edit("🙉🙉🙉🙉")
-    await e.edit("`ئا بگره`")
+    await e.edit("ئا بگره")
     await e.edit("💋")
     await e.edit("🐢                       🚶")
     await e.edit("🐢                      🚶")
@@ -982,10 +982,10 @@ async def anjg(client: Client, message: Message):
     )
 
 
-@Client.on_message(filters.command("nah", ".") & filters.me)
+@Client.on_message(filters.command("بۆ تۆیە", ".") & filters.me)
 async def nahlove(client: Client, message: Message):
     typew = await edit_or_reply(
-        message, "`\n(\\_/)`" "`\n(●_●)`" "`\n />💖 *This is for you`"
+        message, "`\n(\\_/)`" "`\n(●_●)`" "\n />💖ئە م دڵە جوانە بۆ تۆیە *"
     )
     await asyncio.sleep(2)
     await typew.edit("`\n(\\_/)`" "`\n(●_●)`")
@@ -1308,22 +1308,20 @@ add_command_help(
     [
         ["فە کیو", "بۆ پیشاندانی ئەنیمەیشنی پەنجەی ناوەڕاست"],
         ["راکە", "راکردن لە دە س دە ینە سوری"],
-        ["santet", "To display online blackmail animation."],
-        ["gabut", "To display the animation gait."],
+        ["جادووگەری", "بۆ پیشاندانی ئەنیمەیشنی ڕەشبگیری ئۆنلاین"],
+        ["شیتە بۆستە", "کە وتن بە دوای کچیک بۆ ماچی"],
         ["دڵمی", "بۆ پیشاندانی ئەنیمەیشن ئازیز"],
         ["هاک", "بۆ پیشاندانی ئەنیمەیشنی هاککردنی ساختە"],
         ["بۆمب", "بۆ پیشاندانی ئەنیمەیشنی بۆمب"],
         ["میشکت", "بۆ پیشاندانی ئەنیمەیشنی مێشک"],
-        ["kontol", "To display dick art."],
-        ["penis", "To display penis art with emoji."],
-        ["tembak", "To display shooting art."],
-        ["bundir", "To display bundir art."],
-        ["helikopter", "To display helicopter art."],
-        ["y", "To display art y sj."],
-        ["awk", "to display art awkowkowk."],
-        ["nah", "To display art love."],
-        ["ajg", "To Display art anjing."],
-        ["babi", "To display art babi."],
+        ["ئە تکۆژم", "هە رشە کردن لە کە سیک"],
+        ["خوکشتن", "ئە نمە یشنی خو هە لواساندن"],
+        ["هێلیکۆپتەر", "بۆ نمایشکردنی هونەری هێلیکۆپتەر"],
+        ["لایک", "بۆ پیشاندانی ئە نمە یشنی لایک"],
+        ["دیارم", "بۆ نمایشکردنی هونە ری خو دە رخستن"],
+        ["بۆ تۆیە", "بۆ نمایشکردنی خۆشەویستی هونەر"],
+        ["سە گ", "ئە نمە یشنی سە گ"],
+        ["بە راز", "ئە نمە یشنی بە راز"],
         ["باوش", "بۆ بەدەستهێنانی ئەنمە یشنی ئامیز فە رمانە کە بنیرە"],
         ["همم", "بە شێوەیەکی هەڕەمەکی بەدەست بهێنە همم"],
         ["چاوتروکاندن", "بۆ بەدەستهێنانی گیڤی چاوتروکاندن"],
