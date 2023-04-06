@@ -1300,7 +1300,7 @@ add_command_help(
         ["gabut", "To display the animation gait."],
         ["sayang or lover", "To display the animation dear."],
         ["hack", "To display a fake hacking animation."],
-        [""بۆمب, ""بۆ پیشاندانی ئەنیمەیشنی بۆمب],
+        ["بۆمب", "بۆ پیشاندانی ئەنیمەیشنی بۆمب"],
         ["میشکت", "بۆ پیشاندانی ئەنیمەیشنی مێشک"],
         ["kontol", "To display dick art."],
         ["penis", "To display penis art with emoji."],
