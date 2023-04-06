@@ -482,7 +482,7 @@ async def ngefuck(client: Client, message: Message):
     )
 
 
-@@Client.on_message(filters.command("هاک", ".") & filters.me)
+@Client.on_message(filters.command("هاک", ".") & filters.me)
 async def hak(client: Client, message: Message):
     await message.edit_text("گەڕان بەدوای بنکەدراوەی تیلیگرام لە کەسی ئامانجدار...")
     await asyncio.sleep(2)
@@ -1322,7 +1322,7 @@ add_command_help(
         ["تیکدانی چاو", "ئە نمە یشنی بۆ تیکدانی چاو"],
         ["تفوو", "تف کردن لە کە سانی هیچ"],
         ["موبایل", "شە حن کردنە وە ی موبایل"],
-
+        [
             "ئە نە می",
             "بۆ بەدەستهێنانی گیڤی ئە نە می",
         ],
