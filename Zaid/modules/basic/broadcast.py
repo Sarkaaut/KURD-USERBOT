@@ -54,13 +54,13 @@ async def gcast_cmd(client: Client, message: Message):
 
 
 @Client.on_message(
-    filters.command(["gucast"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["تیمی"], ".") & (filters.me | filters.user(SUDO_USER))
 )
 async def gucast(client: Client, message: Message):
     if message.reply_to_message or get_arg(message):
-        tex = await message.reply_text("`Started global broadcast...`")
+        tex = await message.reply_text("دەستی بە پەخشی جیهانی کرد...")
     else:
-        return await message.edit_text("**Give A Message or Reply**")
+        return await message.edit_text("** پەیامێک یان وەڵامێک بدەرەوە**")
     done = 0
     error = 0
     async for dialog in client.get_dialogs():
@@ -82,20 +82,20 @@ async def gucast(client: Client, message: Message):
                     error += 1
                     await asyncio.sleep(0.3)
     await text.edit_text(
-        f"**Successfully Sent Message To** `{done}` **chat, Failed to Send Message To** `{error}` **chat**"
+        f"** بە سەرکەوتوویی نامە بۆ** {done} ** چات شکستی هێنا لە ناردنی نامە بۆ** `{error}` ** چات**"
     )
 
 
 add_command_help(
-    "broadcast",
+    "پەخش",
     [
         [
-            "gcast [text/reply]",
-            "Sending Global Broadcast messages to all groups you are logged into. (Can Send Media/Sticker)",
+            "تیم دە ق یان ریپلە ی بکە",
+            "ناردنی پەیامی پەخشی جیهانی بۆ هەموو ئەو گروپانەی کە چوویتە ناویەوە. (دەتوانێت میدیا/ستیکەر بنێرێت)",
         ],
         [
-            "gucast [text/reply]",
-            "Sending Global Broadcast messages to all incoming Private Massages / PCs. (Can Send Media/Sticker)",
+            "تیمی دە ق یان ریپلە ی بکە",
+            "ناردنی پەیامی پەخشی جیهانی بۆ هەموو مەساجەکانی تایبەت / کۆمپیوتەرەکانی داهاتوو. (دەتوانێت میدیا/ستیکەر بنێرێت)",
         ],
     ],
 )
