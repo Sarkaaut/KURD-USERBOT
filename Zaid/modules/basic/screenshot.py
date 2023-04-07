@@ -9,7 +9,7 @@ from Zaid.modules.help import add_command_help
 
 
 @Client.on_message(
-    filters.command(["screenshot", "ss"], ".") & filters.private & filters.me
+    filters.command(["سکرین", "ss"], ".") & filters.private & filters.me
 )
 async def screenshot(bot: Client, message: Message):
     await asyncio.gather(
@@ -25,11 +25,11 @@ async def screenshot(bot: Client, message: Message):
 
 
 add_command_help(
-    "screenshot",
+    "سکرین",
     [
         [
-            ".screenshot",
-            "Send a notification in a private chat (not secret) to annoy or troll your friends.",
+            "سکرین",
+            "لە چاتی تایبەت (نهێنی نییە) ئاگادارکردنەوە بنێرە بۆ بێزارکردن یان ترۆڵکردنی هاوڕێکانت",
         ],
     ],
 )
