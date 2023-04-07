@@ -5,9 +5,9 @@ from pyrogram.types import Message
 from Zaid.modules.help import *
 
 
-@Client.on_message(filters.command(["stats", "status"], ".") & filters.me)
+@Client.on_message(filters.command(["ئامارەکان", "Amarakan"], ".") & filters.me)
 async def stats(client: Client, message: Message):
-    Man = await message.edit_text("`Collecting stats...`")
+    Man = await message.edit_text("کۆکردنەوەی ئامارەکان...")
     start = datetime.now()
     u = 0
     g = 0
@@ -37,21 +37,21 @@ async def stats(client: Client, message: Message):
     end = datetime.now()
     ms = (end - start).seconds
     await Man.edit_text(
-        """`Your Stats Obtained in {} seconds`
-`You have {} Private Messages.`
-`You are in {} Groups.`
-`You are in {} Super Groups.`
-`You Are in {} Channels.`
-`You Are Admin in {} Chats.`
-`Bots = {}`""".format(
+        """ئامارەکانت لە... {} چرکە 
+نامە کان {} پەیامی تایبەت
+تۆ هەتە {} گروپەکان
+تۆ لە {} گروپە سوپەرەکان
+تۆ لە {} کەناڵەکانی
+تۆ ئەدمینیت لە{} چاتەکان
+بۆتەکان = {}`""".format(
             ms, u, g, sg, c, a_chat, b
         )
     )
 
 
 add_command_help(
-    "stats",
+    "ئامارەکان",
     [
-        ["stats", "to check your account status."],
+        ["ئامارەکان", "بۆ پشکنینی دۆخی ئەکاونتەکەت"],
     ],
 )
