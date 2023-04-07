@@ -27,7 +27,7 @@ async def give_pats(bot: Client, message: Message):
 
 
 add_command_help(
-    " گیڤ",
+    "گیڤ",
     [
         ["گیڤ یان gif", "هە ر جاری گیڤیکی جوان دە نیریت"],
     ],
