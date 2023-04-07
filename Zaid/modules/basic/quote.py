@@ -8,14 +8,14 @@ from Zaid.helper.utility import get_arg
 from Zaid.modules.help import add_command_help
 
 
-@Client.on_message(filters.me & filters.command(["q", "quotly"], "."))
+@Client.on_message(filters.me & filters.command(["stikare", "ستیکەرێک"], "."))
 async def quotly(client: Client, message: Message):
     args = get_arg(message)
     if not message.reply_to_message and not args:
-        return await message.edit("**Please Reply to Message**")
+        return await message.edit("** تکایە وەڵامی نامە بدەرەوە**")
     bot = "QuotLyBot"
     if message.reply_to_message:
-        await message.edit("`Making a Quote . . .`")
+        await message.edit("دروستکردنی کۆت. . .")
         await client.unblock_user(bot)
         if args:
             await client.send_message(bot, f"/qcolor {args}")
@@ -34,19 +34,19 @@ async def quotly(client: Client, message: Message):
                     else None,
                 )
             else:
-                return await message.edit("**Failed to Create Quotly Sticker**")
+                return await message.edit("** شکستی هێنا لە دروستکردنی ستیکەری Quotly**")
 
 
 add_command_help(
-    "quotly",
+    "ستیکەرێک",
     [
         [
-            f"q or .quotly",
-            "To make an quote.",
+            f"ستیکەرێک",
+            "بۆ ئەوەی کۆتێک دروست بکەیت",
         ],
         [
-            f"q <color> or .quotly <color>",
-            "Make a message into a sticker with the custom background color given.",
+            f"يان ته نها پيتي (ق) بنوسه",
+            "پەیامێک بکە بە ستیکەرێک بە ڕەنگی پاشبنەمای تایبەت کە پێی دراوە",
         ],
     ],
 )
