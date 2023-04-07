@@ -17,7 +17,7 @@ async def give_pats(bot: Client, message: Message):
             if request.status == 404:
                 return await message.edit("هیچ پاتێک بۆ تۆ نییە:")
             result = await request.json()
-            url = result.get("لینک", None)
+            url = result.get("link", None)
             await asyncio.gather(
                 message.delete(),
                 bot.send_video(
@@ -27,7 +27,7 @@ async def give_pats(bot: Client, message: Message):
 
 
 add_command_help(
-    "گیڤ",
+    " گیڤ",
     [
         ["گیڤ یان gif", "هە ر جاری گیڤیکی جوان دە نیریت"],
     ],
