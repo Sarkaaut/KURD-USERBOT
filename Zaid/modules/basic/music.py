@@ -9,7 +9,7 @@ from Zaid.modules.help import add_command_help
 
 
 @Client.on_message(
-    filters.command(["m", "music"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["م", "مووزیک"], ".") & (filters.me | filters.user(SUDO_USER))
 )
 async def send_music(bot: Client, message: Message):
     try:
@@ -23,7 +23,7 @@ async def send_music(bot: Client, message: Message):
                     message.reply_to_message.text or message.reply_to_message.caption
             )
         elif not message.reply_to_message and len(cmd) == 1:
-            await message.edit("Give a song name")
+            await message.edit("ناوی گۆرانییەک بدە")
             await asyncio.sleep(2)
             await message.delete()
             return
@@ -54,14 +54,14 @@ async def send_music(bot: Client, message: Message):
             # delete the message from Saved Messages
             await bot.delete_messages("me", saved.id)
         except TimeoutError:
-            await message.edit("That didn't work out")
+            await message.edit("ئەوەش سەری نەگرت")
             await asyncio.sleep(2)
         await message.delete()
     except Exception as e:
         print(e)
-        await message.edit("`Failed to find song`")
+        await message.edit("شکستی هێنا لە دۆزینەوەی گۆرانی")
         await asyncio.sleep(2)
         await message.delete()
 
 
-add_command_help("music", [[".m `or` .music", "Search songs and send."]])
+add_command_help("مووزیک", [[" (مووزیک یان تە نها (م", "گۆرانی بگەڕێ و بنێرە"]])
