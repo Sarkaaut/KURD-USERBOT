@@ -64,4 +64,4 @@ async def send_music(bot: Client, message: Message):
         await message.delete()
 
 
-add_command_help("مووزیک", [["مووزیک", "گۆرانی بگەڕێ و بنێرە"]"
+add_command_help("مووزیک", [["مووزیک", "گۆرانی بگەڕێ و بنێرە"]]"
