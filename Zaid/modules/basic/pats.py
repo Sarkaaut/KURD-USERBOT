@@ -9,15 +9,15 @@ from Zaid.helper.PyroHelpers import GetChatID, ReplyCheck
 from Zaid.modules.help import add_command_help
 
 
-@Client.on_message(filters.command(["pat", "pats"], ".") & filters.me)
+@Client.on_message(filters.command(["gif", "گیڤ"], ".") & filters.me)
 async def give_pats(bot: Client, message: Message):
     URL = "https://some-random-api.ml/animu/pat"
     async with aiohttp.ClientSession() as session:
         async with session.get(URL) as request:
             if request.status == 404:
-                return await message.edit("`no Pats for you :c")
+                return await message.edit("هیچ پاتێک بۆ تۆ نییە:")
             result = await request.json()
-            url = result.get("link", None)
+            url = result.get("لینک", None)
             await asyncio.gather(
                 message.delete(),
                 bot.send_video(
@@ -27,8 +27,8 @@ async def give_pats(bot: Client, message: Message):
 
 
 add_command_help(
-    "pats",
+    "گیڤ",
     [
-        [".pat | .pats", "Give pats."],
+        ["گیڤ یان gif", "هە ر جاری گیڤیکی جوان دە نیریت"],
     ],
 )
