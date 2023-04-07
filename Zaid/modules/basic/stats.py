@@ -37,13 +37,13 @@ async def stats(client: Client, message: Message):
     end = datetime.now()
     ms = (end - start).seconds
     await Man.edit_text(
-        """ئامارەکانت لە... {} چرکە 
+        """ئامارەکانت لە {} چرکە 
 نامە کان {} پەیامی تایبەت
 تۆ هەتە {} گروپەکان
 تۆ لە {} گروپە سوپەرەکان
 تۆ لە {} کەناڵەکانی
 تۆ ئەدمینیت لە{} چاتەکان
-بۆتەکان {}`""".format(
+بۆتەکان {} 
             ms, u, g, sg, c, a_chat, b
         )
     )
