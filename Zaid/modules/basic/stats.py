@@ -43,7 +43,7 @@ async def stats(client: Client, message: Message):
 تۆ لە {} گروپە سوپەرەکان
 تۆ لە {} کەناڵەکانی
 تۆ ئەدمینیت لە{} چاتەکان
-بۆتەکان {} """ format(
+بۆتەکان {} """.format(
             ms, u, g, sg, c, a_chat, b
         )
     )
