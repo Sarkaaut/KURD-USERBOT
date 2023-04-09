@@ -83,36 +83,36 @@ async def extract_user(message):
     return (await extract_user_and_reason(message))[0]
 
 @Client.on_message(
-    filters.command(["unblock"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["لادانی بلۆک"], ".") & (filters.me | filters.user(SUDO_USER))
 )
 async def unblock_user_func(client: Client, message: Message):
     user_id = await extract_user(message)
-    tex = await message.reply_text("`Processing . . .`")
+    tex = await message.reply_text("پرۆسێسکردن . . .")
     if not user_id:
         return await message.edit(
-            "Provide User ID/Username or reply to user message to unblock."
+            "ناسنامەی بەکارهێنەر/ناوی بەکارهێنەر دابین بکە یان وەڵامی پەیامی بەکارهێنەر بدەرەوە بۆ کردنەوەی بلۆککردن."
         )
     if user_id == client.me.id:
-        return await tex.edit("Ohk done ✅.")
+        return await tex.edit("بە سە رکە وتوی بلۆک لادرا ✅.")
     await client.unblock_user(user_id)
     umention = (await client.get_users(user_id)).mention
-    await message.edit(f"**Successfully Unblocked** {umention}")
+    await message.edit(f"**بە سە رکە وتوی بلۆک لادرا** {umention}")
 
 @Client.on_message(
-    filters.command(["block"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["بلۆک"], ".") & (filters.me | filters.user(SUDO_USER))
 )
 async def block_user_func(client: Client, message: Message):
     user_id = await extract_user(message)
-    tex = await message.reply_text("`Processing . . .`")
+    tex = await message.reply_text("پرۆسێسکردن . . .")
     if not user_id:
         return await tex.edit_text(
-            "Provide User ID/Username or reply to user message to block."
+            "ناسنامەی بەکارهێنەر/ناوی بەکارهێنەر دابین بکە یان وەڵامی پەیامی بەکارهێنەر بدەرەوە بۆ بلۆککردن"
         )
     if user_id == client.me.id:
-        return await tex.edit_text("ohk ✅.")
+        return await tex.edit_text("بە سە رکە وتوی بلۆک کرا ✅.")
     await client.block_user(user_id)
     umention = (await client.get_users(user_id)).mention
-    await tex.edit_text(f"**Successfully blocked** {umention}")
+    await tex.edit_text(f"**بە سەرکەوتوویی بلۆک کرا** {umention}")
 
 
 @Client.on_message(
