@@ -5,18 +5,18 @@ from Zaid.modules.help import add_command_help
 log = []
 
 
-@Client.on_message(filters.command("tagalert on", ".") & filters.me)
+@Client.on_message(filters.command("چالاککردن", ".") & filters.me)
 async def set_no_log_p_m(client: Client, message: Message):
     if LOG_GROUP != -100:
         if not message.chat.id in log:
             log.append(message.chat.id)
-            await message.edit("**Tag alert Activated Successfully**")
+            await message.edit("**ئاگادارکردنەوەی تاگ بە سەرکەوتوویی چالاک کرا**")
 
-@Client.on_message(filters.command("tagalert off", ".") & filters.me)
+@Client.on_message(filters.command("ناچالاککردن", ".") & filters.me)
 async def set_no_log_p_m(client: Client, message: Message):
         if not message.chat.id in log:
             log.remove(message.chat.id)
-            await message.edit("**Tag alert DeActivated Successfully**")
+            await message.edit("**ئاگادارکردنەوەی تاگ بە سەرکەوتوویی چالاک نەکراوە**")
 
 if log:
  @Client.on_message(filters.group & filters.mentioned & filters.incoming)
@@ -35,11 +35,14 @@ if log:
 
 
 add_command_help(
-    "tagalert",
+    "ئاگادارکردنه وه",
     [
         [
-            "tagalert on/off",
-            "To activate or deactivate the group tag, which will go to the log group.",
+            "چالاککردن",
+            "**بۆ چالاککردن تاگی گروپ، کە دەچێتە سەر گروپی لۆگ**",
+            "ناچالاککردن",
+            "بۆ ناچالاککردن تاگی گروپ، کە دەچێتە سەر گروپی لۆگ",
+
         ],
     ],
 )
