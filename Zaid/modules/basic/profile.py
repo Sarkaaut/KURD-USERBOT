@@ -116,46 +116,46 @@ async def block_user_func(client: Client, message: Message):
 
 
 @Client.on_message(
-    filters.command(["setname"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["ناویک"], ".") & (filters.me | filters.user(SUDO_USER))
 )
 async def setname(client: Client, message: Message):
-    tex = await message.reply_text("`Processing . . .`")
+    tex = await message.reply_text("پرۆسێسکردن . . .")
     if len(message.command) == 1:
         return await tex.edit(
-            "Provide a text to set as your name."
+            "دەقێک دابین بکە بۆ ئەوەی وەک ناوی خۆت دایبنێیت."
         )
     elif len(message.command) > 1:
         name = message.text.split(None, 1)[1]
         try:
             await client.update_profile(first_name=name)
-            await tex.edit(f"**Successfully Changed Your Name To** `{name}`")
+            await tex.edit(f"**بە سەرکەوتوویی ناوەکەت گۆڕی بۆ** `{name}`")
         except Exception as e:
-            await tex.edit(f"**ERROR:** `{e}`")
+            await tex.edit(f"**هەڵە:** `{e}`")
     else:
         return await tex.edit(
-            "Provide a text to set as your name."
+            "دەقێک دابین بکە بۆ ئەوەی وەک ناوی خۆت دایبنێیت"
         )
 
 @Client.on_message(
-    filters.command(["setbio"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["بایۆ"], ".") & (filters.me | filters.user(SUDO_USER))
 )
 async def set_bio(client: Client, message: Message):
-    tex = await message.edit_text("`Processing . . .`")
+    tex = await message.edit_text("پرۆسێسکردن . . .")
     if len(message.command) == 1:
-        return await tex.edit("Provide text to set as bio.")
+        return await tex.edit("دەق دابین بکە بۆ ئەوەی وەک بایۆ ڕێکبخرێت")
     elif len(message.command) > 1:
         bio = message.text.split(None, 1)[1]
         try:
             await client.update_profile(bio=bio)
-            await tex.edit(f"**Successfully Change your BIO to** `{bio}`")
+            await tex.edit(f"**بە سەرکەوتوویی BIO ـەکەت بگۆڕە بۆ** `{bio}`")
         except Exception as e:
-            await tex.edit(f"**ERROR:** `{e}`")
+            await tex.edit(f"**هە ڵە:** `{e}`")
     else:
-        return await tex.edit("Provide text to set as bio.")
+        return await tex.edit("دەق دابین بکە بۆ ئەوەی وەک بایۆ ڕێکبخرێت")
 
 
 @Client.on_message(
-    filters.command(["setpfp"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["وێنە"], ".") & (filters.me | filters.user(SUDO_USER))
 )
 async def set_pfp(client: Client, message: Message):
     replied = message.reply_to_message
@@ -164,24 +164,24 @@ async def set_pfp(client: Client, message: Message):
         and replied.media
         and (
             replied.photo
-            or (replied.document and "image" in replied.document.mime_type)
+            or (replied.document and "وێنە" in replied.document.mime_type)
         )
     ):
         await client.download_media(message=replied, file_name=profile_photo)
         await client.set_profile_photo(profile_photo)
         if os.path.exists(profile_photo):
             os.remove(profile_photo)
-        await message.reply_text("**Your Profile Photo Changed Successfully.**")
+        await message.reply_text("**وێنەی پڕۆفایلەکەت بە سەرکەوتوویی گۆڕدرا**")
     else:
         await message.reply_text(
-            "Reply to any photo to set as profile photo"
+            "وەڵامدانەوەی هەر وێنەیەک بۆ دانانی وەک وێنەی پڕۆفایل"
         )
         await sleep(3)
         await message.delete()
 
 
 @Client.on_message(
-    filters.command(["vpfp"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["پرۆفایلی ڤیدیۆ"], ".") & (filters.me | filters.user(SUDO_USER))
 )
 async def view_pfp(client: Client, message: Message):
     user_id = await extract_user(message)
@@ -190,7 +190,7 @@ async def view_pfp(client: Client, message: Message):
     else:
         user = await client.get_me()
     if not user.photo:
-        await message.reply_text("Profile photo not found!")
+        await message.reply_text("وێنەی پڕۆفایلی نەدۆزرایەوە!")
         return
     await client.download_media(user.photo.big_file_id, file_name=profile_photo)
     await client.send_photo(
@@ -202,16 +202,16 @@ async def view_pfp(client: Client, message: Message):
 
 
 add_command_help(
-    "profile",
+    "پرۆفایل",
     [
-        ["block", "to block someone on telegram"],
-        ["unblock", "to unblock someone on telegram"],
-        ["setname", "set your profile name."],
-        ["setbio", "set an bio."],
+        ["بلۆک**", "بۆ بلۆککردنی کەسێک لە تەلەگرام**"],
+        ["لادانی بلۆک**", "بۆ کردنەوەی بلۆککردنی کەسێک لە تەلەگرام**"],
+        ["ناویک**", "ناوی پڕۆفایلی خۆت دابنێ**"],
+        ["بایۆ**", "بایۆیەک دابنێ**"],
         [
-            "setpfp",
-            f"reply with image to set your profile pic.",
+            "وێنە",
+            f"**بە وێنە وەڵام بدەرەوە بۆ ئەوەی وێنەی پڕۆفایلەکەت دابنێیت**",
         ],
-        ["vpfp", "Reply with video to set your video profile."],
+        ["پرۆفایلی ڤیدیۆ**", "بۆ دانانی پرۆفایلی ڤیدیۆکەت بە ڤیدیۆ وەڵام بدەرەوە**"],
     ],
 )
