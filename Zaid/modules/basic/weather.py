@@ -34,7 +34,7 @@ async def get_weather(bot: Client, message: Message):
 
 
 add_command_help(
-    " کەشوهەوا",
+    "کەشوهەوا",
     [
         ["کەشوهەوا", "زانیاری کەشوهەوا بۆ شوێنی دابینکراو وەردەگرێت"],
     ],
