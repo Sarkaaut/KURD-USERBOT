@@ -327,7 +327,7 @@ async def demote(client: Client, message: Message):
 
 
 add_command_help(
-    " ئادمین",
+    "ئادمین",
     [
         ["باند", "ریپلە ی بە کارهینە ر بکە بۆ باند کردنی"],
         [
