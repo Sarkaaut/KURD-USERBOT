@@ -54,7 +54,7 @@ async def i_am_not_allowed_to_say_this(bot: Client, message: Message):
 
 
 add_command_help(
-    " جنیو",
+    "جنیو",
     [
         ["جنیو", "فلتەرکردنی وشەی خراپ دەگۆڕێت و دەکوژێنێتەوە"],
     ],
