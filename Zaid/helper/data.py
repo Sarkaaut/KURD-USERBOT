@@ -3,10 +3,10 @@ from pyrogram.types import InlineKeyboardButton, WebAppInfo
 class Data:
 
     text_help_menu = (
-        "**Command List & Help**\n**— Prefixes:** `.`"
+        "**لیستی فەرمانەکان و یارمەتی**\n**— پێشگرەکان:** `.`"
         .replace(",", "")
         .replace("[", "")
         .replace("]", "")
         .replace("'", "")
     )
-    reopen = [[InlineKeyboardButton("Re-Open", callback_data="reopen")]]
+    reopen = [[InlineKeyboardButton("دووبارە بکەرەوە", callback_data="reopen")]]
