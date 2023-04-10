@@ -64,7 +64,7 @@ async def pytrans_tr(_, message: Message):
       await tr_msg.edit(tred_txt)
 
 add_command_help(
-    " وەرگێڕان",
+    "وەرگێڕان",
     [
         ["وەرگێڕان", "وەرگێڕانی هەندێک دەق بە پێدانی دەقێک یان وەڵامدانەوەی ئەو دەقە/کاپشنە"],
     ],
