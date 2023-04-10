@@ -3,7 +3,7 @@ from pyrogram.types import InlineKeyboardButton, WebAppInfo
 class Data:
 
     text_help_menu = (
-        "**لیستی فەرمانەکان و یارمەتی**\n**— پێشگرەکان:** `.`"
+        "**لیستی فەرمانەکان و یارمەتی**\n**: پێشگرەکان** `.`"
         .replace(",", "")
         .replace("[", "")
         .replace("]", "")
