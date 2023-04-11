@@ -44,7 +44,7 @@ async def define(bot: Client, message: Message):
     def out_print(word1):
         out = ""
         if "meaning" in list(word1):
-            meaning = word1["meaning"]
+            meaning = word1["واتا"]
             if "noun" in list(meaning):
                 noun = meaning["noun"]
                 out += combine(noun, "noun")
