@@ -43,47 +43,47 @@ async def define(bot: Client, message: Message):
 
     def out_print(word1):
         out = ""
-        if "meaning" in list(word1):
-            meaning = word1["meaning"]
-            if "noun" in list(meaning):
-                noun = meaning["noun"]
-                out += combine(noun, "noun")
-            if "verb" in list(meaning):
-                verb = meaning["verb"]
-                out += combine(verb, "verb")
-            if "preposition" in list(meaning):
-                preposition = meaning["preposition"]
-                out += combine(preposition, "preposition")
-            if "adverb" in list(meaning):
-                adverb = meaning["adverb"]
-                out += combine(adverb, "adverb")
-            if "adjective" in list(meaning):
-                adjec = meaning["adjective"]
-                out += combine(adjec, "adjective")
-            if "abbreviation" in list(meaning):
-                abbr = meaning["abbreviation"]
-                out += combine(abbr, "abbreviation")
-            if "exclamation" in list(meaning):
-                exclamation = meaning["exclamation"]
-                out += combine(exclamation, "exclamation")
-            if "transitive verb" in list(meaning):
-                transitive_verb = meaning["transitive verb"]
-                out += combine(transitive_verb, "transitive verb")
-            if "determiner" in list(meaning):
-                determiner = meaning["determiner"]
-                out += combine(determiner, "determiner")
+        if "واتا" in list(word1):
+            meaning = word1["واتا"]
+            if "ناو" in list(meaning):
+                noun = meaning["ناو"]
+                out += combine(noun, "ناو")
+            if "کردار" in list(meaning):
+                verb = meaning["کردار"]
+                out += combine(verb, "کردار")
+            if "ئامازی پەیوەندی" in list(meaning):
+                preposition = meaning["ئامازی پەیوەندی"]
+                out += combine(preposition, "ئامازی پەیوەندی")
+            if "هاوەڵکار" in list(meaning):
+                adverb = meaning["هاوەڵکار"]
+                out += combine(adverb, "هاوەڵکار")
+            if "ئاوەڵناو" in list(meaning):
+                adjec = meaning["ئاوەڵناو"]
+                out += combine(adjec, ""ئاوەڵناو)
+            if "کورتکراوەی" in list(meaning):
+                abbr = meaning["کورتکراوەی"]
+                out += combine(abbr, "کورتکراوەی")
+            if "هاوارکردن" in list(meaning):
+                exclamation = meaning["هاوارکردن"]
+                out += combine(exclamation, "هاوارکردن")
+            if "کرداری ڕاگوزەر" in list(meaning):
+                transitive_verb = meaning["کرداری ڕاگوزەر"]
+                out += combine(transitive_verb, "کرداری ڕاگوزەر")
+            if "دیاریکەر" in list(meaning):
+                determiner = meaning["دیاریکەر"]
+                out += combine(determiner, "دیاریکەر")
                 # print(determiner)
             if "crossReference" in list(meaning):
                 crosref = meaning["crossReference"]
                 out += combine(crosref, "crossReference")
-        if "title" in list(word1):
+        if "ناونیشان" in list(word1):
             out += (
-                    "**__Error Note__**\n\n▪️`"
-                    + word1["title"]
+                    "**تێبینی هەڵە**\n\n▪️`"
+                    + word1["ناونیشان"]
                     + "\n\n▪️"
-                    + word1["message"]
+                    + word1["پەیام"]
                     + "\n\n▪️<i>"
-                    + word1["resolution"]
+                    + word1["بڕیار"]
                     + "</i>`"
             )
         return out
