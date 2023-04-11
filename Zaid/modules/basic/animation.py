@@ -417,6 +417,13 @@ async def timer_blankx(client: Client, message: Message):
         link_preview=True,
     )
 
+Client.on_message(filters.command("مردم", ".") & filters.me)
+    deq = deque(list("😹🤣😂😹🤣😂"))
+    for _ in range(48):
+        await asyncio.sleep(0.2)
+        await event.edit("".join(deq))
+        deq.rotate(1)
+    )
 
 @Client.on_message(filters.command(["تفوو", "tfo"], ".") & filters.me)
 async def kocok(client: Client, message: Message):
