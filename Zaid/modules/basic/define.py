@@ -7,7 +7,7 @@ from Zaid.helper.aiohttp_helper import AioHttp
 from Zaid.modules.help import add_command_help
 
 
-@Client.on_message(filters.command(["define", "dict"], ".") & filters.me)
+@Client.on_message(filters.command(["پێناسەکردن", "پ"], ".") & filters.me)
 async def define(bot: Client, message: Message):
     cmd = message.command
 
@@ -17,7 +17,7 @@ async def define(bot: Client, message: Message):
     elif message.reply_to_message and len(cmd) == 1:
         input_string = message.reply_to_message.text
     elif not message.reply_to_message and len(cmd) == 1:
-        await message.edit("`Can't pass to the void.`")
+        await message.edit("**ناتوانێت تێپەڕێت بۆ بۆشایی**")
         await asyncio.sleep(2)
         await message.delete()
         return
@@ -25,18 +25,18 @@ async def define(bot: Client, message: Message):
     def combine(s_word, name):
         w_word = f"**__{name.title()}__**\n"
         for i in s_word:
-            if "definition" in i:
-                if "example" in i:
+            if "پێناسە" in i:
+                if "نموونە" in i:
                     w_word += (
-                            "\n**Definition**\n<pre>"
-                            + i["definition"]
+                            "\n**پێناسە**\n<pre>"
+                            + i["پێناسە"]
                             + "</pre>\n<b>Example</b>\n<pre>"
-                            + i["example"]
+                            + i["نموونە"]
                             + "</pre>"
                     )
                 else:
                     w_word += (
-                            "\n**Definition**\n" + "<pre>" + i["definition"] + "</pre>"
+                            "\n**پێناسە**\n" + "<pre>" + i["پێناسە"] + "</pre>"
                     )
         w_word += "\n\n"
         return w_word
@@ -89,7 +89,7 @@ async def define(bot: Client, message: Message):
         return out
 
     if not input_string:
-        await message.edit("`Plz enter word to search‼️`")
+        await message.edit("وشە داخڵ بکە بۆ گەڕان تگایە ‼️")
     else:
         word = input_string
         r_dec = await AioHttp().get_json(
@@ -106,12 +106,12 @@ async def define(bot: Client, message: Message):
                 "`Search result for   `" + f" {v_word}\n\n" + last_output
             )
         else:
-            await message.edit("`No result found from the database.`")
+            await message.edit("هیچ ئەنجامێک لە بنکەدراوە نەدۆزراوەتەوە")
 
 
 add_command_help(
-    "dictionary",
+    "فەرهەنگ",
     [
-        [".define | .dict", "Define the word you send or reply to."],
+        ["پێناسەکردن", "پێناسەی ئەو وشەیە بکە کە دەینێری یان وەڵامی دەدەیتەوە"],
     ],
 )
