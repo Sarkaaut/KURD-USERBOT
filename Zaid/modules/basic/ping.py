@@ -89,7 +89,7 @@ async def pingme(client: Client, message: Message):
 
 
 add_command_help(
-    "ping",
+    "پینگ",
     [
         ["ping", "Check bot alive or not."],
     ],
