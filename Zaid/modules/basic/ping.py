@@ -63,7 +63,7 @@ async def speed_test(client: Client, message: Message):
 
 
 @Client.on_message(
-    filters.command(["ping"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["پینگ"], ".") & (filters.me | filters.user(SUDO_USER))
 )
 async def pingme(client: Client, message: Message):
     uptime = await get_readable_time((time.time() - StartTime))
@@ -81,7 +81,7 @@ async def pingme(client: Client, message: Message):
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     await xx.edit(
-        f"❏ **╰☞ 𝗣𝗢𝗡𝗚™╮**\n"
+        f"├• **╰☞پینگ™╮**\n"
         f"├• **╰☞** - `%sms`\n"
         f"├• **╰☞ -** `{uptime}` \n"
         f"└• **╰☞:** {client.me.mention}" % (duration)
@@ -91,6 +91,6 @@ async def pingme(client: Client, message: Message):
 add_command_help(
     "پینگ",
     [
-        ["ping", "Check bot alive or not."],
+        ["پینگ", "بۆت بە زیندووی بپشکنە"],
     ],
 )
