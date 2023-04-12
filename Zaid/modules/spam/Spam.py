@@ -143,7 +143,7 @@ async def spam_stick(client: Client, message: Message):
 
 
 add_command_help(
-    "spam",
+    "سپام",
     [
         ["spam <amount of spam> <text>", "Spamming texts in chats!!"],
         [
