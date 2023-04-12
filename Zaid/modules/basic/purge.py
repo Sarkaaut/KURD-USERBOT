@@ -84,7 +84,7 @@ async def purgeme(client: Client, message: Message):
 
 
 add_command_help(
-    "purge",
+    "پاککردنەوە",
     [
         ["del", "to delete someone's message."],
         ["purge", "reply to all messages from your replied."],
