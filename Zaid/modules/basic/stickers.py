@@ -614,7 +614,7 @@ add_command_help(
 
 
 add_command_help(
-    "tiny",
+    "بچووک",
     [
         [
             "tiny [reply ke photo/sticker]",
