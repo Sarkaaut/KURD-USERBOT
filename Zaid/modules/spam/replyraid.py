@@ -120,7 +120,7 @@ async def raid(xspam: Client, e: Message):
 
 
 add_command_help(
-    "raid",
+    "هەڵکوتانە سەر",
     [
         [".raid", "<user id and count>`."],
         [".pornspam", "<count>`."],
@@ -160,7 +160,7 @@ async def gmute_user(client: Client, message: Message):
 
 
 add_command_help(
-    "replyraid",
+    "ريپلە ی",
     [
         [".replyraid", "Reply To User\n To Raid on Someone."],
         [".dreplyraid", "To Disable ReplyRaid."],
