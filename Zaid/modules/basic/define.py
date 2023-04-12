@@ -110,7 +110,7 @@ async def define(bot: Client, message: Message):
 
 
 add_command_help(
-    "dictionary",
+    "فەرهەنگ",
     [
         [".define | .dict", "Define the word you send or reply to."],
     ],
