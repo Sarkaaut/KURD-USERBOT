@@ -579,7 +579,7 @@ async def stick2png(client: Client, message: Message):
 
 
 add_command_help(
-    "sticker",
+    "ستیکەر",
     [
         [
             f"kang `reply` image",
