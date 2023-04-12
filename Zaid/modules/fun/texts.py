@@ -335,7 +335,7 @@ async def silence_wench(bot: Client, message):
 
 
 add_command_help(
-    "text",
+    "تاقیکردنە وە",
     [
         [".nice", "Replaces command with NICENICENICENICE."],
         [".compliment", "Replaces command with a nice compliment."],
