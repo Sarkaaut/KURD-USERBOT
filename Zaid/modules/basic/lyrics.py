@@ -59,4 +59,4 @@ async def send_lyrics(bot: Client, message: Message):
         await message.delete()
 
 
-add_command_help("lyrics", [[".l `or` .lyrics", "Search lyrics and send."]])
+add_command_help("تێکستەکان", [[".l `or` .lyrics", "Search lyrics and send."]])
