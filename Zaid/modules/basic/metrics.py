@@ -37,7 +37,7 @@ async def word_count(bot: Client, message: Message):
 
 
 add_command_help(
-    "metrics",
+    "پێوەرەکان",
     [
         [
             ".wordcount",
