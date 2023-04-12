@@ -135,7 +135,7 @@ if AFK:
 
 
 add_command_help(
-    "afk",
+    "ئافک",
     [
         [".afk", "Activates AFK mode with reason as anything after .afk\nUsage: ```.afk <reason>```"],
         ["!afk", "Deactivates AFK mode."],
