@@ -52,7 +52,7 @@ async def hidden_mention(bot: Client, message: Message):
 
 
 add_command_help(
-    "mention",
+    "ئاماژە پێکردن",
     [
         [
             ".mention",
