@@ -75,7 +75,7 @@ async def hentai_api(bot: Client, message: Message):
 
 for x in cf_api_data:
     add_command_help(
-        "anime_cf",
+        "ئەنیمێ",
         [
             [f".{x}", cf_api_data[x]["help"]],
         ],
