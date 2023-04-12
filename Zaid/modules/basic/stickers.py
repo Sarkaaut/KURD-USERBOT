@@ -603,7 +603,7 @@ add_command_help(
 
 
 add_command_help(
-    "memify",
+    "میفە ی",
     [
         [
             "mmf Top Text ; Bottom Text",
