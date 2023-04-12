@@ -249,7 +249,7 @@ if ok:
 
 
 add_command_help(
-    "globals",
+    "جیهانیەکان",
     [
         [
             "gban <reply/username/userid>",
