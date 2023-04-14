@@ -35,18 +35,18 @@ async def speed_test(client: Client, message: Message):
     spd = speedtest.Speedtest()
 
     new_msg = await new_msg.edit(
-        f"`{new_msg.text}`\n" "بەدەستهێنانی باشترین سێرڤەر لەسەر بنەمای ping . . ."
+        f"{new_msg.text}\n" "بەدەستهێنانی باشترین سێرڤەر لەسەر بنەمای ping . . ."
     )
     spd.get_best_server()
 
-    new_msg = await new_msg.edit(f"`{new_msg.text}`\n" "تاقیکردنەوەی خێرایی دابەزاندن . . .")
+    new_msg = await new_msg.edit(f"{new_msg.text}\n" "تاقیکردنەوەی خێرایی دابەزاندن . . .")
     spd.download()
 
-    new_msg = await new_msg.edit(f"`{new_msg.text}`\n" "تاقیکردنەوەی خێرایی بارکردن . . .")
+    new_msg = await new_msg.edit(f"{new_msg.text}\n" "تاقیکردنەوەی خێرایی بارکردن . . .")
     spd.upload()
 
     new_msg = await new_msg.edit(
-        f"`{new_msg.text}`\n" "بەدەستهێنانی ئەنجام و ئامادەکردنی فۆرماتکردن . . ."
+        f"{new_msg.text}\n" "بەدەستهێنانی ئەنجام و ئامادەکردنی فۆرماتکردن . . ."
     )
     results = spd.results.dict()
 
