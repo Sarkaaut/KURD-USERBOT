@@ -131,30 +131,30 @@ async def updateme_requirements():
         return repr(e)
 
 
-@Client.on_message(filters.command("update", ".") & filters.me)
+@Client.on_message(filters.command("نوێکردنەوە", ".") & filters.me)
 async def upstream(client: Client, message: Message):
-    status = await message.edit_text("`Checking for Updates, Wait a Moment...`")
+    status = await message.edit_text("پشکنینی نوێکارییەکان، ساتێک چاوەڕێ بکە...")
     conf = get_arg(message)
     off_repo = UPSTREAM_REPO_URL
     try:
         txt = (
-            "**Update Could Not Continue Due "
-            + "Several ERROR Occurred**\n\n**LOGTRACE:**\n"
+            "**نوێکردنەوە نەتوانرا بەردەوام بێت**"
+            + "چەندین هەڵە ڕوویدا**\n\n**LOGTRACE:**\n"
         )
         repo = Repo()
     except NoSuchPathError as error:
-        await status.edit(f"{txt}\n**Directory** `{error}` **Can not be found.**")
+        await status.edit(f"{txt}\n**بەڕێوەبەرایەتی** `{error}` **ناتوانرێت بدۆزرێتەوە**")
         repo.__del__()
         return
     except GitCommandError as error:
-        await status.edit(f"{txt}\n**Early failure!** `{error}`")
+        await status.edit(f"{txt}\n**شکستی پێشوەختە!** `{error}`")
         repo.__del__()
         return
     except InvalidGitRepositoryError:
         if conf != "deploy":
             pass
         repo = Repo.init()
-        origin = repo.create_remote("upstream", off_repo)
+        origin = repo.create_remote("لە سەرەوەی ڕووبارەکەدا", off_repo)
         origin.fetch()
         repo.create_head(
             BRANCH,
@@ -165,7 +165,7 @@ async def upstream(client: Client, message: Message):
     ac_br = repo.active_branch.name
     if ac_br != BRANCH:
         await status.edit(
-            f"**[UPDATER]:** `Looks like you are using your own custom branch ({ac_br}). in that case, Updater is unable to identify which branch is to be merged. please checkout to main branch`"
+            f"**[UPDATER]:**وا دیارە تۆ لقی تایبەت بە خۆت بەکاردەهێنیت ({ac_br}). لەو حاڵەتەدا، Updater ناتوانێت بزانێت کام لق تێکەڵ دەکرێت. تکایە پارەدان بۆ لقی سەرەکی"
         )
         repo.__del__()
         return
@@ -178,9 +178,9 @@ async def upstream(client: Client, message: Message):
     changelog = await gen_chlog(repo, f"HEAD..upstream/{ac_br}")
     if "deploy" not in conf:
         if changelog:
-            changelog_str = f"**Update Available For Branch [{ac_br}]:\n\nCHANGELOG:**\n\n`{changelog}`"
+            changelog_str = f"**نوێکردنەوە بەردەستە بۆ لقی [{ac_br}]:\n\nCHANGELOG:**\n\n`{changelog}`"
             if len(changelog_str) > 4096:
-                await status.edit("**Changelog too big, sent as file.**")
+                await status.edit("**زۆر گەورەیە، وەک فایل نێردراوە**")
                 file = open("output.txt", "w+")
                 file.write(changelog_str)
                 file.close()
