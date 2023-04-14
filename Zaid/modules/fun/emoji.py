@@ -39,7 +39,7 @@ special_emojis_dict = {
 special_emoji_commands = [x for x in special_emojis_dict]
 
 
-@Client.on_message(filters.command(special_emoji_commands, "") & filters.me)
+@Client.on_message(filters.command(special_emoji_commands, ".") & filters.me)
 async def special_emojis(bot: Client, message: Message):
     emoji = special_emojis_dict[message.command[0]]
     await message.delete()
