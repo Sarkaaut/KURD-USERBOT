@@ -31,10 +31,10 @@ async def emoji_cycle(bot: Client, message: Message):
 
 
 special_emojis_dict = {
-    "target": {"emoji": "🎯", "help": "The special target emoji"},
-    "dice": {"emoji": "🎲", "help": "The special dice emoji"},
-    "bb": {"emoji": "🏀", "help": "The special basketball emoji"},
-    "soccer": {"emoji": "⚽️", "help": "The special football emoji"},
+    "تیرک": {"emoji": "🎯", "help": "ئیمۆجی تایبەتی تیرک"},
+    "دۆمینە": {"emoji": "🎲", "help": "ئیمۆجی تایبەتی دۆمینە"},
+    "باسکە": {"emoji": "🏀", "help": "ئیمۆجی تایبەتی باسکە"},
+    "تۆپی پێ": {"emoji": "⚽️", "help": "ئیمۆجی تایبەتی تۆپی پێ"},
 }
 special_emoji_commands = [x for x in special_emojis_dict]
 
