@@ -18,7 +18,7 @@ emojis = {
 emoji_commands = [x for x in emojis]
 
 
-@Client.on_message(filters.command(emoji_commands, ".") & filters.me)
+@Client.on_message(filters.command(emoji_commands, "") & filters.me)
 async def emoji_cycle(bot: Client, message: Message):
     deq = deque(emojis[message.command[0]])
     try:
