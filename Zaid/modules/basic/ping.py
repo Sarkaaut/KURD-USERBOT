@@ -52,11 +52,11 @@ async def speed_test(client: Client, message: Message):
 
     await new_msg.edit(
         WWW.SpeedTest.format(
-            start=results["مۆری کات"],
-            ping=results["پینگ"],
+            start=results["timestamp"],
+            ping=results["ping"],
             download=SpeedConvert(results["download"]),
             upload=SpeedConvert(results["upload"]),
-            isp=results["کلایەنت"]["isp"],
+            isp=results["client"]["isp"],
         )
     )
 
