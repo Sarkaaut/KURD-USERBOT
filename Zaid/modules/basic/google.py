@@ -30,16 +30,16 @@ def googlesearch(query):
     return returnquery
 
 
-@Client.on_message(filters.command(["gs", "google"], ".") & filters.me)
+@Client.on_message(filters.command(["gs", "گوگڵ"], ".") & filters.me)
 async def gs(client: Client, message: Message):
-    Man = await edit_or_reply(message, "`Processing...`")
+    Man = await edit_or_reply(message, "پرۆسێسکردن ...")
     msg_txt = message.text
     returnmsg = ""
     query = None
     if " " in msg_txt:
         query = msg_txt[msg_txt.index(" ") + 1 : len(msg_txt)]
     else:
-        await Man.edit("Give a query to search")
+        await Man.edit("شتیک بنوسە بۆ گەڕان")
         return
     results = googlesearch(query)
     for i in range(1, 10, 1):
@@ -66,8 +66,8 @@ add_command_help(
     "گوگڵ",
     [
         [
-            "google",
-            "Featch Details on Google.",
+            "گوگڵ",
+            "وردەکارییەکان لە گووگڵ وەربگرە",
         ],
     ],
 )
