@@ -24,10 +24,10 @@ class WWW:
     NearestDC = "Country: `{}`\n" "Nearest Datacenter: `{}`\n" "This Datacenter: `{}`"
 
 @Client.on_message(
-    filters.command(["speedtest"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["خێرایی بۆت"], ".") & (filters.me | filters.user(SUDO_USER))
 )
 async def speed_test(client: Client, message: Message):
-    new_msg = await message.reply_text("`Running speed test . . .`")
+    new_msg = await message.reply_text("تاقیکردنەوەی خێرایی بۆت . . .")
     try:
        await message.delete()
     except:
@@ -35,28 +35,28 @@ async def speed_test(client: Client, message: Message):
     spd = speedtest.Speedtest()
 
     new_msg = await new_msg.edit(
-        f"`{new_msg.text}`\n" "`Getting best server based on ping . . .`"
+        f"`{new_msg.text}`\n" "بەدەستهێنانی باشترین سێرڤەر لەسەر بنەمای ping . . ."
     )
     spd.get_best_server()
 
-    new_msg = await new_msg.edit(f"`{new_msg.text}`\n" "`Testing download speed . . .`")
+    new_msg = await new_msg.edit(f"`{new_msg.text}`\n" "تاقیکردنەوەی خێرایی دابەزاندن . . .")
     spd.download()
 
-    new_msg = await new_msg.edit(f"`{new_msg.text}`\n" "`Testing upload speed . . .`")
+    new_msg = await new_msg.edit(f"`{new_msg.text}`\n" "تاقیکردنەوەی خێرایی بارکردن . . .")
     spd.upload()
 
     new_msg = await new_msg.edit(
-        f"`{new_msg.text}`\n" "`Getting results and preparing formatting . . .`"
+        f"`{new_msg.text}`\n" "بەدەستهێنانی ئەنجام و ئامادەکردنی فۆرماتکردن . . ."
     )
     results = spd.results.dict()
 
     await new_msg.edit(
         WWW.SpeedTest.format(
-            start=results["timestamp"],
-            ping=results["ping"],
+            start=results["مۆری کات"],
+            ping=results["پینگ"],
             download=SpeedConvert(results["download"]),
             upload=SpeedConvert(results["upload"]),
-            isp=results["client"]["isp"],
+            isp=results["کلایەنت"]["isp"],
         )
     )
 
