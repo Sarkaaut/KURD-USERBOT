@@ -72,7 +72,7 @@ async def purgeme(client: Client, message: Message):
         )
     ]
     if not message_ids:
-        return await message.edit_text("Could not find message.")
+        return await message.edit_text("نەتوانرا پەیام بدۆزرێتەوە")
     to_delete = [message_ids[i : i + 99] for i in range(0, len(message_ids), 99)]
     for hundred_messages_or_less in to_delete:
         await client.delete_messages(
