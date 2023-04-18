@@ -6,7 +6,7 @@ from pyrogram.types import Message
 from Zaid.modules.help import add_command_help
 
 
-@Client.on_message(filters.command("del", ".") & filters.me)
+@Client.on_message(filters.command("سڕینەوە", ".") & filters.me)
 async def del_msg(client: Client, message: Message):
     msg_src = message.reply_to_message
     if msg_src:
@@ -21,14 +21,14 @@ async def del_msg(client: Client, message: Message):
 
 
 
-@Client.on_message(filters.command("purge", ".") & filters.me)
+@Client.on_message(filters.command("پاککردنەوە", ".") & filters.me)
 async def purge(client: Client, message: Message):
-    ex = await message.edit_text("`Starting To Purge Messages!`")
+    ex = await message.edit_text("دەستکردن بە پاککردنەوەی پەیامەکان!")
     msg = message.reply_to_message
     if msg:
         itermsg = list(range(msg.id, message.id))
     else:
-        await ex.edit("`Reply To Message To Purge!`")
+        await ex.edit("وەڵامی نامە بۆ پاککردنەوە!")
         return
     count = 0
 
@@ -45,23 +45,23 @@ async def purge(client: Client, message: Message):
             return
 
     done = await ex.edit(
-        f"**Fast Purge Completed!**\n**Successfully Delete** `{str(count)}` **Message.**"
+        f"** پاککردنەوەی خێرا تەواو بوو!**\n** بە سەرکەوتوویی سڕینەوە** {str(count)} **پەیام**"
     )
     await asyncio.sleep(2)
     await done.delete()
 
 
 
-@Client.on_message(filters.command("purgeme", ".") & filters.me)
+@Client.on_message(filters.command("ژمارەی پاککردنەوە", ".") & filters.me)
 async def purgeme(client: Client, message: Message):
     if len(message.command) != 2:
         return await message.delete()
     n = message.text.split(None, 1)[1].strip()
     if not n.isnumeric():
-        return await message.edit_text("Please enter a number")
+        return await message.edit_text("تکایە ژمارەیەک بنوسه")
     n = int(n)
     if n < 1:
-        return await message.edit_text("Enter the number of messages you want to delete!")
+        return await message.edit_text("ژمارەی ئەو نامانە بنووسە کە دەتەوێت بیسڕیتەوە!")
     chat_id = message.chat.id
     message_ids = [
         m.id
@@ -86,8 +86,8 @@ async def purgeme(client: Client, message: Message):
 add_command_help(
     "پاککردنەوە",
     [
-        ["del", "to delete someone's message."],
-        ["purge", "reply to all messages from your replied."],
-        ["purgeme [count]", "to delete your messages only."],
+        ["سڕینەوە", "بۆ سڕینەوەی نامەی کەسێک"],
+        ["پاککردنەوە", "وەڵامی هەموو نامەکان بدەرەوە لە وەڵامدانەوەی خۆتەوە."],
+        ["ژمارەی پاککردنەوە", "بۆ سڕینەوەی نامەکانت تەنها"],
     ],
 )
