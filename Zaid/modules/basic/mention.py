@@ -12,17 +12,17 @@ mention = partial("<a href='tg://user?id={}'>{}</a>".format)
 hmention = partial("<a href='tg://user?id={}'>\u200B</a>{}".format)
 
 
-@Client.on_message(filters.command("mention", ".") & filters.me)
+@Client.on_message(filters.command("ئاماژە پێکردن", ".") & filters.me)
 async def mention_user(bot: Client, message: Message):
     if len(message.command) < 3:
-        await message.edit("Incorrect format\nExample: .mention @Athfan CTO")
+        await message.edit("فۆرماتێکی هەڵە\nنموونە: . ئاماژە پێکردن @Sarkaut سڵاو")
         await asyncio.sleep(3)
         await message.delete()
         return
     try:
         user = await bot.get_users(message.command[1])
     except Exception:
-        await message.edit("User not found")
+        await message.edit("بەکارهێنەر نەدۆزرایەوە")
         await asyncio.sleep(3)
         await message.delete()
         return
@@ -31,17 +31,17 @@ async def mention_user(bot: Client, message: Message):
     await message.edit(_mention)
 
 
-@Client.on_message(filters.command("hmention", ".") & filters.me)
+@Client.on_message(filters.command("ئاماژە ی شاراوە", ".") & filters.me)
 async def hidden_mention(bot: Client, message: Message):
     if len(message.command) < 3:
-        await message.edit("Incorrect format\nExample: .hmention @Athfan")
+        await message.edit("فۆرماتێکی هەڵە\nنموونە: . ئاماژە ی شاراوە @SARKAUT سڵاو")
         await asyncio.sleep(3)
         await message.delete()
         return
     try:
         user = await bot.get_users(message.command[1])
     except Exception:
-        await message.edit("User not found")
+        await message.edit("بەکارهێنەر نەدۆزرایەوە")
         await asyncio.sleep(3)
         await message.delete()
         return
@@ -55,12 +55,12 @@ add_command_help(
     "ئاماژە پێکردن",
     [
         [
-            ".mention",
-            "Mention a user with a different name\nExample: `.mention @user CTO`",
+            "ئاماژە پێکردن",
+            "ئاماژە بە بەکارهێنەرێک بکە بە ناوێکی جیاواز\nنموونە: ئاماژە پێکردن @user سڵاو",
         ],
         [
-            ".hmention",
-            "Mention a user with a hidden text\nExample: `.hmention @user`",
+            "ئاماژە ی شاراوە",
+            "باسی بەکارهێنەرێک بکە کە دەقێکی شاراوەی هەبێت\نموونە: . ئاماژە پێکردن @user",
         ],
     ],
 )
