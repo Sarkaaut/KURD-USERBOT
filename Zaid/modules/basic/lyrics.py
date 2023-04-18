@@ -23,7 +23,7 @@ async def send_lyrics(bot: Client, message: Message):
             elif len(cmd) == 1:
                 song_name = message.reply_to_message.text
         elif not message.reply_to_message and len(cmd) == 1:
-            await message.edit("Give a song name")
+            await message.edit("ناوی گۆرانییەک بدە")
             await asyncio.sleep(2)
             await message.delete()
             return
@@ -54,7 +54,7 @@ async def send_lyrics(bot: Client, message: Message):
             await asyncio.sleep(2)
         await message.delete()
     except Exception as e:
-        await message.edit("`Failed to find lyrics`")
+        await message.edit("شکستی هێنا لە دۆزینەوەی تێکستەکان")
         await asyncio.sleep(2)
         await message.delete()
 
