@@ -8,7 +8,7 @@ from Zaid.modules.help import add_command_help
 
 
 @Client.on_message(
-    filters.command(["l", "lyrics"], ".") & (filters.me | filters.user(SUDO_USER))
+    filters.command(["l", "تێکستەکان"], ".") & (filters.me | filters.user(SUDO_USER))
 )
 async def send_lyrics(bot: Client, message: Message):
     try:
@@ -28,13 +28,13 @@ async def send_lyrics(bot: Client, message: Message):
             await message.delete()
             return
 
-        await message.edit(f"Getting lyrics for `{song_name}`")
+        await message.edit(f"بەدەستهێنانی تێکستی گۆرانی بۆ`{song_name}`")
         lyrics_results = await bot.get_inline_bot_results("ilyricsbot", song_name)
 
         try:
             # send to Saved Messages because hide_via doesn't work sometimes
             saved = await bot.send_inline_bot_result(
-                chat_id="me",
+                chat_id="من",
                 query_id=lyrics_results.query_id,
                 result_id=lyrics_results.results[0].id,
             )
@@ -43,14 +43,14 @@ async def send_lyrics(bot: Client, message: Message):
             # forward from Saved Messages
             await bot.copy_message(
                 chat_id=message.chat.id,
-                from_chat_id="me",
+                from_chat_id="من",
                 message_id=saved.updates[1].message.id,
             )
 
             # delete the message from Saved Messages
-            await bot.delete_messages("me", saved.updates[1].message.id)
+            await bot.delete_messages("من", saved.updates[1].message.id)
         except TimeoutError:
-            await message.edit("That didn't work out")
+            await message.edit("ئەوەش سەری نەگرت")
             await asyncio.sleep(2)
         await message.delete()
     except Exception as e:
@@ -59,4 +59,4 @@ async def send_lyrics(bot: Client, message: Message):
         await message.delete()
 
 
-add_command_help("تێکستەکان", [[".l `or` .lyrics", "Search lyrics and send."]])
+add_command_help("تێکستەکان", [["تێکستەکان", "بەدوای تێکستەکاندا بگەڕێ و بنێرن"]])
