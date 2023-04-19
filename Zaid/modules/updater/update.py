@@ -226,7 +226,7 @@ async def upstream(client: Client, message: Message):
             repo.__del__()
             return
         await status.edit(
-            "`[HEROKU]: Zaid-Userbot Deploy Update is in Progress...`"
+            "`[HEROKU]: KURD-USERBOT Deploy Update is in Progress...`"
         )
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
@@ -243,7 +243,7 @@ async def upstream(client: Client, message: Message):
         except GitCommandError:
             pass
         await status.edit(
-            "`Zaid-Userbot Successfully Updated! Userbot can be used again.`"
+            "`KURD-USERBOT Successfully Updated! Userbot can be used again.`"
         )
     else:
         try:
