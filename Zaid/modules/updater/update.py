@@ -252,7 +252,7 @@ async def upstream(client: Client, message: Message):
             repo.git.reset("--hard", "FETCH_HEAD")
         await updateme_requirements()
         await status.edit(
-            "`Zaid-Userbot Successfully Updated! Userbot can be used again.`",
+            "`KURD-USERBOT Successfully Updated! Userbot can be used again.`",
         )
         args = [sys.executable, "-m", "Zaid"]
         execle(sys.executable, *args, environ)
@@ -317,9 +317,9 @@ async def updatees(client: Client, message: Message):
 
 
 add_command_help(
-    "update",
+    "ئە پدیت",
     [
-        ["update", "To see a list of the latest updates from Zaid-Userbot."],
-        ["update deploy", "To update userbot."],
+        ["update", "بۆ بینینی لیستی نوێترین نوێکارییەکانی Kurd-Userbot"],
+        ["update deploy", "بۆ نوێکردنەوەی Kurd-Uesrbot"],
     ],
 )
