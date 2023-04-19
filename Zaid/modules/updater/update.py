@@ -131,30 +131,30 @@ async def updateme_requirements():
         return repr(e)
 
 
-@Client.on_message(filters.command("نوێکردنەوە", ".") & filters.me)
+@Client.on_message(filters.command("update", ".") & filters.me)
 async def upstream(client: Client, message: Message):
-    status = await message.edit_text("پشکنینی نوێکارییەکان، ساتێک چاوەڕێ بکە...")
+    status = await message.edit_text("`Checking for Updates, Wait a Moment...`")
     conf = get_arg(message)
     off_repo = UPSTREAM_REPO_URL
     try:
         txt = (
-            "**نوێکردنەوە نەتوانرا بەردەوام بێت**"
-            + "چەندین هەڵە ڕوویدا**\n\n**LOGTRACE:**\n"
+            "**Update Could Not Continue Due "
+            + "Several ERROR Occurred**\n\n**LOGTRACE:**\n"
         )
         repo = Repo()
     except NoSuchPathError as error:
-        await status.edit(f"{txt}\n**بەڕێوەبەرایەتی** `{error}` **ناتوانرێت بدۆزرێتەوە**")
+        await status.edit(f"{txt}\n**Directory** `{error}` **Can not be found.**")
         repo.__del__()
         return
     except GitCommandError as error:
-        await status.edit(f"{txt}\n**شکستی پێشوەختە!** `{error}`")
+        await status.edit(f"{txt}\n**Early failure!** `{error}`")
         repo.__del__()
         return
     except InvalidGitRepositoryError:
         if conf != "deploy":
             pass
         repo = Repo.init()
-        origin = repo.create_remote("لە سەرەوەی ڕووبارەکەدا", off_repo)
+        origin = repo.create_remote("upstream", off_repo)
         origin.fetch()
         repo.create_head(
             BRANCH,
@@ -165,7 +165,7 @@ async def upstream(client: Client, message: Message):
     ac_br = repo.active_branch.name
     if ac_br != BRANCH:
         await status.edit(
-            f"**[UPDATER]:**وا دیارە تۆ لقی تایبەت بە خۆت بەکاردەهێنیت ({ac_br}). لەو حاڵەتەدا، Updater ناتوانێت بزانێت کام لق تێکەڵ دەکرێت. تکایە پارەدان بۆ لقی سەرەکی"
+            f"**[UPDATER]:** `Looks like you are using your own custom branch ({ac_br}). in that case, Updater is unable to identify which branch is to be merged. please checkout to main branch`"
         )
         repo.__del__()
         return
@@ -178,9 +178,9 @@ async def upstream(client: Client, message: Message):
     changelog = await gen_chlog(repo, f"HEAD..upstream/{ac_br}")
     if "deploy" not in conf:
         if changelog:
-            changelog_str = f"**نوێکردنەوە بەردەستە بۆ لقی [{ac_br}]:\n\nCHANGELOG:**\n\n`{changelog}`"
+            changelog_str = f"**Update Available For Branch [{ac_br}]:\n\nCHANGELOG:**\n\n`{changelog}`"
             if len(changelog_str) > 4096:
-                await status.edit("**زۆر گەورەیە، وەک فایل نێردراوە**")
+                await status.edit("**Changelog too big, sent as file.**")
                 file = open("output.txt", "w+")
                 file.write(changelog_str)
                 file.close()
@@ -243,7 +243,7 @@ async def upstream(client: Client, message: Message):
         except GitCommandError:
             pass
         await status.edit(
-            "`KURD-USERBOT Successfully Updated! Userbot can be used again.`"
+            "`Zaid-Userbot Successfully Updated! Userbot can be used again.`"
         )
     else:
         try:
@@ -252,7 +252,7 @@ async def upstream(client: Client, message: Message):
             repo.git.reset("--hard", "FETCH_HEAD")
         await updateme_requirements()
         await status.edit(
-            "`KURD-USERBOT Successfully Updated! Userbot can be used again.`",
+            "`Zaid-Userbot Successfully Updated! Userbot can be used again.`",
         )
         args = [sys.executable, "-m", "Zaid"]
         execle(sys.executable, *args, environ)
@@ -317,9 +317,9 @@ async def updatees(client: Client, message: Message):
 
 
 add_command_help(
-    "ئە پدیت",
+    "update",
     [
-        ["تازە کردنە وە", "بۆ بینینی لیستی نوێترین نوێکارییەکانی kurd Uesr bot"],
-        ["ئە پدیت کردن", "بۆ نوێکردنەوەی userbot"],
+        ["update", "To see a list of the latest updates from Zaid-Userbot."],
+        ["update deploy", "To update userbot."],
     ],
 )
