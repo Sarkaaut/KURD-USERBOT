@@ -8,27 +8,27 @@ from Zaid.helper.PyroHelpers import ReplyCheck
 from Zaid.modules.help import add_command_help
 
 sticker_data = {
-    "mock": {
+    "گاڵتە پێکردن": {
         "value": 7,
-        "empty_message": "GiVE ME sOMEThINg TO MOCK",
-        "action": "Mocking...",
+        "empty_message": "شتێکم پێ بدە تا گاڵتە بکەم",
+        "action": "گاڵتەکردن...",
     },
-    "ggl": {
+    "گەڕان": {
         "value": 12,
-        "empty_message": "Senpai, I need something to Google...",
-        "action": "Googling...",
+        "empty_message": "سێنپای، پێویستم بە شتێکە بۆ گووگڵ...",
+        "action": "گووگڵکردن...",
     },
-    "waifu": {
-        "alts": ["ag", "animegirl"],
+    "کچێکی ئەنیمێ": {
+        "alts": ["ag", "کچێکی ئەنیمێ"],
         "value": [15, 20, 32, 33, 34, 40, 41, 42, 58],
-        "empty_message": "The waifu ran away...",
-        "action": "Asking my wiafus to say it...",
+        "empty_message": "وایفوەکە ڕایکرد...",
+        "action": "داواکردن لە ویافوسەکەم کە بیڵێت...",
     },
-    "animeboy": {
-        "alts": ["ab"],
+    "ئەنیمێ کوڕیک": {
+        "alts": ["ئەنیمێ کوڕیک"],
         "value": [37, 38, 48, 55],
-        "empty_message": "Senpai, I need something to say...",
-        "action": "The boys are on it...",
+        "empty_message": "سێنپای، پێویستم بە شتێکە بیڵێم...",
+        "action": "کوڕەکان لەسەری بوون...",
     },
 }
 
@@ -96,10 +96,10 @@ async def sticker_super_func(bot: Client, message: Message):
                 hide_via=True,
             )
         except TimeoutError:
-            await message.edit("`@StickerizerBot didn't respond in time...`")
+            await message.edit("@StickerizerBot لە کاتی خۆیدا وەڵامی نەدایەوە...")
             await asyncio.sleep(2)
     except Exception:
-        await message.edit("`Failed to reach @Stickerizerbot...`")
+        await message.edit("نەیتوانی بگات @Stickerizerbot...")
         await asyncio.sleep(2)
     await message.delete()
 
@@ -115,7 +115,7 @@ add_command_help(
             "کچێکی ئەنیمێ",
             "ستیکەرێکی کچە ئەنیمێیەکی هەڕەمەکی دەنێرێت. یاساکان وەک لە سەرەوە جێبەجێ دەکرێن.",
         ],
-        ["کوڕی ئەنیمێ", "ستیکەرێکی کوڕی هەڕەمەکی دەنێرێت. یاساکان وەک لە سەرەوە جێبەجێ دەکرێن"],
+        ["ئەنیمێ کوڕیک", "ستیکەرێکی کوڕی هەڕەمەکی دەنێرێت. یاساکان وەک لە سەرەوە جێبەجێ دەکرێن"],
         [
             "گەڕان",
             "دوگمەی گەڕانی گووگڵ دەنێرێت لەگەڵ ئەو پرسیارەی کە تۆ پێی دەدەیت. یاساکان وەک لە سەرەوە جێبەجێ دەکرێن.",
