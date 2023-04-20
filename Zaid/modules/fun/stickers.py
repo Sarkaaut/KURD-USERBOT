@@ -108,10 +108,10 @@ add_command_help(
     "ستیکەریس",
     [
         [
-            "mock",
-            "Sends a Spongebob mocking meme of what you sent with command or text of what you replied to.\n"
-            '**Usage**:\n```.mock you smell like shit``` will give you the meme that says "You smell like shit"\n'
-            "Reply to a text message with .mock and it will grab the text of that message and generate the meme.",
+            "گاڵتە پێکردن",
+            "میمێکی گاڵتەجاڕی سپۆنجبۆب دەنێرێت کە چیت ناردووە بە فەرمان یان دەقی ئەوەی کە وەڵامت داوەتەوە\n"
+            '**بەکارهێنان**:\n گاڵتەکردن بۆنی گوێدرێژت هەیە ئەو میمەت پێدەبەخشێت کە دەڵێت "بۆنی گوێدرێژ دەکەیت""\n'
+            "وەڵامی نامەیەک بدەرەوە بە .گاڵتە پێکردن و ئەویش دەقی ئەو نامەیە دەگرێت و میمەکە دروست دەکات",
         ],
         [
             "animegirl `or` .ag",
