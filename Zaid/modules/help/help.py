@@ -17,7 +17,7 @@ async def edit_or_reply(message: Message, *args, **kwargs) -> Message:
     )
     return await xyz(*args, **kwargs)
 
-@Client.on_message(filters.command([".", "yarmate"], ".") & filters.me)
+@Client.on_message(filters.command(["ي", "yarmate"], ".") & filters.me)
 async def module_help(client: Client, message: Message):
     cmd = message.command
     help_arg = ""
