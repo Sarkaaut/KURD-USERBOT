@@ -17,7 +17,7 @@ async def edit_or_reply(message: Message, *args, **kwargs) -> Message:
     )
     return await xyz(*args, **kwargs)
 
-@Client.on_message(filters.command(["يارمه تي", "yarmate"], ".") & filters.me)
+@Client.on_message(filters.command([".", "yarmate"], ".") & filters.me)
 async def module_help(client: Client, message: Message):
     cmd = message.command
     help_arg = ""
@@ -58,7 +58,7 @@ async def module_help(client: Client, message: Message):
             this_command = f"──「 **Help For {str(help_arg).upper()}** 」──\n\n"
             for x in commands:
                 this_command += f"  •  **Command:** `.{str(x)}`\n  •  **Function:** `{str(commands[x])}`\n\n"
-            this_command += "© @TheUpdatesChannel"
+            this_command += "@SARKAUT"
             await edit_or_reply(
                 message, this_command, parse_mode=enums.ParseMode.MARKDOWN
             )
@@ -85,10 +85,10 @@ async def module_helper(client: Client, message: Message):
         for x in split_list(sorted(CMD_HELP.keys()), 2):
             ac.add_row([x[0], x[1] if len(x) >= 2 else None])
         await edit_or_reply(
-            message, f"```{str(ac)}```\n• @TheSupportChat × @TheUpdatesChannel •"
+            message, f"```{str(ac)}```\n• @group_shet4akan × @group_shet4akan •"
         )
         await message.reply(
-            f"**Usage**:`.help broadcast` **To View Module details**"
+            f"**Usage**:`.help broadcast` ** بۆ بینینی وردەکارییەکانی مۆدیول**"
         )
 
     if help_arg:
@@ -97,14 +97,14 @@ async def module_helper(client: Client, message: Message):
             this_command = f"──「 **Help For {str(help_arg).upper()}** 」──\n\n"
             for x in commands:
                 this_command += f"  •  **Command:** `.{str(x)}`\n  •  **Function:** `{str(commands[x])}`\n\n"
-            this_command += "© @TheUpdatesChannel"
+            this_command += "@SARKAUT"
             await edit_or_reply(
                 message, this_command, parse_mode=enums.ParseMode.MARKDOWN
             )
         else:
             await edit_or_reply(
                 message,
-                f"`{help_arg}` **Not a Valid Module Name.**",
+                f"`{help_arg}` ** ناوی مۆدیولێکی دروست نییە**",
             )
 
 
